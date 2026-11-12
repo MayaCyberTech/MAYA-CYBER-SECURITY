@@ -2,313 +2,390 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#100A2A">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
-  <meta name="apple-mobile-web-app-title" content="MAYA CYBER">
-  <meta name="description" content="MAYA CYBER SECURITY - Defensive security review">
-  <link rel="manifest" href="./manifest.json">
-  <title>MAYA CYBER SECURITY</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#100A2A">
+<meta name="description" content="MAYA CYBER SECURITY - Defensive security analysis">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-title" content="MAYA CYBER">
+<link rel="manifest" href="./manifest.json">
+<link rel="apple-touch-icon" href="./icon-512.png">
+<title>MAYA CYBER SECURITY — INFINITY X</title>
 
-  <style>
-    * { box-sizing: border-box; }
-    body {
-      margin: 0;
-      padding: 18px;
-      background: linear-gradient(145deg,#100A2A,#21104A,#071D35);
-      color: white;
-      font-family: Arial, sans-serif;
-    }
-    .container { max-width: 760px; margin: auto; }
-    header, section {
-      background: rgba(255,255,255,.07);
-      border: 1px solid rgba(120,210,255,.25);
-      border-radius: 18px;
-      padding: 18px;
-      margin-bottom: 16px;
-    }
-    h1 {
-      color: #70E8FF;
-      text-align: center;
-      font-size: 25px;
-    }
-    h2 { color: #C5A7FF; font-size: 19px; }
-    .subtitle { text-align: center; color: #B9C8E8; }
-    .version { text-align: center; color: #70E8FF; }
-    .score {
-      font-size: 38px;
-      font-weight: bold;
-      color: #70E8FF;
-      text-align: center;
-      margin: 12px;
-    }
-    .bar {
-      height: 13px;
-      background: #30244D;
-      border-radius: 20px;
-      overflow: hidden;
-    }
-    #progress {
-      width: 0%;
-      height: 100%;
-      background: linear-gradient(90deg,#70E8FF,#A77BFF);
-      transition: width .3s;
-    }
-    .item {
-      background: rgba(255,255,255,.06);
-      padding: 13px;
-      margin: 10px 0;
-      border-radius: 12px;
-      border: 1px solid #493C6B;
-    }
-    .item p { color: #D5D9EC; line-height: 1.6; }
-    select, button {
-      width: 100%;
-      padding: 12px;
-      border-radius: 10px;
-      border: none;
-      margin-top: 8px;
-      font-size: 15px;
-    }
-    select {
-      background: #21183F;
-      color: white;
-      border: 1px solid #70E8FF;
-    }
-    button {
-      background: linear-gradient(90deg,#159DC5,#7951D8);
-      color: white;
-      font-weight: bold;
-      cursor: pointer;
-    }
-    button.secondary { background: #382A58; }
-    .notice {
-      color: #FFD98A;
-      line-height: 1.7;
-      font-size: 14px;
-    }
-    #reports p { overflow-wrap: anywhere; }
-    footer {
-      text-align: center;
-      color: #AEB8D5;
-      font-size: 12px;
-      padding: 15px;
-    }
-  </style>
+<style>
+*{box-sizing:border-box}
+body{
+ margin:0;padding:16px;
+ background:linear-gradient(145deg,#100A2A,#21104A,#071D35);
+ color:#fff;font-family:Arial,sans-serif
+}
+.container{max-width:780px;margin:auto}
+header,section{
+ background:rgba(255,255,255,.07);
+ border:1px solid rgba(112,232,255,.25);
+ border-radius:18px;padding:18px;margin-bottom:16px
+}
+h1{text-align:center;color:#70E8FF;font-size:25px}
+h2{color:#C5A7FF;font-size:19px}
+.subtitle{text-align:center;color:#B9C8E8}
+.version{text-align:center;color:#70E8FF;font-weight:bold}
+select,button{
+ width:100%;padding:13px;margin-top:9px;
+ border-radius:10px;font-size:15px
+}
+select{
+ background:#21183F;color:white;
+ border:1px solid #70E8FF
+}
+button{
+ border:0;color:white;font-weight:bold;cursor:pointer;
+ background:linear-gradient(90deg,#159DC5,#7951D8)
+}
+button.secondary{background:#382A58}
+button.danger{background:#873D65}
+button:focus-visible,select:focus-visible{
+ outline:2px solid #70E8FF;outline-offset:3px
+}
+.card{
+ background:rgba(255,255,255,.06);
+ padding:14px;margin:10px 0;
+ border-radius:12px;border:1px solid #493C6B
+}
+.card p{color:#D5D9EC;line-height:1.6}
+.score{
+ font-size:38px;font-weight:bold;color:#70E8FF;
+ text-align:center;margin:12px
+}
+.bar{
+ height:13px;background:#30244D;
+ border-radius:20px;overflow:hidden
+}
+#progress{
+ width:0;height:100%;
+ background:linear-gradient(90deg,#70E8FF,#A77BFF);
+ transition:width .3s
+}
+.notice{color:#FFD98A;line-height:1.7;font-size:14px}
+.result{
+ padding:13px;border-radius:12px;
+ background:#21183F;margin:9px 0;line-height:1.7
+}
+.good{color:#75E6B0}
+.warn{color:#FFD98A}
+.bad{color:#FF91AE}
+footer{text-align:center;color:#AEB8D5;font-size:12px;padding:15px}
+@media print{
+ body{background:white;color:black}
+ header,section,.card,.result{background:white;color:black;border:1px solid #aaa}
+ button,select{display:none}
+ h1,h2,p,.notice,.subtitle,.version{color:black}
+}
+</style>
 </head>
 
 <body>
 <div class="container">
 
-  <header>
-    <h1>🛡️ MAYA CYBER SECURITY</h1>
-    <p class="subtitle">DEFENSIVE SECURITY DASHBOARD</p>
-    <p class="version">100000.0 — INFINITY X</p>
-  </header>
+<header>
+<h1>🛡️ MAYA CYBER SECURITY</h1>
+<p class="subtitle">SMART DEFENSIVE SECURITY CENTER</p>
+<p class="version">10,000,000.0 — INFINITY X ULTIMATE</p>
+<p class="subtitle">MULTI-DEVICE SECURITY AWARENESS</p>
+</header>
 
-  <section>
-    <h2>مؤشر اكتمال المراجعة</h2>
-    <div class="score" id="score">0%</div>
-    <div class="bar"><div id="progress"></div></div>
-    <p id="summary" class="subtitle">لم تبدأ المراجعة بعد</p>
-    <p class="notice">
-      هذه النسبة تقيس العناصر التي راجعتها فقط، ولا تمثل نسبة أمان الجهاز.
-    </p>
-  </section>
+<section>
+<h2>1. اختيار الجهاز</h2>
+<p>اختاري الجهاز الذي تريدين مراجعته:</p>
+<select id="device">
+<option value="iPhone / iPad">iPhone / iPad — iOS</option>
+<option value="Android">Android</option>
+<option value="Windows">Windows</option>
+<option value="macOS">macOS</option>
+</select>
+<p class="notice">اختيار الجهاز يساعد على تنظيم التقرير، ولا يمنح الموقع صلاحية الوصول إلى ملفات النظام.</p>
+</section>
 
-  <section>
-    <h2>مراجعة إعدادات الأمان</h2>
-    <div id="checks"></div>
-    <button onclick="updateDashboard()">تحديث النسبة</button>
-  </section>
+<section>
+<h2>2. SMART THREAT DETECTION</h2>
+<p class="notice">أجيبي حسب ما وجدته عند مراجعة إعدادات جهازك. لا تختاري وجود مشكلة لمجرد أنك غير متأكدة.</p>
+<div id="checks"></div>
+<button onclick="analyze()">تحليل النتائج</button>
+</section>
 
-  <section>
-    <h2>التقارير</h2>
-    <button onclick="saveReport()">حفظ تقرير جديد</button>
-    <button class="secondary" onclick="showReports()">عرض التقارير المحفوظة</button>
-    <button class="secondary" onclick="window.print()">طباعة / حفظ PDF</button>
-    <div id="reports"></div>
-  </section>
+<section>
+<h2>3. SECURITY ANALYSIS</h2>
+<div class="score" id="score">لم يبدأ التحليل</div>
+<div class="bar"><div id="progress"></div></div>
+<div id="results" class="result">أكملي المراجعة ثم اضغطي تحليل النتائج.</div>
+<p class="notice">المؤشر يقيس اكتمال المراجعة فقط، وليس نسبة أمان الجهاز.</p>
+</section>
 
-  <section>
-    <h2>حول المشروع</h2>
-    <p class="notice">
-      MAYA CYBER SECURITY مشروع توعوي دفاعي لمراجعة إعدادات الخصوصية
-      والأمان، ومساعدة المستخدم على ملاحظة الأمور التي تحتاج إلى مراجعة.
-      لا يستطيع هذا الموقع فحص ملفات النظام الداخلية أو تأكيد وجود اختراق.
-    </p>
-  </section>
+<section>
+<h2>4. SECURITY REPORTS</h2>
+<button onclick="saveReport()">حفظ التقرير</button>
+<button class="secondary" onclick="showReports()">عرض التقارير السابقة</button>
+<button class="secondary" onclick="downloadReport()">تنزيل آخر تقرير</button>
+<button class="secondary" onclick="window.print()">طباعة / PDF</button>
+<div id="reports"></div>
+</section>
 
-  <footer>
-    MAYA CYBER SECURITY © 2026<br>
-    Defensive Security Awareness Project
-  </footer>
+<section>
+<h2>5. ABOUT MAYA CYBER</h2>
+<p class="notice">
+هذا مشروع دفاعي للتوعية ومراجعة إعدادات الأمان والخصوصية.
+يعتمد التحليل على إجابات المستخدم، ولا يفحص ملفات النظام الداخلية
+ولا يستطيع تأكيد حدوث اختراق. النتائج المريبة تحتاج إلى تحقق إضافي.
+</p>
+</section>
 
+<footer>
+MAYA CYBER SECURITY © 2026<br>
+INFINITY X ULTIMATE — DEFENSIVE PROJECT
+</footer>
 </div>
 
 <script>
-const checks = [
-  {
-    title: "تحديث النظام",
-    description: "تحقق من تثبيت آخر تحديث رسمي لنظام جهازك."
-  },
-  {
-    title: "الأجهزة المرتبطة بالحساب",
-    description: "راجع الأجهزة التي تظهر في حساب Apple أو Google."
-  },
-  {
-    title: "ملفات تعريف وإدارة الجهاز",
-    description: "راجع ملفات التعريف وإدارة الجهاز التي لا تعرفها."
-  },
-  {
-    title: "اتصالات VPN",
-    description: "تحقق من اتصالات VPN التي قمت بإضافتها."
-  },
-  {
-    title: "الكاميرا والميكروفون",
-    description: "راجع التطبيقات التي لديها إذن استخدام الكاميرا والميكروفون."
-  },
-  {
-    title: "إذن الموقع",
-    description: "راجع التطبيقات التي يمكنها الوصول إلى موقعك."
-  },
-  {
-    title: "التطبيقات المثبتة",
-    description: "راجع التطبيقات التي لا تتذكر تثبيتها."
-  },
-  {
-    title: "المصادقة الثنائية",
-    description: "تحقق من تفعيل المصادقة الثنائية لحساباتك المهمة."
-  },
-  {
-    title: "شبكة Wi-Fi",
-    description: "تحقق من الاتصال بشبكة موثوقة وكلمة مرور قوية."
-  },
-  {
-    title: "النسخ الاحتياطي",
-    description: "تحقق من وجود نسخة احتياطية حديثة."
-  }
+"use strict";
+
+const questions = [
+{
+ title:"الأجهزة المرتبطة بالحساب",
+ desc:"هل وجدت جهازًا مرتبطًا بحسابك لا تعرفه؟"
+},
+{
+ title:"تنبيهات تسجيل الدخول",
+ desc:"هل وصلك تنبيه دخول لا تتعرف عليه؟"
+},
+{
+ title:"التطبيقات المثبتة",
+ desc:"هل وجدت تطبيقًا لا تتذكر تثبيته؟"
+},
+{
+ title:"ملفات التعريف وإدارة الجهاز",
+ desc:"هل وجدت ملف تعريف أو إدارة جهاز لا تعرف مصدره؟"
+},
+{
+ title:"اتصالات VPN",
+ desc:"هل وجدت اتصال VPN لم تقم بإعداده؟"
+},
+{
+ title:"أذونات التطبيقات",
+ desc:"هل لاحظت تطبيقًا لديه أذونات لا تتوقعها؟"
+},
+{
+ title:"إعدادات الحساب",
+ desc:"هل تغيرت إعدادات حسابك دون علمك؟"
+},
+{
+ title:"تحديثات النظام",
+ desc:"هل نظام الجهاز غير محدّث؟"
+},
+{
+ title:"الحماية الإضافية للحساب",
+ desc:"هل المصادقة الثنائية غير مفعّلة في حساب مهم؟"
+},
+{
+ title:"شبكة Wi-Fi",
+ desc:"هل تتصل بشبكة لا تعرف مصدرها؟"
+}
 ];
 
-const savedStates = JSON.parse(
-  localStorage.getItem("mayaStates") || "{}"
-);
+const choices = [
+["pending","لم أتحقق بعد"],
+["normal","لا، كل شيء معروف"],
+["suspicious","نعم، وجدت شيئًا غير معروف"],
+["unsure","لست متأكدًا"]
+];
 
-const checksContainer = document.getElementById("checks");
+const checkArea=document.getElementById("checks");
 
-checks.forEach((item, index) => {
-  const card = document.createElement("div");
-  card.className = "item";
+questions.forEach((q,i)=>{
+ const card=document.createElement("div");
+ card.className="card";
 
-  const title = document.createElement("strong");
-  title.textContent = (index + 1) + ". " + item.title;
+ const title=document.createElement("strong");
+ title.textContent=(i+1)+". "+q.title;
 
-  const description = document.createElement("p");
-  description.textContent = item.description;
+ const desc=document.createElement("p");
+ desc.textContent=q.desc;
 
-  const select = document.createElement("select");
-  select.id = "check-" + index;
+ const select=document.createElement("select");
+ select.id="q"+i;
+ select.setAttribute("aria-label",q.title);
 
-  [
-    ["pending", "لم تتم المراجعة"],
-    ["done", "تمت المراجعة"],
-    ["review", "يحتاج إلى مراجعة"]
-  ].forEach(([value, label]) => {
-    const option = document.createElement("option");
-    option.value = value;
-    option.textContent = label;
-    select.appendChild(option);
-  });
+ choices.forEach(([value,label])=>{
+  const option=document.createElement("option");
+  option.value=value;
+  option.textContent=label;
+  select.appendChild(option);
+ });
 
-  select.value = savedStates[index] || "pending";
-
-  select.addEventListener("change", () => {
-    savedStates[index] = select.value;
-    localStorage.setItem("mayaStates", JSON.stringify(savedStates));
-    updateDashboard();
-  });
-
-  card.append(title, description, select);
-  checksContainer.appendChild(card);
+ card.append(title,desc,select);
+ checkArea.appendChild(card);
 });
 
-function updateDashboard() {
-  let completed = 0;
-  let needsReview = 0;
+let lastReport=null;
 
-  checks.forEach((item, index) => {
-    const value = document.getElementById("check-" + index).value;
-    if (value === "done") completed++;
-    if (value === "review") needsReview++;
+function analyze(){
+ let completed=0;
+ let suspicious=0;
+ let unsure=0;
+ let normal=0;
+ const findings=[];
+
+ questions.forEach((q,i)=>{
+  const value=document.getElementById("q"+i).value;
+
+  if(value!=="pending") completed++;
+  if(value==="suspicious") suspicious++;
+  if(value==="unsure") unsure++;
+  if(value==="normal") normal++;
+
+  findings.push({
+   title:q.title,
+   answer:choices.find(c=>c[0]===value)[1],
+   status:value
   });
+ });
 
-  const percentage = Math.round((completed / checks.length) * 100);
+ const percent=Math.round(completed/questions.length*100);
+ document.getElementById("score").textContent=percent+"%";
+ document.getElementById("progress").style.width=percent+"%";
 
-  document.getElementById("score").textContent = percentage + "%";
-  document.getElementById("progress").style.width = percentage + "%";
-  document.getElementById("summary").textContent =
-    completed + " تمت مراجعتها — " +
-    needsReview + " تحتاج إلى مراجعة — " +
-    (checks.length - completed - needsReview) + " لم تتم مراجعتها";
+ let level="";
+ let color="";
+
+ if(suspicious>0){
+  level="مؤشرات مريبة تستحق التحقق";
+  color="bad";
+ }else if(unsure>0 || completed<questions.length){
+  level="تحتاج بعض العناصر إلى مراجعة";
+  color="warn";
+ }else{
+  level="لم تظهر مؤشرات مريبة في إجاباتك";
+  color="good";
+ }
+
+ const results=document.getElementById("results");
+ results.replaceChildren();
+
+ const heading=document.createElement("strong");
+ heading.className=color;
+ heading.textContent=level;
+
+ const summary=document.createElement("p");
+ summary.textContent=
+  "تمت مراجعة "+completed+" من "+questions.length+
+  " — مؤشرات مريبة: "+suspicious+
+  " — غير مؤكدة: "+unsure+
+  " — طبيعية حسب إجاباتك: "+normal;
+
+ results.append(heading,summary);
+
+ const note=document.createElement("p");
+ note.className="notice";
+ note.textContent=
+  suspicious>0
+  ? "راجعي العناصر المريبة من إعدادات النظام والحساب الرسمي. لا تعني هذه النتيجة إثبات اختراق."
+  : "عدم ظهور مؤشرات في الإجابات لا يضمن خلو الجهاز من كل المخاطر.";
+
+ results.appendChild(note);
+
+ lastReport={
+  date:new Date().toLocaleString("ar"),
+  device:document.getElementById("device").value,
+  percent,
+  suspicious,
+  unsure,
+  normal,
+  level,
+  findings
+ };
 }
 
-function saveReport() {
-  const report = {
-    date: new Date().toLocaleString("ar"),
-    states: checks.map((item, index) => ({
-      title: item.title,
-      state: document.getElementById("check-" + index).value
-    }))
-  };
+function saveReport(){
+ if(!lastReport){
+  alert("حللي النتائج أولًا.");
+  return;
+ }
 
-  const reports = JSON.parse(
-    localStorage.getItem("mayaReports") || "[]"
-  );
+ let reports=[];
+ try{
+  reports=JSON.parse(localStorage.getItem("mayaReports")||"[]");
+  if(!Array.isArray(reports)) reports=[];
+ }catch{
+  reports=[];
+ }
 
-  reports.unshift(report);
-  localStorage.setItem("mayaReports", JSON.stringify(reports));
+ reports.unshift(lastReport);
+
+ try{
+  localStorage.setItem("mayaReports",JSON.stringify(reports));
   alert("تم حفظ التقرير على هذا الجهاز.");
+ }catch{
+  alert("تعذر الحفظ. قد تكون مساحة التخزين غير كافية.");
+ }
 }
 
-function showReports() {
-  const reports = JSON.parse(
-    localStorage.getItem("mayaReports") || "[]"
-  );
+function showReports(){
+ const area=document.getElementById("reports");
+ area.replaceChildren();
 
-  const container = document.getElementById("reports");
-  container.replaceChildren();
+ let reports=[];
+ try{
+  reports=JSON.parse(localStorage.getItem("mayaReports")||"[]");
+ }catch{
+  reports=[];
+ }
 
-  if (!reports.length) {
-    container.textContent = "لا توجد تقارير محفوظة بعد.";
-    return;
-  }
+ if(!Array.isArray(reports)||reports.length===0){
+  area.textContent="لا توجد تقارير محفوظة.";
+  return;
+ }
 
-  reports.forEach((report, index) => {
-    const card = document.createElement("div");
-    card.className = "item";
+ reports.forEach((r,i)=>{
+  const card=document.createElement("div");
+  card.className="card";
 
-    const heading = document.createElement("strong");
-    heading.textContent = "تقرير " + (index + 1) + " — " + report.date;
+  const title=document.createElement("strong");
+  title.textContent="تقرير "+(i+1)+" — "+r.date;
 
-    const details = document.createElement("p");
-    details.textContent = report.states.map(item =>
-      item.title + ": " + item.state
-    ).join(" | ");
+  const detail=document.createElement("p");
+  detail.textContent=
+   "الجهاز: "+r.device+
+   " | المراجعة: "+r.percent+"%"+
+   " | المؤشرات المريبة: "+r.suspicious+
+   " | "+r.level;
 
-    card.append(heading, details);
-    container.appendChild(card);
-  });
+  card.append(title,detail);
+  area.appendChild(card);
+ });
 }
 
-updateDashboard();
+function downloadReport(){
+ if(!lastReport){
+  alert("حللي النتائج أولًا.");
+  return;
+ }
 
-if ("serviceWorker" in navigator) {
-  window.addEventListener("load", () => {
-    navigator.serviceWorker.register("./service-worker.js")
-      .catch(error => console.log("Service Worker:", error));
-  });
+ const blob=new Blob(
+  [JSON.stringify(lastReport,null,2)],
+  {type:"application/json;charset=utf-8"}
+ );
+
+ const url=URL.createObjectURL(blob);
+ const link=document.createElement("a");
+ link.href=url;
+ link.download="MAYA-CYBER-REPORT.json";
+ link.click();
+ URL.revokeObjectURL(url);
+}
+
+if("serviceWorker" in navigator){
+ window.addEventListener("load",()=>{
+  navigator.serviceWorker.register("./service-worker.js")
+   .catch(error=>console.log("Service Worker:",error));
+ });
 }
 </script>
 </body>
