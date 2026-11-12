@@ -1,224 +1,236 @@
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090b18">
 <title>MAYA CYBER SECURITY</title>
-
 <style>
-* { box-sizing: border-box; }
-
-body {
-  margin: 0;
-  font-family: Arial, sans-serif;
-  background: #090514;
-  color: white;
-  text-align: center;
+:root {
+  --cyan:#00e5ff;
+  --purple:#a855f7;
+  --bg:#090b18;
+  --panel:#15182b;
+  --text:#f4f5ff;
 }
-
-header {
-  padding: 30px 15px;
-  background: linear-gradient(135deg,#18082f,#5212a0);
-  border-bottom: 2px solid #a855f7;
+*{box-sizing:border-box}
+body{
+  margin:0;
+  padding:20px;
+  background:radial-gradient(circle at top,#24204b,var(--bg) 60%);
+  color:var(--text);
+  font-family:Arial,sans-serif;
 }
-
-.logo { font-size: 48px; }
-h1 { color: #d8a5ff; font-size: 27px; }
-
-main {
-  padding: 20px;
-  max-width: 650px;
-  margin: auto;
+header{text-align:center;padding:25px 5px}
+.logo{
+  font-size:32px;
+  font-weight:bold;
+  background:linear-gradient(90deg,var(--cyan),var(--purple));
+  -webkit-background-clip:text;
+  color:transparent;
 }
-
-.card {
-  background: #170d27;
-  border: 1px solid #7134a8;
-  border-radius: 15px;
-  padding: 22px;
-  margin: 16px 0;
+.version{color:var(--cyan);margin-top:10px}
+.panel{
+  background:var(--panel);
+  border:1px solid #514078;
+  border-radius:17px;
+  padding:18px;
+  margin:15px auto;
+  max-width:650px;
+  box-shadow:0 0 20px #a855f722;
 }
-
-.score {
-  font-size: 42px;
-  color: #c084fc;
-  font-weight: bold;
+h2{color:var(--cyan);font-size:19px}
+button{
+  border:0;
+  border-radius:10px;
+  padding:12px 17px;
+  margin:5px;
+  font-weight:bold;
+  cursor:pointer;
+  background:linear-gradient(90deg,var(--cyan),var(--purple));
+  color:#080b18;
 }
-
-button {
-  background: #8b35d6;
-  color: white;
-  border: 0;
-  padding: 14px 22px;
-  border-radius: 10px;
-  font-size: 16px;
-  margin: 8px;
-  cursor: pointer;
+select{
+  background:#22243b;
+  color:white;
+  padding:10px;
+  border-radius:8px;
+  border:1px solid var(--purple);
 }
-
-.result {
-  color: #c4b5fd;
-  line-height: 1.9;
-  overflow-wrap: anywhere;
+.item{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  gap:10px;
+  padding:12px 0;
+  border-bottom:1px solid #34334e;
 }
-
-#reportCard { display: none; }
-
-table {
-  width: 100%;
-  border-collapse: collapse;
-  margin-top: 15px;
+.item select{max-width:145px}
+.progress{
+  height:12px;
+  background:#292b40;
+  border-radius:20px;
+  overflow:hidden;
+  margin:15px 0;
 }
-
-td, th {
-  border: 1px solid #7134a8;
-  padding: 10px;
-  text-align: center;
+#bar{
+  width:0%;
+  height:100%;
+  background:linear-gradient(90deg,var(--cyan),var(--purple));
+  transition:.3s;
 }
-
-footer {
-  padding: 25px;
-  color: #a78bbf;
-}
-
-@media print {
-  body * { visibility: hidden; }
-
-  #printReport,
-  #printReport * {
-    visibility: visible;
-  }
-
-  #printReport {
-    display: block !important;
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    color: #111;
-    background: white;
-    padding: 20px;
-  }
-
-  #printReport h2 { color: #542080; }
-
-  #printReport table,
-  #printReport td,
-  #printReport th {
-    border: 1px solid #555;
-    color: #111;
-  }
-
-  .no-print { display: none !important; }
-}
+#result{color:var(--cyan);font-weight:bold}
+small{color:#aaa}
+footer{text-align:center;color:#aaa;margin:30px 0}
 </style>
 </head>
-
 <body>
 
-<header class="no-print">
-  <div class="logo">🛡️</div>
-  <h1>MAYA CYBER SECURITY</h1>
-  <p>ADVANCED SECURITY CENTER</p>
+<header>
+  <div class="logo">MAYA CYBER SECURITY</div>
+  <div class="version">100000.0 — INFINITY X</div>
+  <p>DEFENSIVE SECURITY DASHBOARD</p>
 </header>
 
-<main class="no-print">
-
-  <div class="card">
-    <h2>Security Dashboard</h2>
-    <div class="score" id="score">75 / 100</div>
-    <p>DEMO SECURITY SCORE</p>
-  </div>
-
-  <div class="card">
-    <h2>🔐 Security Checks</h2>
-    <button onclick="scan()">START SECURITY CHECK</button>
-    <div class="result" id="result">
-      Your security report will appear here.
-    </div>
-  </div>
-
-  <div class="card" id="reportCard">
-    <h2>📄 Security Report</h2>
-    <p>Your demonstration report is ready.</p>
-    <button onclick="exportPDF()">EXPORT REPORT AS PDF</button>
-  </div>
-
-  <div class="card">
-    <h2>🛡️ Privacy & Protection</h2>
-    <p>Device Security Awareness</p>
-    <p>Privacy Settings Review</p>
-    <p>Software Update Reminder</p>
-    <p>Permission Review</p>
-  </div>
-
-  <div class="card">
-    <h2>About MAYA CYBER</h2>
-    <p>Security and privacy awareness platform.</p>
-    <p>This is a demonstration, not a real device scan.</p>
-  </div>
-
-</main>
-
-<!-- Printable report -->
-<section id="printReport" hidden>
-  <h2>MAYA CYBER SECURITY</h2>
-  <h3>DEVICE SECURITY REVIEW REPORT</h3>
-
-  <p>Report type: Demonstration / Manual Review</p>
-  <p id="reportDate"></p>
-  <p>Demo score: 75 / 100</p>
-
-  <table>
-    <tr>
-      <th>Security item</th>
-      <th>Review status</th>
-    </tr>
-    <tr><td>Screen Lock</td><td>Manual Review</td></tr>
-    <tr><td>Software Updates</td><td>Manual Review</td></tr>
-    <tr><td>Camera Permissions</td><td>Manual Review</td></tr>
-    <tr><td>Microphone Permissions</td><td>Manual Review</td></tr>
-    <tr><td>Photos Access</td><td>Manual Review</td></tr>
-  </table>
-
-  <p>
-    Important: This report is a demonstration.
-    No real device inspection was performed.
-    All listed items require manual review by the device owner.
-  </p>
-
-  <p>MAYA CYBER SECURITY © 2026</p>
+<section class="panel">
+  <h2>🛡️ لوحة التحكم</h2>
+  <p>مرحباً بك في مركز مراجعة أمن الجهاز.</p>
+  <p>نسبة اكتمال المراجعة:</p>
+  <div class="progress"><div id="bar"></div></div>
+  <div id="result">0% مكتمل</div>
+  <button onclick="updateProgress()">تحديث النسبة</button>
 </section>
 
-<footer class="no-print">
-  MAYA CYBER SECURITY © 2026
+<section class="panel">
+  <h2>🔍 المراجعة الأمنية اليدوية</h2>
+  <p><small>اختر حالة كل عنصر بعد التحقق منه بنفسك.</small></p>
+  <div id="checks"></div>
+  <button onclick="saveReport()">حفظ التقرير</button>
+</section>
+
+<section class="panel">
+  <h2>📊 التقرير الأمني</h2>
+  <div id="report">لم يتم إنشاء تقرير بعد.</div>
+  <button onclick="exportPDF()">تصدير / طباعة PDF</button>
+</section>
+
+<section class="panel">
+  <h2>📁 سجل التقارير</h2>
+  <div id="history">لا توجد تقارير محفوظة.</div>
+  <button onclick="showHistory()">عرض السجل</button>
+</section>
+
+<footer>
+  MAYA CYBER SECURITY © 2026<br>
+  <small>أداة توعية ومراجعة يدوية وليست ماسحاً أمنياً تلقائياً.</small>
 </footer>
 
 <script>
-function scan() {
-  document.getElementById("result").innerHTML =
-    "✅ Security Demo Started<br>" +
-    "🔐 Screen Lock: Manual Review<br>" +
-    "📱 Software Updates: Manual Review<br>" +
-    "🎥 Camera Permissions: Manual Review<br>" +
-    "🎙️ Microphone Permissions: Manual Review<br>" +
-    "🖼️ Photos Access: Manual Review<br>" +
-    "⚠️ Demonstration only. Not a real device scan.";
+const items = [
+"قفل الشاشة",
+"تحديث نظام التشغيل",
+"إذن الكاميرا",
+"إذن الميكروفون",
+"إذن الموقع",
+"الوصول إلى الصور",
+"المصادقة الثنائية",
+"التطبيقات المثبتة",
+"أمان شبكة Wi-Fi",
+"النسخ الاحتياطي"
+];
 
-  document.getElementById("score").innerText = "75 / 100";
+const container=document.getElementById("checks");
 
-  document.getElementById("reportDate").innerText =
-    "Report date: " + new Date().toLocaleString();
+items.forEach((item,i)=>{
+  container.innerHTML+=`
+  <div class="item">
+    <span>${i+1}. ${item}</span>
+    <select id="check${i}" onchange="updateProgress()">
+      <option value="unknown">لم أتحقق</option>
+      <option value="good">تم التحقق</option>
+      <option value="review">يحتاج مراجعة</option>
+    </select>
+  </div>`;
+});
 
-  document.getElementById("printReport").hidden = false;
-  document.getElementById("reportCard").style.display = "block";
+function updateProgress(){
+  let done=0;
+  items.forEach((_,i)=>{
+    if(document.getElementById("check"+i).value!=="unknown")done++;
+  });
+  let percent=Math.round(done/items.length*100);
+  document.getElementById("bar").style.width=percent+"%";
+  document.getElementById("result").textContent=percent+"% مكتمل";
 }
 
-function exportPDF() {
-  window.print();
+function saveReport(){
+  const answers=items.map((item,i)=>({
+    name:item,
+    status:document.getElementById("check"+i).value
+  }));
+  const report={
+    date:new Date().toLocaleString(),
+    answers:answers
+  };
+  let history=JSON.parse(localStorage.getItem("mayaReports")||"[]");
+  history.unshift(report);
+  localStorage.setItem("mayaReports",JSON.stringify(history));
+  displayReport(report);
+  showHistory();
+  alert("تم حفظ التقرير على هذا المتصفح.");
 }
+
+function displayReport(report){
+  let html="<p><b>التاريخ:</b> "+report.date+"</p>";
+  report.answers.forEach(a=>{
+    let status=a.status==="good"?"تم التحقق":
+      a.status==="review"?"يحتاج مراجعة":"لم أتحقق";
+    html+=`<p>${a.name}: ${status}</p>`;
+  });
+  document.getElementById("report").innerHTML=html;
+}
+
+function showHistory(){
+  let history=JSON.parse(localStorage.getItem("mayaReports")||"[]");
+  const area=document.getElementById("history");
+  if(!history.length){
+    area.textContent="لا توجد تقارير محفوظة.";
+    return;
+  }
+  area.innerHTML="";
+  history.forEach((r,i)=>{
+    let btn=document.createElement("button");
+    btn.textContent="تقرير "+(i+1)+" — "+r.date;
+    btn.onclick=()=>displayReport(r);
+    area.appendChild(btn);
+  });
+}
+
+function exportPDF(){
+  const content=document.getElementById("report").innerHTML;
+  const win=window.open("","_blank");
+  if(!win){
+    alert("تعذر فتح نافذة الطباعة. اسمح بالنوافذ المنبثقة في المتصفح.");
+    return;
+  }
+  win.document.write(`
+    <html lang="ar" dir="rtl">
+    <head><meta charset="UTF-8">
+    <title>MAYA Security Report</title>
+    <style>body{font-family:Arial;padding:25px;line-height:2}
+    h1{color:#7135bd}</style></head>
+    <body>
+    <h1>MAYA CYBER SECURITY</h1>
+    <h2>Security Review Report</h2>
+    ${content}
+    <p>هذا تقرير مراجعة يدوية وليس نتيجة فحص تلقائي.</p>
+    <script>window.onload=()=>window.print();<\/script>
+    </body></html>`);
+  win.document.close();
+}
+
+showHistory();
 </script>
-
 </body>
 </html>
