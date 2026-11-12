@@ -1,103 +1,222 @@
 
 <!DOCTYPE html>
-<html lang="ar" dir="rtl">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>MAYA CYBER SECURITY</title>
+
 <style>
-* {box-sizing:border-box}
+* { box-sizing: border-box; }
+
 body {
-  margin:0;
-  font-family:Arial,sans-serif;
-  background:#090514;
-  color:white;
-  text-align:center;
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: #090514;
+  color: white;
+  text-align: center;
 }
+
 header {
-  padding:30px 15px;
-  background:linear-gradient(135deg,#18082f,#5212a0);
-  border-bottom:2px solid #a855f7;
+  padding: 30px 15px;
+  background: linear-gradient(135deg,#18082f,#5212a0);
+  border-bottom: 2px solid #a855f7;
 }
-.logo {font-size:48px}
-h1 {color:#d8a5ff;font-size:27px}
-.subtitle {color:#c9a9e9}
-main {padding:20px;max-width:600px;margin:auto}
+
+.logo { font-size: 48px; }
+h1 { color: #d8a5ff; font-size: 27px; }
+
+main {
+  padding: 20px;
+  max-width: 650px;
+  margin: auto;
+}
+
 .card {
-  background:#170d27;
-  border:1px solid #7134a8;
-  border-radius:15px;
-  padding:20px;
-  margin:15px 0;
+  background: #170d27;
+  border: 1px solid #7134a8;
+  border-radius: 15px;
+  padding: 22px;
+  margin: 16px 0;
 }
-.score {font-size:42px;color:#c084fc;font-weight:bold}
+
+.score {
+  font-size: 42px;
+  color: #c084fc;
+  font-weight: bold;
+}
+
 button {
-  background:#8b35d6;
-  color:white;
-  border:0;
-  padding:13px 22px;
-  border-radius:10px;
-  font-size:16px;
-  margin:8px;
+  background: #8b35d6;
+  color: white;
+  border: 0;
+  padding: 14px 22px;
+  border-radius: 10px;
+  font-size: 16px;
+  margin: 8px;
+  cursor: pointer;
 }
-button:active {background:#6120a0}
-.result {color:#c4b5fd;line-height:1.8}
-footer {padding:25px;color:#a78bbf}
+
+.result {
+  color: #c4b5fd;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+#reportCard { display: none; }
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 15px;
+}
+
+td, th {
+  border: 1px solid #7134a8;
+  padding: 10px;
+  text-align: center;
+}
+
+footer {
+  padding: 25px;
+  color: #a78bbf;
+}
+
+@media print {
+  body * { visibility: hidden; }
+
+  #printReport,
+  #printReport * {
+    visibility: visible;
+  }
+
+  #printReport {
+    display: block !important;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    color: #111;
+    background: white;
+    padding: 20px;
+  }
+
+  #printReport h2 { color: #542080; }
+
+  #printReport table,
+  #printReport td,
+  #printReport th {
+    border: 1px solid #555;
+    color: #111;
+  }
+
+  .no-print { display: none !important; }
+}
 </style>
 </head>
+
 <body>
 
-<header>
-<div class="logo">🛡️</div>
-<h1>MAYA CYBER SECURITY</h1>
-<p class="subtitle">ADVANCED SECURITY CENTER</p>
+<header class="no-print">
+  <div class="logo">🛡️</div>
+  <h1>MAYA CYBER SECURITY</h1>
+  <p>ADVANCED SECURITY CENTER</p>
 </header>
 
-<main>
-<div class="card">
-<h2>Security Dashboard</h2>
-<div class="score" id="score">75 / 100</div>
-<p>DEMO SECURITY SCORE</p>
-</div>
+<main class="no-print">
 
-<div class="card">
-<h2>🔐 Security Checks</h2>
-<button onclick="scan()">START SECURITY CHECK</button>
-<div class="result" id="result">
-Your security report will appear here.
-</div>
-</div>
+  <div class="card">
+    <h2>Security Dashboard</h2>
+    <div class="score" id="score">75 / 100</div>
+    <p>DEMO SECURITY SCORE</p>
+  </div>
 
-<div class="card">
-<h2>🛡️ Privacy & Protection</h2>
-<p>Device Security Awareness</p>
-<p>Privacy Settings Review</p>
-<p>Software Update Reminder</p>
-<p>Permission Review</p>
-</div>
+  <div class="card">
+    <h2>🔐 Security Checks</h2>
+    <button onclick="scan()">START SECURITY CHECK</button>
+    <div class="result" id="result">
+      Your security report will appear here.
+    </div>
+  </div>
 
-<div class="card">
-<h2>About MAYA CYBER</h2>
-<p>منصة توعوية لمراجعة إعدادات الأمان والخصوصية.</p>
-<p>تعمل هذه النسخة كتجربة توضيحية ولا تنفذ فحصًا حقيقيًا للجهاز.</p>
-</div>
+  <div class="card" id="reportCard">
+    <h2>📄 Security Report</h2>
+    <p>Your demonstration report is ready.</p>
+    <button onclick="exportPDF()">EXPORT REPORT AS PDF</button>
+  </div>
+
+  <div class="card">
+    <h2>🛡️ Privacy & Protection</h2>
+    <p>Device Security Awareness</p>
+    <p>Privacy Settings Review</p>
+    <p>Software Update Reminder</p>
+    <p>Permission Review</p>
+  </div>
+
+  <div class="card">
+    <h2>About MAYA CYBER</h2>
+    <p>Security and privacy awareness platform.</p>
+    <p>This is a demonstration, not a real device scan.</p>
+  </div>
+
 </main>
 
-<footer>
-MAYA CYBER SECURITY © 2026
+<!-- Printable report -->
+<section id="printReport" hidden>
+  <h2>MAYA CYBER SECURITY</h2>
+  <h3>DEVICE SECURITY REVIEW REPORT</h3>
+
+  <p>Report type: Demonstration / Manual Review</p>
+  <p id="reportDate"></p>
+  <p>Demo score: 75 / 100</p>
+
+  <table>
+    <tr>
+      <th>Security item</th>
+      <th>Review status</th>
+    </tr>
+    <tr><td>Screen Lock</td><td>Manual Review</td></tr>
+    <tr><td>Software Updates</td><td>Manual Review</td></tr>
+    <tr><td>Camera Permissions</td><td>Manual Review</td></tr>
+    <tr><td>Microphone Permissions</td><td>Manual Review</td></tr>
+    <tr><td>Photos Access</td><td>Manual Review</td></tr>
+  </table>
+
+  <p>
+    Important: This report is a demonstration.
+    No real device inspection was performed.
+    All listed items require manual review by the device owner.
+  </p>
+
+  <p>MAYA CYBER SECURITY © 2026</p>
+</section>
+
+<footer class="no-print">
+  MAYA CYBER SECURITY © 2026
 </footer>
 
 <script>
 function scan() {
- document.getElementById("result").innerHTML =
- "✅ Security Demo Started<br>" +
- "🔐 Screen Lock: Manual Review<br>" +
- "📱 Software Updates: Manual Review<br>" +
- "🎥 Camera Permissions: Manual Review<br>" +
- "🎙️ Microphone Permissions: Manual Review<br>" +
- "🖼️ Photos Access: Manual Review<br>" +
- "⚠️ This is a demonstration, not a real device scan.";
- document.getElementById("score").innerText="75 / 100";
+  document.getElementById("result").innerHTML =
+    "✅ Security Demo Started<br>" +
+    "🔐 Screen Lock: Manual Review<br>" +
+    "📱 Software Updates: Manual Review<br>" +
+    "🎥 Camera Permissions: Manual Review<br>" +
+    "🎙️ Microphone Permissions: Manual Review<br>" +
+    "🖼️ Photos Access: Manual Review<br>" +
+    "⚠️ Demonstration only. Not a real device scan.";
+
+  document.getElementById("score").innerText = "75 / 100";
+
+  document.getElementById("reportDate").innerText =
+    "Report date: " + new Date().toLocaleString();
+
+  document.getElementById("printReport").hidden = false;
+  document.getElementById("reportCard").style.display = "block";
+}
+
+function exportPDF() {
+  window.print();
 }
 </script>
 
