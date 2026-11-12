@@ -1,0 +1,105 @@
+
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MAYA CYBER SECURITY</title>
+<style>
+* {box-sizing:border-box}
+body {
+  margin:0;
+  font-family:Arial,sans-serif;
+  background:#090514;
+  color:white;
+  text-align:center;
+}
+header {
+  padding:30px 15px;
+  background:linear-gradient(135deg,#18082f,#5212a0);
+  border-bottom:2px solid #a855f7;
+}
+.logo {font-size:48px}
+h1 {color:#d8a5ff;font-size:27px}
+.subtitle {color:#c9a9e9}
+main {padding:20px;max-width:600px;margin:auto}
+.card {
+  background:#170d27;
+  border:1px solid #7134a8;
+  border-radius:15px;
+  padding:20px;
+  margin:15px 0;
+}
+.score {font-size:42px;color:#c084fc;font-weight:bold}
+button {
+  background:#8b35d6;
+  color:white;
+  border:0;
+  padding:13px 22px;
+  border-radius:10px;
+  font-size:16px;
+  margin:8px;
+}
+button:active {background:#6120a0}
+.result {color:#c4b5fd;line-height:1.8}
+footer {padding:25px;color:#a78bbf}
+</style>
+</head>
+<body>
+
+<header>
+<div class="logo">🛡️</div>
+<h1>MAYA CYBER SECURITY</h1>
+<p class="subtitle">ADVANCED SECURITY CENTER</p>
+</header>
+
+<main>
+<div class="card">
+<h2>Security Dashboard</h2>
+<div class="score" id="score">75 / 100</div>
+<p>DEMO SECURITY SCORE</p>
+</div>
+
+<div class="card">
+<h2>🔐 Security Checks</h2>
+<button onclick="scan()">START SECURITY CHECK</button>
+<div class="result" id="result">
+Your security report will appear here.
+</div>
+</div>
+
+<div class="card">
+<h2>🛡️ Privacy & Protection</h2>
+<p>Device Security Awareness</p>
+<p>Privacy Settings Review</p>
+<p>Software Update Reminder</p>
+<p>Permission Review</p>
+</div>
+
+<div class="card">
+<h2>About MAYA CYBER</h2>
+<p>منصة توعوية لمراجعة إعدادات الأمان والخصوصية.</p>
+<p>تعمل هذه النسخة كتجربة توضيحية ولا تنفذ فحصًا حقيقيًا للجهاز.</p>
+</div>
+</main>
+
+<footer>
+MAYA CYBER SECURITY © 2026
+</footer>
+
+<script>
+function scan() {
+ document.getElementById("result").innerHTML =
+ "✅ Security Demo Started<br>" +
+ "🔐 Screen Lock: Manual Review<br>" +
+ "📱 Software Updates: Manual Review<br>" +
+ "🎥 Camera Permissions: Manual Review<br>" +
+ "🎙️ Microphone Permissions: Manual Review<br>" +
+ "🖼️ Photos Access: Manual Review<br>" +
+ "⚠️ This is a demonstration, not a real device scan.";
+ document.getElementById("score").innerText="75 / 100";
+}
+</script>
+
+</body>
+</html>
