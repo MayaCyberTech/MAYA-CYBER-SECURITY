@@ -1,0 +1,11 @@
+{
+  "name": "MAYA CYBER SECURITY",
+  "short_name": "MAYA CYBER",
+  "description": "Defensive device security awareness and manual checks",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#100A2A",
+  "theme_color": "#8B5CF6",
+  "orientation": "portrait",
+  "icons": []
+}
