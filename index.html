@@ -3,106 +3,79 @@
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#090d1c">
-<meta name="description" content="MAYA CYBER SECURITY - Defensive Cybersecurity Awareness Platform">
-<title>MAYA CYBER SECURITY — INFINITY X</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#080d1b">
+<meta name="description" content="MAYA CYBER SECURITY - Professional Defensive Awareness Platform">
+<title>MAYA CYBER SECURITY | INFINITY X</title>
 <link rel="manifest" href="manifest.json">
 <style>
 :root{
- --bg:#080d1c;--panel:#111a30;--panel2:#17233d;
- --cyan:#38e5ff;--purple:#9b75ff;--text:#edf5ff;
- --muted:#9aabc5;--border:#293957;--green:#35d6a0;
- --orange:#ffbd59;--red:#ff657d
+--bg:#080d1b;--panel:#111a2d;--panel2:#17243c;
+--line:#293957;--cyan:#42dcf5;--purple:#9b7bff;
+--text:#eff5ff;--muted:#9babc3;--green:#43d6a1;
+--yellow:#ffc66d;--red:#ff7188
 }
 *{box-sizing:border-box}
-body{
- margin:0;background:radial-gradient(circle at top,#17264a 0,#080d1c 48%);
- color:var(--text);font-family:Arial,Tahoma,sans-serif;min-height:100vh
-}
+body{margin:0;background:radial-gradient(ellipse at top,#172747 0,#080d1b 55%);color:var(--text);font-family:Arial,Tahoma,sans-serif;min-height:100vh}
 button,input,select,textarea{font:inherit}
 button{cursor:pointer}
-header{
- padding:20px 5%;display:flex;align-items:center;
- justify-content:space-between;gap:12px;flex-wrap:wrap;
- border-bottom:1px solid var(--border);background:#090f20dd;
- position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)
-}
-.logo{font-size:21px;font-weight:900;letter-spacing:1px}
-.logo span{color:var(--cyan)}
-.tagline{font-size:11px;color:var(--muted);margin-top:5px}
-select,.field{
- background:var(--panel);color:var(--text);
- border:1px solid var(--border);padding:11px;border-radius:10px
-}
-main{max-width:1150px;margin:auto;padding:24px 16px 60px}
-.hero{
- text-align:center;padding:35px 15px 25px
-}
-.hero h1{font-size:clamp(27px,5vw,44px);margin:8px 0}
-.hero h1 span{color:var(--cyan)}
-.hero p{color:var(--muted);line-height:1.8}
-.glow{
- width:85px;height:85px;border-radius:26px;margin:0 auto 18px;
- display:grid;place-items:center;font-size:38px;
- background:linear-gradient(135deg,#163c60,#36235f);
- border:1px solid #4a8cae;box-shadow:0 0 35px #38e5ff22
-}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
-.card{
- background:linear-gradient(145deg,var(--panel),#0e172a);
- border:1px solid var(--border);border-radius:17px;
- padding:20px;box-shadow:0 10px 30px #0002
-}
-.card h3{margin:0 0 10px}
-.card p{color:var(--muted);line-height:1.7;font-size:14px}
-.stat{font-size:30px;color:var(--cyan);font-weight:bold;margin:12px 0}
-.btn{
- border:0;border-radius:11px;padding:12px 17px;
- background:linear-gradient(100deg,#28cce8,#8270ff);
- color:#061020;font-weight:800;margin:4px
-}
-.btn.secondary{background:#202e49;color:var(--text);border:1px solid var(--border)}
-.btn.danger{background:#542536;color:#fff}
-.btn:disabled{opacity:.4;cursor:not-allowed}
-.nav{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
-.nav button{background:#17233a;color:var(--text);border:1px solid var(--border);padding:10px 13px;border-radius:10px}
-.nav button.active{border-color:var(--cyan);color:var(--cyan)}
-.page{display:none}
-.page.active{display:block}
-.notice{
- border:1px solid #75613a;background:#302719;color:#ffe2a7;
- border-radius:12px;padding:13px;line-height:1.7;font-size:13px;margin:14px 0
-}
-.question{padding:17px 0;border-bottom:1px solid var(--border)}
-.question p{font-weight:bold;line-height:1.7}
-.answers{display:flex;gap:9px;flex-wrap:wrap}
-.answers label{
- background:#1a2943;padding:9px 13px;border-radius:9px;
- border:1px solid var(--border);font-size:14px
-}
-.answers input{accent-color:var(--cyan)}
-.progress{height:9px;background:#26334c;border-radius:20px;overflow:hidden;margin:15px 0}
-.progress div{height:100%;background:linear-gradient(90deg,var(--cyan),var(--purple));width:0}
-.result{font-size:34px;color:var(--cyan);font-weight:bold}
-.small{font-size:12px;color:var(--muted);line-height:1.7}
-.item{
- background:#17243c;border:1px solid var(--border);
- border-radius:12px;padding:13px;margin:10px 0;line-height:1.7
-}
-textarea{width:100%;min-height:90px;resize:vertical}
-input.field{width:100%;margin:6px 0}
-footer{text-align:center;padding:25px;color:var(--muted);font-size:12px}
+header{position:sticky;top:0;z-index:10;display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;padding:15px 5%;background:#080e1eeF;border-bottom:1px solid var(--line);backdrop-filter:blur(12px)}
+.brand{font-weight:900;font-size:21px;letter-spacing:1px}
+.brand span{color:var(--cyan)}
+.subbrand{font-size:10px;color:var(--muted);margin-top:4px;letter-spacing:1px}
+select,input,textarea{background:#0d1729;color:var(--text);border:1px solid var(--line);border-radius:10px;padding:11px;width:100%}
+header select{width:auto;min-width:125px}
+main{max-width:1180px;margin:auto;padding:22px 16px 55px}
+.hero{text-align:center;padding:30px 10px}
+.emblem{width:78px;height:78px;border-radius:24px;margin:auto auto 15px;display:grid;place-items:center;font-size:35px;background:linear-gradient(135deg,#123c55,#34245d);border:1px solid #397c9b;box-shadow:0 0 30px #42dcf522}
+h1{font-size:clamp(27px,5vw,43px);margin:7px}
+h1 span{color:var(--cyan)}
+p{line-height:1.7}
+.muted,.small{color:var(--muted)}
+.small{font-size:12px;line-height:1.7}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(215px,1fr));gap:14px}
+.card{background:linear-gradient(145deg,var(--panel),#0d1628);border:1px solid var(--line);border-radius:17px;padding:19px;box-shadow:0 12px 30px #0002;margin-bottom:13px}
+.card h2,.card h3{margin-top:0}
+.card p{color:var(--muted);font-size:14px}
+.btn{border:0;border-radius:10px;padding:12px 17px;margin:4px;background:linear-gradient(100deg,#42dcf5,#9276ff);color:#071321;font-weight:800}
+.btn.secondary{background:#1d2b45;color:var(--text);border:1px solid var(--line)}
+.btn.danger{background:#55283a;color:#fff}
+.btn:disabled{opacity:.4}
+.nav{display:flex;gap:7px;flex-wrap:wrap;margin:18px 0}
+.nav button{padding:10px 13px;border:1px solid var(--line);border-radius:10px;background:#14213a;color:var(--text)}
+.nav button.active{border-color:var(--cyan);color:var(--cyan);background:#17334a}
+.page{display:none}.page.active{display:block}
+.stat{font-size:30px;font-weight:900;color:var(--cyan);margin:12px 0}
+.stat-label{font-size:12px;color:var(--muted)}
+.notice{background:#302819;border:1px solid #79613b;color:#ffe0a5;border-radius:12px;padding:13px;font-size:13px;line-height:1.7;margin:12px 0}
+.info{background:#142a3b;border:1px solid #28536b;color:#c8efff;border-radius:12px;padding:13px;font-size:13px;line-height:1.7;margin:12px 0}
+.item{padding:13px;background:#17243c;border:1px solid var(--line);border-radius:12px;margin:10px 0;line-height:1.7}
+.question{padding:15px 0;border-bottom:1px solid var(--line)}
+.question p{font-weight:bold}
+.answers{display:flex;gap:8px;flex-wrap:wrap}
+.answers label{padding:9px 12px;background:#1a2943;border:1px solid var(--line);border-radius:9px;font-size:13px}
+.answers input{width:auto;accent-color:var(--cyan)}
+.progress{height:8px;border-radius:20px;background:#293750;overflow:hidden;margin:14px 0}
+.progress div{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--purple));transition:.2s}
+.result-number{font-size:38px;font-weight:900;color:var(--cyan)}
+.bar{height:9px;background:#293750;border-radius:20px;overflow:hidden;margin:7px 0 13px}
+.bar span{display:block;height:100%;background:linear-gradient(90deg,var(--cyan),var(--purple))}
+.field-label{display:block;margin:13px 0 6px;font-size:13px;color:var(--muted)}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.row>*{flex:1;min-width:130px}
+footer{text-align:center;color:var(--muted);font-size:12px;padding:25px}
 .hidden{display:none!important}
+hr{border:0;border-top:1px solid var(--line);margin:16px 0}
+@media(max-width:500px){header{padding:12px}main{padding:15px 12px}.nav button{font-size:12px;padding:9px}}
 </style>
 </head>
 <body>
 <header>
  <div>
-  <div class="logo">MAYA <span>CYBER</span></div>
-  <div class="tagline">INFINITY X • DEFENSIVE SECURITY PLATFORM</div>
+  <div class="brand">MAYA <span>CYBER</span></div>
+  <div class="subbrand">INFINITY X • PROFESSIONAL EDITION</div>
  </div>
- <select id="language" onchange="changeLanguage(this.value)" aria-label="Language">
+ <select id="language" onchange="setLanguage(this.value)" aria-label="Language">
   <option value="ar">العربية</option><option value="en">English</option>
   <option value="fr">Français</option><option value="es">Español</option>
   <option value="de">Deutsch</option><option value="tr">Türkçe</option>
@@ -114,322 +87,503 @@ footer{text-align:center;padding:25px;color:var(--muted);font-size:12px}
 <main>
 <section id="welcome">
  <div class="hero">
-  <div class="glow">🛡️</div>
+  <div class="emblem">🛡️</div>
   <h1>MAYA <span>CYBER SECURITY</span></h1>
-  <p id="welcomeText">منصة توعوية للأمن السيبراني، تساعد الأفراد والفرق على فهم الممارسات الأمنية وتحسينها.</p>
+  <p id="welcomeDescription">منصة احترافية للتوعية بالأمن السيبراني وتحسين الممارسات الرقمية للأفراد والفرق.</p>
+  <div class="small">DEFENSIVE SECURITY • PRIVACY • AWARENESS • ANALYTICS</div>
  </div>
  <div class="grid">
   <div class="card">
    <h3>👤 المساحة الفردية</h3>
-   <p>تقييم توعوي شخصي، نصائح، وتقارير محلية.</p>
-   <button class="btn" onclick="enterApp('individual')">الدخول الفردي</button>
+   <p>تقييم شخصي، تحليل النتائج، توصيات وتقارير محلية.</p>
+   <button class="btn" onclick="enter('individual')">الدخول الفردي</button>
   </div>
   <div class="card">
    <h3>🏢 مساحة الشركات</h3>
-   <p>عرض تجريبي لمتابعة التوعية والنتائج داخل المؤسسة.</p>
-   <button class="btn" onclick="enterApp('company')">دخول مساحة الشركة</button>
+   <p>لوحة تجريبية لمراجعة المؤشرات والتقارير التوعوية.</p>
+   <button class="btn" onclick="enter('company')">دخول الشركات</button>
   </div>
  </div>
- <div class="notice">هذه نسخة تجريبية تعمل محليًا داخل المتصفح. لا تتصل بخادم، ولا تفحص الهاتف أو الشبكات، ولا تثبت وجود اختراق.</div>
+ <div class="notice">نسخة تجريبية محلية. لا تفحص الأجهزة أو الشبكات، ولا تكتشف الاختراق تلقائيًا. لا تستخدميها لتخزين بيانات حقيقية أو حساسة.</div>
 </section>
 
-<section id="application" class="hidden">
- <div class="hero" style="padding:12px">
-  <div class="glow">🛡️</div>
+<section id="app" class="hidden">
+ <div class="hero" style="padding:10px">
+  <div class="emblem">🛡️</div>
   <h1>MAYA <span>CONTROL CENTER</span></h1>
-  <p id="modeText">لوحة التحكم التوعوية</p>
- </div>
- <div class="nav">
-  <button class="active" onclick="showPage('home',this)">الرئيسية</button>
-  <button onclick="showPage('assessment',this)">التقييم</button>
-  <button onclick="showPage('ai',this)">MAYA AI</button>
-  <button onclick="showPage('privacy',this)">الخصوصية</button>
-  <button onclick="showPage('learning',this)">التعلم</button>
-  <button onclick="showPage('reports',this)">التقارير</button>
-  <button onclick="showPage('enterprise',this)">الشركات</button>
+  <p id="modeLabel" class="muted">المساحة الفردية</p>
  </div>
 
- <section id="home" class="page active">
+ <div class="nav" id="navigation">
+  <button class="active" data-page="dashboard" onclick="showPage('dashboard',this)">الرئيسية</button>
+  <button data-page="assessment" onclick="showPage('assessment',this)">التقييم</button>
+  <button data-page="analytics" onclick="showPage('analytics',this)">التحليلات</button>
+  <button data-page="assistant" onclick="showPage('assistant',this)">MAYA AI</button>
+  <button data-page="privacy" onclick="showPage('privacy',this)">الخصوصية</button>
+  <button data-page="academy" onclick="showPage('academy',this)">الأكاديمية</button>
+  <button data-page="reports" onclick="showPage('reports',this)">التقارير</button>
+  <button data-page="organization" onclick="showPage('organization',this)">الشركات</button>
+ </div>
+
+ <section id="dashboard" class="page active">
   <div class="grid">
-   <div class="card"><h3>📊 آخر مؤشر توعوي</h3><div class="stat" id="lastRisk">--</div><p>يُحسب من إجابات التقييم، وليس فحصًا تقنيًا.</p></div>
-   <div class="card"><h3>📁 التقارير المحفوظة</h3><div class="stat" id="reportCount">0</div><p>تقارير محفوظة على هذا المتصفح فقط.</p></div>
-   <div class="card"><h3>🌐 اللغات</h3><div class="stat">09</div><p>اختاري لغة الواجهة من القائمة أعلاه.</p></div>
+   <div class="card"><div class="stat-label">التقارير المحفوظة</div><div class="stat" id="statReports">0</div><p>على هذا المتصفح</p></div>
+   <div class="card"><div class="stat-label">متوسط مؤشر التحسين</div><div class="stat" id="statAverage">--</div><p>من نتائج التقييم المتاحة</p></div>
+   <div class="card"><div class="stat-label">آخر تقييم</div><div class="stat" id="statLatest">--</div><p>المؤشر التوعوي الأخير</p></div>
+   <div class="card"><div class="stat-label">الملف المرجعي</div><div class="stat" id="statProfile">عام</div><p>إعداد توعوي تجريبي</p></div>
   </div>
-  <div class="card" style="margin-top:15px">
-   <h3>مرحبًا بك في MAYA</h3>
-   <p>ابدئي بتقييم توعوي لمعرفة الممارسات التي يمكن تحسينها. ستجدين بعده توصيات تعليمية مناسبة لإجاباتك.</p>
-   <button class="btn" onclick="showPage('assessment',document.querySelector('.nav button:nth-child(2)'))">ابدئي التقييم</button>
+  <div class="card">
+   <h2>مرحبًا بك في MAYA</h2>
+   <p>ابدئي بالتقييم التوعوي، ثم راجعي التحليلات والتوصيات المصممة وفق إجاباتك.</p>
+   <button class="btn" onclick="showPage('assessment',document.querySelector('[data-page=assessment]'))">بدء تقييم جديد</button>
+   <button class="btn secondary" onclick="showPage('analytics',document.querySelector('[data-page=analytics]'))">عرض التحليلات</button>
   </div>
+  <div class="info">منهج MAYA: جمع أقل قدر من البيانات، توضيح حدود المؤشرات، وتقديم توصيات قابلة للفهم.</div>
  </section>
 
  <section id="assessment" class="page">
   <div class="card">
-   <h2>🧠 التقييم الأمني التوعوي</h2>
-   <p>أجيبي حسب ممارساتك الحالية. لا تدخلي كلمات مرور أو معلومات خاصة.</p>
+   <h2>التقييم الأمني التوعوي</h2>
+   <p class="muted">اختاري الإجابة التي تصف ممارساتك الحالية. لا تكتبي أي كلمة مرور أو رمز تحقق.</p>
    <div class="progress"><div id="progressBar"></div></div>
-   <div id="questions"></div>
-   <button class="btn" onclick="finishAssessment()">إنهاء التقييم وحساب المؤشر</button>
-   <div id="assessmentResult"></div>
+   <div id="progressText" class="small">0 من 10</div>
+   <div id="questionList"></div>
+   <button class="btn" onclick="completeAssessment()">تحليل التقييم</button>
+   <div id="assessmentOutput"></div>
   </div>
  </section>
 
- <section id="ai" class="page">
+ <section id="analytics" class="page">
   <div class="card">
-   <h2>✨ MAYA AI</h2>
-   <p>مساعد توعوي محلي يقدم إرشادات عامة. ليس خدمة ذكاء اصطناعي متصلة ولا محللًا تقنيًا.</p>
-   <input class="field" id="aiQuestion" placeholder="اكتبي سؤالك عن الأمن الرقمي">
-   <button class="btn" onclick="askMaya()">إرسال</button>
-   <div id="aiAnswer" class="item">مرحبًا! اسأليني عن حماية الحسابات والخصوصية والتوعية الرقمية.</div>
+   <h2>📊 MAYA SMART ANALYTICS</h2>
+   <p>تحليل وصفي لنتائج التقييم المحفوظة على هذا الجهاز.</p>
+   <div id="analyticsOutput"></div>
+   <button class="btn secondary" onclick="renderAnalytics()">تحديث التحليلات</button>
+  </div>
+ </section>
+
+ <section id="assistant" class="page">
+  <div class="card">
+   <h2>✨ MAYA AI — Awareness Assistant</h2>
+   <p>مساعد إرشادي محلي يعتمد على قواعد نصية، وليس نموذج ذكاء اصطناعي متصلًا بالإنترنت.</p>
+   <textarea id="assistantInput" placeholder="اكتبي سؤالك عن حماية الحسابات أو الخصوصية..." rows="3"></textarea>
+   <button class="btn" onclick="askAssistant()">إرسال السؤال</button>
+   <div id="assistantOutput" class="item">مرحبًا! يمكنني مساعدتك في موضوعات التوعية الرقمية.</div>
   </div>
  </section>
 
  <section id="privacy" class="page">
   <div class="card">
    <h2>🔐 مركز الخصوصية</h2>
-   <p>هذا الإصدار يحفظ نتائج التقييم في التخزين المحلي للمتصفح على جهازك.</p>
-   <div class="item">لا ترسلي كلمات المرور أو رموز التحقق أو البيانات الشخصية إلى أي شخص.</div>
-   <div class="item">مؤشر الخصوصية التالي تعليمي فقط، وليس تدقيقًا فعليًا لإعدادات جهازك.</div>
-   <label>هل تستخدمين المصادقة الثنائية في حساباتك المهمة؟</label>
-   <select class="field" id="twoFactor"><option value="yes">نعم</option><option value="no">لا</option><option value="unknown">لست متأكدة</option></select>
-   <label>هل تراجعين أذونات التطبيقات بانتظام؟</label>
-   <select class="field" id="permissions"><option value="yes">نعم</option><option value="no">لا</option><option value="unknown">لست متأكدة</option></select>
-   <button class="btn" onclick="privacyCheck()">حساب مؤشر الخصوصية</button>
-   <div id="privacyResult" class="item"></div>
+   <p>التقارير تحفظ محليًا في متصفحك. لا يتم إرسالها إلى خادم في هذه النسخة.</p>
+   <div class="notice">لا تدخلي معلومات شخصية أو كلمات مرور أو بيانات موظفين حقيقية في النسخة التجريبية.</div>
+   <label class="field-label">هل تستخدمين المصادقة الثنائية للحسابات المهمة؟</label>
+   <select id="privacy2fa"><option value="yes">نعم</option><option value="no">لا</option><option value="unknown">لست متأكدة</option></select>
+   <label class="field-label">هل تراجعين أذونات التطبيقات؟</label>
+   <select id="privacyPermissions"><option value="yes">نعم</option><option value="no">لا</option><option value="unknown">لست متأكدة</option></select>
+   <label class="field-label">هل تراجعين إعدادات الخصوصية دوريًا؟</label>
+   <select id="privacySettings"><option value="yes">نعم</option><option value="no">لا</option><option value="unknown">لست متأكدة</option></select>
+   <button class="btn" onclick="calculatePrivacy()">حساب مؤشر الممارسات</button>
+   <div id="privacyOutput" class="item"></div>
   </div>
  </section>
 
- <section id="learning" class="page">
+ <section id="academy" class="page">
   <div class="grid">
-   <div class="card"><h3>🔑 كلمات المرور</h3><p>استخدمي كلمة مرور طويلة وفريدة لكل حساب، واستعيني بمدير كلمات مرور موثوق.</p></div>
-   <div class="card"><h3>📩 التصيد الاحتيالي</h3><p>تحققي من عنوان المرسل والرابط قبل فتحه، ولا تشاركي رموز التحقق.</p></div>
+   <div class="card"><h3>🔑 إدارة كلمات المرور</h3><p>استخدمي كلمات مرور طويلة وفريدة، واحتفظي بها في مدير موثوق.</p></div>
+   <div class="card"><h3>📩 التصيد الاحتيالي</h3><p>تحققي من هوية المرسل والنطاق، ولا تفتحي الروابط المشبوهة.</p></div>
+   <div class="card"><h3>🔐 المصادقة الثنائية</h3><p>أضيفي طبقة تحقق ثانية إلى حساباتك المهمة.</p></div>
    <div class="card"><h3>📱 تحديث الأجهزة</h3><p>ثبتي تحديثات النظام والتطبيقات من المصادر الرسمية.</p></div>
-   <div class="card"><h3>🔐 المصادقة الثنائية</h3><p>فعّلي طبقة تحقق إضافية للحسابات المهمة، واحفظي رموز الاسترداد بأمان.</p></div>
-   <div class="card"><h3>🌍 الشبكات العامة</h3><p>تجنبي إدخال معلومات حساسة على شبكات لا تثقين بها، وتأكدي من اتصالك بالمواقع الصحيحة.</p></div>
-   <div class="card"><h3>💾 النسخ الاحتياطي</h3><p>احتفظي بنسخ احتياطية منتظمة في مكان آمن واختبري إمكانية استعادتها.</p></div>
+   <div class="card"><h3>💾 النسخ الاحتياطي</h3><p>احتفظي بنسخ احتياطية منتظمة واختبري إمكانية استعادتها.</p></div>
+   <div class="card"><h3>🌐 الخصوصية الرقمية</h3><p>راجعي أذونات التطبيقات وقللي مشاركة البيانات غير الضرورية.</p></div>
+   <div class="card"><h3>🏢 توعية الفرق</h3><p>اعتمدي تدريبًا دوريًا وسياسات واضحة للإبلاغ عن الحوادث.</p></div>
+   <div class="card"><h3>📋 إدارة المخاطر</h3><p>حددي الأولويات، ووثقي الإجراءات، وراجعيها دوريًا.</p></div>
   </div>
  </section>
 
  <section id="reports" class="page">
   <div class="card">
-   <h2>📑 التقارير</h2>
-   <p>التقارير محفوظة محليًا في هذا المتصفح. لا تمثل شهادة أمنية أو إثباتًا تقنيًا.</p>
-   <button class="btn" onclick="exportReports()">تصدير التقارير JSON</button>
-   <button class="btn secondary" onclick="exportText()">تنزيل ملخص نصي</button>
-   <button class="btn danger" onclick="clearReports()">حذف التقارير المحلية</button>
-   <div id="reportsList"></div>
+   <h2>📑 مركز التقارير</h2>
+   <p>التقارير محلية على هذا المتصفح. يمكنك تصدير نسخة للاحتفاظ بها.</p>
+   <div class="row">
+    <button class="btn" onclick="exportJSON()">تصدير JSON</button>
+    <button class="btn secondary" onclick="exportCSV()">تصدير CSV</button>
+   </div>
+   <button class="btn danger" onclick="deleteReports()">حذف التقارير المحلية</button>
+   <div id="reportList"></div>
   </div>
  </section>
 
- <section id="enterprise" class="page">
+ <section id="organization" class="page">
   <div class="card">
-   <h2>🏢 مساحة الشركات — DEMO</h2>
-   <div class="notice">هذه لوحة عرض تجريبية فقط. لا تضيف مستخدمين حقيقيين ولا تطبق صلاحيات أو عزل بيانات المؤسسات.</div>
-   <label>معرّف المؤسسة التجريبي</label>
-   <input class="field" id="orgId" value="MAYA-DEMO-001">
-   <label>الدور الوصفي</label>
-   <select class="field" id="userRole">
-    <option>Demo Administrator</option><option>Demo Security Analyst</option><option>Demo Employee</option>
+   <h2>🏢 ENTERPRISE WORKSPACE — DEMO</h2>
+   <div class="notice">هذه مساحة عرض فقط. ليست نظام إدارة موظفين أو تسجيل دخول أو صلاحيات حقيقية. لا تستخدميها لبيانات مؤسسة فعلية.</div>
+   <label class="field-label">معرّف تجريبي للمؤسسة</label>
+   <input id="orgId" value="MAYA-DEMO-001" maxlength="40">
+   <label class="field-label">الدور الوصفي في العرض</label>
+   <select id="orgRole"><option>Demo Administrator</option><option>Demo Security Analyst</option><option>Demo Employee</option></select>
+   <label class="field-label">المرجع التوعوي</label>
+   <select id="orgProfile">
+    <option value="General Best Practices">General Best Practices</option>
+    <option value="OWASP ASVS Awareness">OWASP ASVS Awareness</option>
+    <option value="ISO 27001 Awareness">ISO 27001 Awareness</option>
+    <option value="NIST CSF Awareness">NIST CSF Awareness</option>
    </select>
-   <label>ملف التوعية المرجعي</label>
-   <select class="field" id="compliance">
-    <option>General Best Practices</option>
-    <option>OWASP ASVS Awareness</option>
-    <option>ISO 27001 Awareness</option>
-    <option>NIST CSF Awareness</option>
-   </select>
-   <button class="btn" onclick="saveDemoSettings()">حفظ الإعدادات التجريبية</button>
-   <div id="enterpriseResult" class="item"></div>
-   <h3>إحصائيات محلية</h3>
-   <div class="stat" id="companyCount">0</div>
-   <p>عدد التقارير المسجلة في هذا المتصفح، وليس عدد موظفي مؤسسة فعلية.</p>
+   <button class="btn" onclick="saveOrganization()">حفظ إعدادات العرض</button>
+   <div id="orgOutput" class="item"></div>
+   <hr>
+   <h3>ملخص مساحة العرض</h3>
+   <div id="orgSummary"></div>
   </div>
  </section>
 
- <div class="small" style="text-align:center;margin-top:20px">
-  MAYA CYBER SECURITY • Educational Defensive Platform • Demo Build
- </div>
+ <div class="small" style="text-align:center;margin-top:18px">MAYA CYBER SECURITY • INFINITY X • PROFESSIONAL DEMO</div>
 </section>
 </main>
-<footer>© 2026 MAYA CYBER SECURITY — INFINITY X</footer>
+<footer>© 2026 MAYA CYBER SECURITY. Educational defensive platform.</footer>
 
 <script>
-const questions=[
-"هل تستخدمين كلمة مرور مختلفة للحسابات المهمة؟",
+const QUESTIONS=[
+"هل تستخدمين كلمة مرور فريدة لكل حساب مهم؟",
 "هل تفعلين المصادقة الثنائية للحسابات المهمة؟",
-"هل تتحققين من الروابط قبل الضغط عليها؟",
-"هل تثبتين التطبيقات من مصادر رسمية فقط؟",
-"هل تحدثين نظام الهاتف والتطبيقات بانتظام؟",
-"هل تتجنبين مشاركة رموز التحقق مع الآخرين؟",
+"هل تتحققين من الروابط قبل فتحها؟",
+"هل تثبتين التطبيقات من مصادر رسمية؟",
+"هل تحدثين النظام والتطبيقات بانتظام؟",
+"هل تتجنبين مشاركة رموز التحقق؟",
 "هل تراجعين أذونات التطبيقات؟",
-"هل تحتفظين بنسخ احتياطية من ملفاتك المهمة؟",
+"هل تحتفظين بنسخ احتياطية آمنة؟",
 "هل تتحققين من هوية المرسل قبل فتح المرفقات؟",
-"هل تعرفين كيف تبلغين عن رسالة أو نشاط مشبوه؟"
+"هل تعرفين طريقة الإبلاغ عن نشاط مشبوه؟"
 ];
-const translations={
-en:{welcome:"A cybersecurity awareness platform for individuals and teams.",home:"Home",assessment:"Assessment",ai:"MAYA AI",privacy:"Privacy",learning:"Learning",reports:"Reports",enterprise:"Enterprise",mode:"Awareness control center"},
-fr:{welcome:"Une plateforme de sensibilisation à la cybersécurité pour les particuliers et les équipes.",home:"Accueil",assessment:"Évaluation",ai:"MAYA AI",privacy:"Confidentialité",learning:"Apprentissage",reports:"Rapports",enterprise:"Entreprise",mode:"Centre de sensibilisation"},
-es:{welcome:"Una plataforma de concienciación en ciberseguridad para personas y equipos.",home:"Inicio",assessment:"Evaluación",ai:"MAYA AI",privacy:"Privacidad",learning:"Aprendizaje",reports:"Informes",enterprise:"Empresa",mode:"Centro de concienciación"},
-de:{welcome:"Eine Plattform für Cybersicherheitsbewusstsein für Einzelpersonen und Teams.",home:"Start",assessment:"Bewertung",ai:"MAYA AI",privacy:"Datenschutz",learning:"Lernen",reports:"Berichte",enterprise:"Unternehmen",mode:"Awareness-Zentrale"},
-tr:{welcome:"Bireyler ve ekipler için siber güvenlik farkındalık platformu.",home:"Ana sayfa",assessment:"Değerlendirme",ai:"MAYA AI",privacy:"Gizlilik",learning:"Öğrenme",reports:"Raporlar",enterprise:"Şirket",mode:"Farkındalık merkezi"},
-pt:{welcome:"Uma plataforma de conscientização em cibersegurança para pessoas e equipes.",home:"Início",assessment:"Avaliação",ai:"MAYA AI",privacy:"Privacidade",learning:"Aprendizagem",reports:"Relatórios",enterprise:"Empresa",mode:"Centro de conscientização"},
-zh:{welcome:"面向个人和团队的网络安全意识平台。",home:"主页",assessment:"评估",ai:"MAYA AI",privacy:"隐私",learning:"学习",reports:"报告",enterprise:"企业",mode:"安全意识中心"},
-ja:{welcome:"個人やチーム向けのサイバーセキュリティ意識向上プラットフォーム。",home:"ホーム",assessment:"評価",ai:"MAYA AI",privacy:"プライバシー",learning:"学習",reports:"レポート",enterprise:"企業",mode:"意識向上センター"}
-};
-let currentMode="individual";
-let reports=loadReports();
-let lastScore=null;
 
-function loadReports(){
- try{return JSON.parse(localStorage.getItem("mayaInfinityV2Reports")||"[]")}
- catch(e){return []}
+const QUESTION_TRANSLATIONS={
+en:[
+"Do you use a unique password for each important account?",
+"Do you enable two-factor authentication on important accounts?",
+"Do you check links before opening them?",
+"Do you install apps only from official sources?",
+"Do you update your system and apps regularly?",
+"Do you avoid sharing verification codes?",
+"Do you review app permissions?",
+"Do you keep secure backups?",
+"Do you verify senders before opening attachments?",
+"Do you know how to report suspicious activity?"
+],
+fr:[
+"Utilisez-vous un mot de passe unique pour chaque compte important?",
+"Activez-vous l'authentification à deux facteurs?",
+"Vérifiez-vous les liens avant de les ouvrir?",
+"Installez-vous uniquement des applications officielles?",
+"Mettez-vous régulièrement à jour le système et les applications?",
+"Évitez-vous de partager les codes de vérification?",
+"Vérifiez-vous les autorisations des applications?",
+"Conservez-vous des sauvegardes sécurisées?",
+"Vérifiez-vous l'expéditeur avant d'ouvrir une pièce jointe?",
+"Savez-vous signaler une activité suspecte?"
+],
+es:[
+"¿Utilizas una contraseña única para cada cuenta importante?",
+"¿Activaste la autenticación de dos factores?",
+"¿Compruebas los enlaces antes de abrirlos?",
+"¿Instalas aplicaciones solo de fuentes oficiales?",
+"¿Actualizas el sistema y las aplicaciones regularmente?",
+"¿Evitas compartir códigos de verificación?",
+"¿Revisas los permisos de las aplicaciones?",
+"¿Mantienes copias de seguridad seguras?",
+"¿Verificas al remitente antes de abrir archivos adjuntos?",
+"¿Sabes cómo informar de actividad sospechosa?"
+],
+de:[
+"Verwendest du für jedes wichtige Konto ein eigenes Passwort?",
+"Verwendest du Zwei-Faktor-Authentifizierung?",
+"Überprüfst du Links vor dem Öffnen?",
+"Installierst du Apps nur aus offiziellen Quellen?",
+"Aktualisierst du System und Apps regelmäßig?",
+"Gibst du keine Bestätigungscodes weiter?",
+"Überprüfst du App-Berechtigungen?",
+"Erstellst du sichere Backups?",
+"Überprüfst du Absender vor dem Öffnen von Anhängen?",
+"Weißt du, wie man verdächtige Aktivitäten meldet?"
+],
+tr:[
+"Her önemli hesap için benzersiz parola kullanıyor musun?",
+"İki faktörlü kimlik doğrulamayı etkinleştiriyor musun?",
+"Bağlantıları açmadan önce kontrol ediyor musun?",
+"Uygulamaları yalnızca resmi kaynaklardan mı yüklüyorsun?",
+"Sistemi ve uygulamaları düzenli güncelliyor musun?",
+"Doğrulama kodlarını paylaşmaktan kaçınıyor musun?",
+"Uygulama izinlerini kontrol ediyor musun?",
+"Güvenli yedekler tutuyor musun?",
+"Ekleri açmadan önce göndereni doğruluyor musun?",
+"Şüpheli etkinliği nasıl bildireceğini biliyor musun?"
+],
+pt:[
+"Usas uma senha exclusiva para cada conta importante?",
+"Ativas a autenticação de dois fatores?",
+"Verificas os links antes de abri-los?",
+"Instalas aplicativos apenas de fontes oficiais?",
+"Atualizas o sistema e os aplicativos regularmente?",
+"Evitas compartilhar códigos de verificação?",
+"Revisas as permissões dos aplicativos?",
+"Manténs cópias de segurança?",
+"Verificas o remetente antes de abrir anexos?",
+"S sabes como denunciar atividades suspeitas?"
+],
+zh:[
+"你是否为每个重要账户使用独立密码？",
+"你是否启用了双重身份验证？",
+"打开链接前是否检查链接？",
+"你是否只从官方来源安装应用？",
+"你是否定期更新系统和应用？",
+"你是否避免分享验证码？",
+"你是否检查应用权限？",
+"你是否保存安全备份？",
+"打开附件前是否确认发件人？",
+"你是否知道如何报告可疑活动？"
+],
+ja:[
+"重要なアカウントごとに固有のパスワードを使用していますか？",
+"二要素認証を有効にしていますか？",
+"リンクを開く前に確認していますか？",
+"公式の提供元からのみアプリをインストールしていますか？",
+"システムとアプリを定期的に更新していますか？",
+"認証コードを共有しないようにしていますか？",
+"アプリの権限を確認していますか？",
+"安全なバックアップを保管していますか？",
+"添付ファイルを開く前に送信者を確認していますか？",
+"不審な活動の報告方法を知っていますか？"
+]
+};
+
+const UI={
+en:{home:"Home",assessment:"Assessment",analytics:"Analytics",ai:"MAYA AI",privacy:"Privacy",academy:"Academy",reports:"Reports",organization:"Enterprise",yes:"Yes",no:"No",unknown:"Not sure",welcome:"A professional cybersecurity awareness platform for individuals and teams."},
+fr:{home:"Accueil",assessment:"Évaluation",analytics:"Analyses",ai:"MAYA AI",privacy:"Confidentialité",academy:"Académie",reports:"Rapports",organization:"Entreprise",yes:"Oui",no:"Non",unknown:"Incertain",welcome:"Une plateforme professionnelle de sensibilisation à la cybersécurité."},
+es:{home:"Inicio",assessment:"Evaluación",analytics:"Análisis",ai:"MAYA AI",privacy:"Privacidad",academy:"Academia",reports:"Informes",organization:"Empresa",yes:"Sí",no:"No",unknown:"No estoy seguro",welcome:"Una plataforma profesional de concienciación sobre ciberseguridad."},
+de:{home:"Start",assessment:"Bewertung",analytics:"Analysen",ai:"MAYA AI",privacy:"Datenschutz",academy:"Lernbereich",reports:"Berichte",organization:"Unternehmen",yes:"Ja",no:"Nein",unknown:"Unsicher",welcome:"Eine professionelle Plattform für Cybersicherheitsbewusstsein."},
+tr:{home:"Ana sayfa",assessment:"Değerlendirme",analytics:"Analiz",ai:"MAYA AI",privacy:"Gizlilik",academy:"Akademi",reports:"Raporlar",organization:"Şirket",yes:"Evet",no:"Hayır",unknown:"Emin değilim",welcome:"Profesyonel siber güvenlik farkındalık platformu."},
+pt:{home:"Início",assessment:"Avaliação",analytics:"Análises",ai:"MAYA AI",privacy:"Privacidade",academy:"Academia",reports:"Relatórios",organization:"Empresa",yes:"Sim",no:"Não",unknown:"Não sei",welcome:"Uma plataforma profissional de conscientização em cibersegurança."},
+zh:{home:"主页",assessment:"评估",analytics:"分析",ai:"MAYA AI",privacy:"隐私",academy:"学习中心",reports:"报告",organization:"企业",yes:"是",no:"否",unknown:"不确定",welcome:"专业的网络安全意识平台。"},
+ja:{home:"ホーム",assessment:"評価",analytics:"分析",ai:"MAYA AI",privacy:"プライバシー",academy:"学習",reports:"レポート",organization:"企業",yes:"はい",no:"いいえ",unknown:"不明",welcome:"プロフェッショナルなサイバーセキュリティ意識向上プラットフォーム。"}
+};
+
+let language="ar",mode="individual";
+let reports=readReports();
+
+function readReports(){
+ try{
+  const data=JSON.parse(localStorage.getItem("mayaProfessionalReports")||"[]");
+  return Array.isArray(data)?data:[];
+ }catch(e){return []}
 }
-function saveReports(){
- try{localStorage.setItem("mayaInfinityV2Reports",JSON.stringify(reports))}
- catch(e){alert("تعذر الحفظ. قد تكون مساحة التخزين ممتلئة.");}
- updateStats();
+function persist(){
+ try{localStorage.setItem("mayaProfessionalReports",JSON.stringify(reports));}
+ catch(e){alert("تعذر حفظ البيانات. قد تكون مساحة المتصفح ممتلئة.");}
+ refreshStats();
 }
-function enterApp(mode){
- currentMode=mode;
+function enter(type){
+ mode=type;
  document.getElementById("welcome").classList.add("hidden");
- document.getElementById("application").classList.remove("hidden");
- document.getElementById("modeText").textContent=mode==="company"?"مساحة الشركة التجريبية":"المساحة الفردية";
- renderQuestions();updateStats();showPage("home",document.querySelector(".nav button"));
+ document.getElementById("app").classList.remove("hidden");
+ document.getElementById("modeLabel").textContent=type==="company"?"مساحة الشركات التجريبية":"المساحة الفردية";
+ buildQuestions();
+ refreshStats();
 }
 function showPage(id,button){
- document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+ document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
  document.getElementById(id).classList.add("active");
- document.querySelectorAll(".nav button").forEach(b=>b.classList.remove("active"));
+ document.querySelectorAll(".nav button").forEach(x=>x.classList.remove("active"));
  if(button)button.classList.add("active");
+ if(id==="analytics")renderAnalytics();
  if(id==="reports")renderReports();
- if(id==="home")updateStats();
+ if(id==="organization")renderOrganization();
+ if(id==="dashboard")refreshStats();
 }
-function renderQuestions(){
- const host=document.getElementById("questions");
+function buildQuestions(){
+ const host=document.getElementById("questionList");
  host.innerHTML="";
- questions.forEach((q,i)=>{
+ const qs=language==="ar"?QUESTIONS:(QUESTION_TRANSLATIONS[language]||QUESTIONS);
+ const labels=UI[language]||{yes:"نعم",no:"لا",unknown:"لست متأكدة"};
+ qs.forEach((q,i)=>{
   const div=document.createElement("div");div.className="question";
-  div.innerHTML=`<p>${i+1}. ${q}</p><div class="answers">
-   <label><input type="radio" name="q${i}" value="yes"> نعم</label>
-   <label><input type="radio" name="q${i}" value="no"> لا</label>
-   <label><input type="radio" name="q${i}" value="unknown"> لست متأكدة</label>
-  </div>`;
-  host.appendChild(div);
+  const p=document.createElement("p");p.textContent=(i+1)+". "+q;
+  const answers=document.createElement("div");answers.className="answers";
+  [["yes",labels.yes],["no",labels.no],["unknown",labels.unknown]].forEach(([value,label])=>{
+   const lab=document.createElement("label");
+   const radio=document.createElement("input");radio.type="radio";radio.name="answer"+i;radio.value=value;
+   radio.addEventListener("change",updateProgress);
+   lab.append(radio,document.createTextNode(" "+label));answers.appendChild(lab);
+  });
+  div.append(p,answers);host.appendChild(div);
  });
- host.querySelectorAll("input").forEach(input=>input.addEventListener("change",updateProgress));
+ updateProgress();
 }
 function updateProgress(){
- let answered=questions.filter((q,i)=>document.querySelector(`input[name="q${i}"]:checked`)).length;
- document.getElementById("progressBar").style.width=(answered/questions.length*100)+"%";
+ let count=QUESTIONS.filter((q,i)=>document.querySelector('input[name="answer'+i+'"]:checked')).length;
+ document.getElementById("progressBar").style.width=(count/10*100)+"%";
+ document.getElementById("progressText").textContent=count+" من 10";
 }
-function finishAssessment(){
- let answers=questions.map((q,i)=>{
-  let el=document.querySelector(`input[name="q${i}"]:checked`);
-  return el?el.value:null;
- });
- if(answers.some(a=>a===null)){alert("أجيبي عن جميع الأسئلة أولًا.");return;}
- let yes=answers.filter(a=>a==="yes").length;
- let no=answers.filter(a=>a==="no").length;
- let unknown=answers.filter(a=>a==="unknown").length;
- let indicator=Math.round((no+unknown*.5)/questions.length*100);
- let level=indicator<25?"مؤشر توعوي منخفض":indicator<55?"توجد فرص للتحسين":"توجد أولويات توعوية للتحسين";
- let recs=[];
- if(answers[1]!=="yes")recs.push("راجعي تفعيل المصادقة الثنائية للحسابات المهمة.");
- if(answers[2]!=="yes")recs.push("تحققي من الروابط وعناوين المواقع قبل فتحها.");
- if(answers[4]!=="yes")recs.push("راجعي تحديثات النظام والتطبيقات.");
- if(answers[7]!=="yes")recs.push("أنشئي نسخة احتياطية آمنة لملفاتك المهمة.");
- if(!recs.length)recs.push("استمري في الممارسات الجيدة وراجعيها دوريًا.");
+function completeAssessment(){
+ const answers=QUESTIONS.map((q,i)=>document.querySelector('input[name="answer'+i+'"]:checked')?.value||null);
+ if(answers.some(x=>!x)){alert("يرجى الإجابة عن الأسئلة العشرة.");return;}
+ const yes=answers.filter(x=>x==="yes").length;
+ const no=answers.filter(x=>x==="no").length;
+ const unknown=answers.filter(x=>x==="unknown").length;
+ const indicator=Math.round((no+unknown*.5)*10);
+ const recommendations=[];
+ const advice=[
+  "استخدمي كلمة مرور فريدة وطويلة لكل حساب مهم.",
+  "راجعي تفعيل المصادقة الثنائية للحسابات المهمة.",
+  "تحققي من الروابط وعناوين المواقع قبل فتحها.",
+  "نزّلي التطبيقات من المتاجر والمصادر الرسمية.",
+  "ثبتي تحديثات النظام والتطبيقات بانتظام.",
+  "لا تشاركي رموز التحقق مع أي شخص.",
+  "راجعي أذونات التطبيقات واحذفي ما لا تحتاجينه.",
+  "احتفظي بنسخ احتياطية آمنة ومنتظمة.",
+  "تحققي من هوية المرسل قبل فتح المرفقات.",
+  "تعرفي على طريقة الإبلاغ الرسمية عن الأنشطة المشبوهة."
+ ];
+ answers.forEach((a,i)=>{if(a!=="yes")recommendations.push(advice[i]);});
+ let level=indicator<25?"مؤشر تحسين توعوي منخفض":indicator<55?"توجد فرص للتحسين":"توجد أولويات توعوية للتحسين";
  const report={
-  id:"MAYA-"+Date.now(),date:new Date().toLocaleString(),
-  yes,no,unknown,indicator,level,recommendations:recs,
-  mode:currentMode,orgId:currentMode==="company"?document.getElementById("orgId").value:"Individual demo",
-  profile:document.getElementById("compliance").value
+  id:"MAYA-"+Date.now(),date:new Date().toISOString(),
+  yes,no,unknown,indicator,level,recommendations,
+  mode,profile:document.getElementById("orgProfile").value,
+  organization:mode==="company"?"DEMO": "Individual"
  };
- reports.unshift(report);reports=reports.slice(0,100);saveReports();
- lastScore=indicator;
- document.getElementById("assessmentResult").innerHTML=
- `<div class="item"><h3>نتيجة التقييم</h3>
- <div class="result">${indicator}%</div><strong>${level}</strong>
- <p>نعم: ${yes} • لا: ${no} • غير متأكدة: ${unknown}</p>
- <p>معرّف التقرير: ${report.id}</p>
- <h3>توصيات توعوية</h3>${recs.map(r=>`<p>• ${r}</p>`).join("")}
- <p class="small">هذه نتيجة مبنية على إجاباتك فقط، وليست قياسًا تقنيًا للخطر أو دليلًا على اختراق الجهاز.</p></div>`;
- updateStats();
+ reports.unshift(report);reports=reports.slice(0,150);persist();
+ const out=document.getElementById("assessmentOutput");out.innerHTML="";
+ const box=document.createElement("div");box.className="item";
+ const h=document.createElement("h3");h.textContent="نتيجة التقييم";
+ const num=document.createElement("div");num.className="result-number";num.textContent=indicator+"%";
+ const lv=document.createElement("strong");lv.textContent=level;
+ const counts=document.createElement("p");counts.textContent=`نعم: ${yes} • لا: ${no} • غير متأكدة: ${unknown}`;
+ const id=document.createElement("p");id.textContent="معرّف التقرير: "+report.id;
+ const title=document.createElement("h3");title.textContent="توصيات مخصصة";
+ box.append(h,num,lv,counts,id,title);
+ recommendations.forEach(r=>{const p=document.createElement("p");p.textContent="• "+r;box.appendChild(p);});
+ const note=document.createElement("p");note.className="small";note.textContent="المؤشر تقدير توعوي من إجاباتك، وليس فحصًا تقنيًا أو إثباتًا لوجود اختراق أو عدمه.";
+ box.appendChild(note);out.appendChild(box);
+ refreshStats();
 }
-function updateStats(){
- document.getElementById("reportCount").textContent=reports.length;
- document.getElementById("companyCount").textContent=reports.filter(r=>r.mode==="company").length;
- document.getElementById("lastRisk").textContent=reports.length?reports[0].indicator+"%":"--";
+function refreshStats(){
+ const total=reports.length;
+ document.getElementById("statReports").textContent=total;
+ document.getElementById("statAverage").textContent=total?Math.round(reports.reduce((s,r)=>s+r.indicator,0)/total)+"%":"--";
+ document.getElementById("statLatest").textContent=total?reports[0].indicator+"%":"--";
+ document.getElementById("statProfile").textContent=total?reports[0].profile:"عام";
 }
-function askMaya(){
- let q=document.getElementById("aiQuestion").value.trim().toLowerCase();
+function renderAnalytics(){
+ const host=document.getElementById("analyticsOutput");host.innerHTML="";
+ if(!reports.length){host.textContent="لا توجد نتائج بعد. أنشئي تقييمًا أولًا.";return;}
+ const avg=Math.round(reports.reduce((s,r)=>s+r.indicator,0)/reports.length);
+ const latest=reports[0];
+ const yes=reports.reduce((s,r)=>s+r.yes,0);
+ const no=reports.reduce((s,r)=>s+r.no,0);
+ const unknown=reports.reduce((s,r)=>s+r.unknown,0);
+ const groups=[
+  ["عدد التقييمات",reports.length],
+  ["متوسط مؤشر التحسين",avg+"%"],
+  ["آخر مؤشر",latest.indicator+"%"],
+  ["إجمالي إجابات نعم",yes],
+  ["إجمالي إجابات لا",no],
+  ["إجمالي غير متأكد",unknown]
+ ];
+ groups.forEach(([label,value])=>{
+  const div=document.createElement("div");div.className="item";
+  div.textContent=label+" : "+value;host.appendChild(div);
+ });
+ const title=document.createElement("h3");title.textContent="توزيع الإجابات في جميع التقارير";host.appendChild(title);
+ const sum=yes+no+unknown||1;
+ [["نعم",yes],["لا",no],["غير متأكدة",unknown]].forEach(([label,n])=>{
+  const wrap=document.createElement("div");
+  const p=document.createElement("p");p.textContent=label+" — "+n+" ("+Math.round(n/sum*100)+"%)";
+  const bar=document.createElement("div");bar.className="bar";
+  const span=document.createElement("span");span.style.width=(n/sum*100)+"%";bar.appendChild(span);
+  wrap.append(p,bar);host.appendChild(wrap);
+ });
+ const note=document.createElement("p");note.className="small";note.textContent="هذه إحصائيات وصفية للتقارير الموجودة محليًا فقط. لا تمثل تقييمًا تقنيًا لمؤسسة أو جهاز.";
+ host.appendChild(note);
+}
+function askAssistant(){
+ const q=document.getElementById("assistantInput").value.trim().toLowerCase();
  if(!q){alert("اكتبي سؤالًا أولًا.");return;}
- let answer="ابدئي بتحديث التطبيقات، واستخدمي كلمات مرور فريدة، وفعّلي المصادقة الثنائية. لا تشاركي رموز التحقق أو كلمات المرور.";
- if(q.includes("تصيد")||q.includes("رابط")||q.includes("phish")||q.includes("link"))
-  answer="لا تفتحي الرابط مباشرة. افحصي عنوان المرسل والنطاق بعناية، وادخلي إلى الموقع بكتابة عنوانه الرسمي بنفسك. لا تشاركي رموز التحقق.";
- else if(q.includes("كلمة")||q.includes("password")||q.includes("mot de passe"))
-  answer="استخدمي كلمة مرور طويلة وفريدة لكل حساب، ولا تعيدي استخدامها. يمكن الاستعانة بمدير كلمات مرور موثوق.";
- else if(q.includes("خصوص")||q.includes("privacy"))
-  answer="راجعي أذونات التطبيقات، وقللي البيانات التي تشاركينها، واستخدمي إعدادات الخصوصية المتاحة في التطبيقات.";
- else if(q.includes("تحديث")||q.includes("update"))
-  answer="فعّلي التحديثات التلقائية عند توفرها، وثبتي التحديثات من متجر التطبيقات أو الموقع الرسمي فقط.";
- else if(q.includes("اختراق")||q.includes("hack"))
-  answer="لا يمكن لهذا التطبيق اكتشاف الاختراقات. إذا لاحظت نشاطًا غير مألوف، راجعي نشاط تسجيل الدخول من الموقع الرسمي للخدمة وغيّري كلمة المرور من جهاز موثوق واطلبي المساعدة من الدعم الرسمي.";
- document.getElementById("aiAnswer").textContent=answer;
+ let answer="لتحسين أمانك الرقمي: استخدمي كلمات مرور فريدة، فعّلي المصادقة الثنائية، وحدثي التطبيقات من مصادرها الرسمية.";
+ if(/تصيد|رابط|phish|link/.test(q))answer="تحققي من عنوان المرسل واسم النطاق، ولا تفتحي الروابط غير المتوقعة. زوري الموقع بكتابة عنوانه الرسمي بنفسك ولا تشاركي رموز التحقق.";
+ else if(/كلمة مرور|password|mot de passe/.test(q))answer="استخدمي كلمة مرور طويلة وفريدة لكل حساب. يمكن استخدام مدير كلمات مرور موثوق، ولا تعيدي استخدام كلمة المرور نفسها.";
+ else if(/خصوصية|privacy/.test(q))answer="راجعي أذونات التطبيقات وإعدادات الخصوصية، وقللي البيانات التي تشاركينها، واستخدمي المصادقة الثنائية.";
+ else if(/تحديث|update/.test(q))answer="ثبتي تحديثات النظام والتطبيقات من المصادر الرسمية. التحديثات تساعد في معالجة مشكلات أمنية معروفة.";
+ else if(/اختراق|hack/.test(q))answer="هذا التطبيق لا يستطيع اكتشاف الاختراق. إذا لاحظت نشاطًا غير مألوف، راجعي سجل الدخول من الموقع الرسمي للخدمة واطلبي المساعدة من دعمها الرسمي.";
+ else if(/نسخ احتياطي|backup/.test(q))answer="احتفظي بنسخ احتياطية منتظمة في مكان آمن، وتأكدي دوريًا من إمكانية استعادة الملفات.";
+ document.getElementById("assistantOutput").textContent=answer;
 }
-function privacyCheck(){
- let a=document.getElementById("twoFactor").value;
- let b=document.getElementById("permissions").value;
- let score=(a==="yes"?50:a==="unknown"?25:0)+(b==="yes"?50:b==="unknown"?25:0);
- document.getElementById("privacyResult").textContent="مؤشر الممارسات المختارة: "+score+"%. هذا تقدير تعليمي مبسط وليس فحصًا لخصوصية الجهاز.";
+function calculatePrivacy(){
+ const values=["privacy2fa","privacyPermissions","privacySettings"].map(id=>document.getElementById(id).value);
+ const score=Math.round(values.reduce((s,v)=>s+(v==="yes"?100:v==="unknown"?50:0),0)/3);
+ document.getElementById("privacyOutput").textContent="مؤشر الممارسات المختارة: "+score+"%. هذا مؤشر توعوي مبسط وليس فحصًا تقنيًا لإعدادات جهازك.";
 }
 function renderReports(){
- const host=document.getElementById("reportsList");host.innerHTML="";
- if(!reports.length){host.textContent="لا توجد تقارير محفوظة بعد.";return;}
+ const host=document.getElementById("reportList");host.innerHTML="";
+ if(!reports.length){host.textContent="لا توجد تقارير محفوظة.";return;}
  reports.forEach(r=>{
   const div=document.createElement("div");div.className="item";
-  const title=document.createElement("strong");title.textContent=r.id+" — "+r.date;
-  const detail=document.createElement("p");
-  detail.textContent="المؤشر التوعوي: "+r.indicator+"% | نعم: "+r.yes+" | لا: "+r.no+" | غير متأكدة: "+r.unknown;
-  div.append(title,detail);host.appendChild(div);
+  const title=document.createElement("strong");title.textContent=r.id;
+  const date=document.createElement("p");date.textContent=new Date(r.date).toLocaleString();
+  const score=document.createElement("p");score.textContent="مؤشر التحسين التوعوي: "+r.indicator+"%";
+  const counts=document.createElement("p");counts.textContent=`نعم: ${r.yes} | لا: ${r.no} | غير متأكدة: ${r.unknown}`;
+  div.append(title,date,score,counts);host.appendChild(div);
  });
 }
-function exportReports(){
+function exportJSON(){
  const blob=new Blob([JSON.stringify(reports,null,2)],{type:"application/json"});
- downloadBlob(blob,"maya-cyber-reports.json");
+ download(blob,"maya-professional-reports.json");
 }
-function exportText(){
- const content=reports.map(r=>`${r.id}\n${r.date}\nالمؤشر: ${r.indicator}%\n${r.level}\nالتوصيات:\n${r.recommendations.join("\n")}\n`).join("\n---\n");
- downloadBlob(new Blob([content],{type:"text/plain;charset=utf-8"}),"maya-reports.txt");
+function exportCSV(){
+ const rows=[["Report ID","Date","Indicator","Yes","No","Unknown","Mode","Profile"]];
+ reports.forEach(r=>rows.push([r.id,r.date,r.indicator,r.yes,r.no,r.unknown,r.mode,r.profile]));
+ const csv=rows.map(row=>row.map(v=>'"'+String(v??"").replace(/"/g,'""')+'"').join(",")).join("\n");
+ download(new Blob(["\uFEFF"+csv],{type:"text/csv;charset=utf-8"}),"maya-reports.csv");
 }
-function downloadBlob(blob,name){
+function download(blob,name){
  const url=URL.createObjectURL(blob),a=document.createElement("a");
  a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();
- URL.revokeObjectURL(url);
+ setTimeout(()=>URL.revokeObjectURL(url),1000);
 }
-function clearReports(){
- if(!confirm("هل تريدين حذف جميع التقارير المحلية؟"))return;
- reports=[];saveReports();renderReports();
+function deleteReports(){
+ if(!confirm("هل تريدين حذف جميع التقارير المحفوظة على هذا المتصفح؟"))return;
+ reports=[];persist();renderReports();renderAnalytics();
 }
-function saveDemoSettings(){
- const data={
-  orgId:document.getElementById("orgId").value.trim(),
-  role:document.getElementById("userRole").value,
-  profile:document.getElementById("compliance").value
- };
- document.getElementById("enterpriseResult").textContent=
- "تم تحديث إعدادات العرض لهذه الجلسة: "+JSON.stringify(data);
+function saveOrganization(){
+ const org=document.getElementById("orgId").value.trim();
+ if(!org){alert("أدخلي معرّفًا تجريبيًا.");return;}
+ const data={org,role:document.getElementById("orgRole").value,profile:document.getElementById("orgProfile").value};
+ try{sessionStorage.setItem("mayaDemoOrganization",JSON.stringify(data));}catch(e){}
+ document.getElementById("orgOutput").textContent="تم حفظ إعدادات العرض لهذه الجلسة. لا تنشئ هذه العملية حسابات أو صلاحيات حقيقية.";
+ renderOrganization();
 }
-function changeLanguage(lang){
+function renderOrganization(){
+ const host=document.getElementById("orgSummary");host.innerHTML="";
+ const count=reports.filter(r=>r.mode==="company").length;
+ const p=document.createElement("p");p.textContent="عدد تقارير مساحة الشركة التجريبية: "+count;
+ const note=document.createElement("p");note.className="small";note.textContent="قبل استخدام MAYA مع شركات حقيقية، يلزم خادم آمن وتسجيل دخول وصلاحيات فعلية وعزل بيانات المؤسسات واختبارات أمنية مستقلة.";
+ host.append(p,note);
+}
+function setLanguage(lang){
+ language=lang;
+ const rtl=lang==="ar";
  document.documentElement.lang=lang;
- document.documentElement.dir=lang==="ar"?"rtl":"ltr";
- if(lang==="ar"){document.getElementById("welcomeText").textContent="منصة توعوية للأمن السيبراني، تساعد الأفراد والفرق على فهم الممارسات الأمنية وتحسينها.";return;}
- const t=translations[lang];if(!t)return;
- document.getElementById("welcomeText").textContent=t.welcome;
- const labels=[t.home,t.assessment,t.ai,t.privacy,t.learning,t.reports,t.enterprise];
- document.querySelectorAll(".nav button").forEach((b,i)=>b.textContent=labels[i]);
- document.getElementById("modeText").textContent=t.mode;
+ document.documentElement.dir=rtl?"rtl":"ltr";
+ const welcome=document.getElementById("welcomeDescription");
+ welcome.textContent=rtl?"منصة احترافية للتوعية بالأمن السيبراني وتحسين الممارسات الرقمية للأفراد والفرق.":(UI[lang]?.welcome||"Cybersecurity awareness platform.");
+ const labels=UI[lang];
+ if(labels){
+  document.querySelectorAll("#navigation button").forEach((b,i)=>{
+   const keys=["home","assessment","analytics","ai","privacy","academy","reports","organization"];
+   b.textContent=labels[keys[i]];
+  });
+ }
+ buildQuestions();
 }
-updateStats();
+refreshStats();
 if("serviceWorker" in navigator){
  window.addEventListener("load",()=>navigator.serviceWorker.register("service-worker.js").catch(()=>{}));
 }
