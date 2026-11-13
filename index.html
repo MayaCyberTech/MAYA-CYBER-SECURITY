@@ -1,453 +1,438 @@
+
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#100a2a">
-<meta name="description" content="MAYA CYBER SECURITY - Defensive security awareness and demo enterprise dashboard">
-<title>MAYA CYBER SECURITY — INFINITY X ENTERPRISE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#090d1c">
+<meta name="description" content="MAYA CYBER SECURITY - Defensive Cybersecurity Awareness Platform">
+<title>MAYA CYBER SECURITY — INFINITY X</title>
+<link rel="manifest" href="manifest.json">
 <style>
-:root{--bg:#090817;--panel:#15132b;--panel2:#1c1a38;--cyan:#55e7ff;--purple:#9c7bff;--text:#f5f4ff;--muted:#b8b5d2;--line:#353052}
+:root{
+ --bg:#080d1c;--panel:#111a30;--panel2:#17233d;
+ --cyan:#38e5ff;--purple:#9b75ff;--text:#edf5ff;
+ --muted:#9aabc5;--border:#293957;--green:#35d6a0;
+ --orange:#ffbd59;--red:#ff657d
+}
 *{box-sizing:border-box}
-body{margin:0;background:radial-gradient(circle at top,#201747 0,#090817 48%);color:var(--text);font-family:system-ui,-apple-system,"Segoe UI",sans-serif;min-height:100vh}
-header{padding:24px 16px 12px;text-align:center}
-header h1{margin:0;color:var(--cyan);font-size:clamp(24px,5vw,36px);letter-spacing:1px}
-header p{color:var(--muted);margin:8px 0}
-main{max-width:1050px;margin:auto;padding:12px 14px 50px}
-.panel{background:linear-gradient(145deg,rgba(28,26,56,.97),rgba(17,15,37,.97));border:1px solid var(--line);border-radius:18px;padding:18px;margin:14px 0;box-shadow:0 12px 35px #0004}
+body{
+ margin:0;background:radial-gradient(circle at top,#17264a 0,#080d1c 48%);
+ color:var(--text);font-family:Arial,Tahoma,sans-serif;min-height:100vh
+}
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+header{
+ padding:20px 5%;display:flex;align-items:center;
+ justify-content:space-between;gap:12px;flex-wrap:wrap;
+ border-bottom:1px solid var(--border);background:#090f20dd;
+ position:sticky;top:0;z-index:10;backdrop-filter:blur(12px)
+}
+.logo{font-size:21px;font-weight:900;letter-spacing:1px}
+.logo span{color:var(--cyan)}
+.tagline{font-size:11px;color:var(--muted);margin-top:5px}
+select,.field{
+ background:var(--panel);color:var(--text);
+ border:1px solid var(--border);padding:11px;border-radius:10px
+}
+main{max-width:1150px;margin:auto;padding:24px 16px 60px}
+.hero{
+ text-align:center;padding:35px 15px 25px
+}
+.hero h1{font-size:clamp(27px,5vw,44px);margin:8px 0}
+.hero h1 span{color:var(--cyan)}
+.hero p{color:var(--muted);line-height:1.8}
+.glow{
+ width:85px;height:85px;border-radius:26px;margin:0 auto 18px;
+ display:grid;place-items:center;font-size:38px;
+ background:linear-gradient(135deg,#163c60,#36235f);
+ border:1px solid #4a8cae;box-shadow:0 0 35px #38e5ff22
+}
+.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:15px}
+.card{
+ background:linear-gradient(145deg,var(--panel),#0e172a);
+ border:1px solid var(--border);border-radius:17px;
+ padding:20px;box-shadow:0 10px 30px #0002
+}
+.card h3{margin:0 0 10px}
+.card p{color:var(--muted);line-height:1.7;font-size:14px}
+.stat{font-size:30px;color:var(--cyan);font-weight:bold;margin:12px 0}
+.btn{
+ border:0;border-radius:11px;padding:12px 17px;
+ background:linear-gradient(100deg,#28cce8,#8270ff);
+ color:#061020;font-weight:800;margin:4px
+}
+.btn.secondary{background:#202e49;color:var(--text);border:1px solid var(--border)}
+.btn.danger{background:#542536;color:#fff}
+.btn:disabled{opacity:.4;cursor:not-allowed}
+.nav{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}
+.nav button{background:#17233a;color:var(--text);border:1px solid var(--border);padding:10px 13px;border-radius:10px}
+.nav button.active{border-color:var(--cyan);color:var(--cyan)}
+.page{display:none}
+.page.active{display:block}
+.notice{
+ border:1px solid #75613a;background:#302719;color:#ffe2a7;
+ border-radius:12px;padding:13px;line-height:1.7;font-size:13px;margin:14px 0
+}
+.question{padding:17px 0;border-bottom:1px solid var(--border)}
+.question p{font-weight:bold;line-height:1.7}
+.answers{display:flex;gap:9px;flex-wrap:wrap}
+.answers label{
+ background:#1a2943;padding:9px 13px;border-radius:9px;
+ border:1px solid var(--border);font-size:14px
+}
+.answers input{accent-color:var(--cyan)}
+.progress{height:9px;background:#26334c;border-radius:20px;overflow:hidden;margin:15px 0}
+.progress div{height:100%;background:linear-gradient(90deg,var(--cyan),var(--purple));width:0}
+.result{font-size:34px;color:var(--cyan);font-weight:bold}
+.small{font-size:12px;color:var(--muted);line-height:1.7}
+.item{
+ background:#17243c;border:1px solid var(--border);
+ border-radius:12px;padding:13px;margin:10px 0;line-height:1.7
+}
+textarea{width:100%;min-height:90px;resize:vertical}
+input.field{width:100%;margin:6px 0}
+footer{text-align:center;padding:25px;color:var(--muted);font-size:12px}
 .hidden{display:none!important}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:12px}
-.tile{background:var(--panel2);border:1px solid var(--line);padding:15px;border-radius:14px}
-.tile strong{display:block;font-size:25px;color:var(--cyan)}
-.tile span,.small{font-size:13px;color:var(--muted)}
-button,select,input,textarea{font:inherit}
-button{border:1px solid #5b4d91;background:#28234b;color:white;padding:11px 15px;border-radius:12px;cursor:pointer;margin:4px}
-button:hover{border-color:var(--cyan)}
-button.primary{background:linear-gradient(90deg,#5a43bd,#087e9b);border:0}
-button.secondary{background:#24213f}
-button.danger{border-color:#9b4b68;color:#ffb5c7}
-nav{display:flex;gap:7px;overflow-x:auto;padding:8px 2px 12px;position:sticky;top:0;background:#0b0919ed;z-index:5}
-nav button{white-space:nowrap;flex:0 0 auto;margin:0}
-input,select,textarea{width:100%;padding:12px;margin:6px 0 10px;background:#0e0c20;border:1px solid var(--line);border-radius:10px;color:var(--text)}
-label{display:block;color:var(--muted);font-size:14px;margin-top:8px}
-.badge{display:inline-block;color:var(--cyan);border:1px solid #3c7890;padding:4px 9px;border-radius:20px;font-size:12px}
-.question{padding:14px;border:1px solid var(--line);border-radius:12px;margin:10px 0;background:#100e24}
-.answers{display:flex;gap:8px;flex-wrap:wrap}
-.answers button{min-width:85px}
-.answers button.selected{background:#28576a;border-color:var(--cyan)}
-.report{padding:13px;border:1px solid var(--line);border-radius:12px;margin:9px 0;overflow-wrap:anywhere}
-.muted{color:var(--muted)}
-.score{font-size:36px;color:var(--cyan);font-weight:800}
-footer{text-align:center;color:var(--muted);font-size:12px;padding:20px}
-@media(min-width:700px){main{padding-left:22px;padding-right:22px}}
 </style>
 </head>
 <body>
 <header>
-<h1>MAYA CYBER SECURITY</h1>
-<p>INFINITY X ENTERPRISE · DEFENSIVE SECURITY AWARENESS</p>
-<span class="badge" id="statusBadge">نسخة تجريبية آمنة</span>
+ <div>
+  <div class="logo">MAYA <span>CYBER</span></div>
+  <div class="tagline">INFINITY X • DEFENSIVE SECURITY PLATFORM</div>
+ </div>
+ <select id="language" onchange="changeLanguage(this.value)" aria-label="Language">
+  <option value="ar">العربية</option><option value="en">English</option>
+  <option value="fr">Français</option><option value="es">Español</option>
+  <option value="de">Deutsch</option><option value="tr">Türkçe</option>
+  <option value="pt">Português</option><option value="zh">中文</option>
+  <option value="ja">日本語</option>
+ </select>
 </header>
+
 <main>
-
-<section id="accountChoice" class="panel">
-<h2>مرحباً بك في MAYA ENTERPRISE</h2>
-<p class="muted">اختاري نوع المساحة التي تريدين استخدامها.</p>
-<div class="grid">
-<button class="primary" onclick="selectAccount('individual')">👤 حساب فردي <small>المراجعة الشخصية والتقارير</small></button>
-<button class="primary" onclick="selectAccount('company')">🏢 مساحة شركة تجريبية <small>إدارة موظفين تجريبيين وتقارير</small></button>
-</div>
-<p class="small">تنبيه: مساحة الشركة هنا نموذج واجهة محلي وليست خدمة مؤسسية حقيقية.</p>
+<section id="welcome">
+ <div class="hero">
+  <div class="glow">🛡️</div>
+  <h1>MAYA <span>CYBER SECURITY</span></h1>
+  <p id="welcomeText">منصة توعوية للأمن السيبراني، تساعد الأفراد والفرق على فهم الممارسات الأمنية وتحسينها.</p>
+ </div>
+ <div class="grid">
+  <div class="card">
+   <h3>👤 المساحة الفردية</h3>
+   <p>تقييم توعوي شخصي، نصائح، وتقارير محلية.</p>
+   <button class="btn" onclick="enterApp('individual')">الدخول الفردي</button>
+  </div>
+  <div class="card">
+   <h3>🏢 مساحة الشركات</h3>
+   <p>عرض تجريبي لمتابعة التوعية والنتائج داخل المؤسسة.</p>
+   <button class="btn" onclick="enterApp('company')">دخول مساحة الشركة</button>
+  </div>
+ </div>
+ <div class="notice">هذه نسخة تجريبية تعمل محليًا داخل المتصفح. لا تتصل بخادم، ولا تفحص الهاتف أو الشبكات، ولا تثبت وجود اختراق.</div>
 </section>
 
-<nav id="nav" class="hidden">
-<button onclick="showPage('home')">الرئيسية</button>
-<button onclick="showPage('scan')">المراجعة الأمنية</button>
-<button onclick="showPage('ai')">MAYA AI</button>
-<button onclick="showPage('privacy')">الخصوصية</button>
-<button onclick="showPage('learn')">التعلم</button>
-<button onclick="showPage('reportsPage')">التقارير</button>
-<button id="companyNav" class="hidden" onclick="showPage('enterprise')">الشركات</button>
-<button onclick="switchAccount()">تبديل المساحة</button>
-</nav>
+<section id="application" class="hidden">
+ <div class="hero" style="padding:12px">
+  <div class="glow">🛡️</div>
+  <h1>MAYA <span>CONTROL CENTER</span></h1>
+  <p id="modeText">لوحة التحكم التوعوية</p>
+ </div>
+ <div class="nav">
+  <button class="active" onclick="showPage('home',this)">الرئيسية</button>
+  <button onclick="showPage('assessment',this)">التقييم</button>
+  <button onclick="showPage('ai',this)">MAYA AI</button>
+  <button onclick="showPage('privacy',this)">الخصوصية</button>
+  <button onclick="showPage('learning',this)">التعلم</button>
+  <button onclick="showPage('reports',this)">التقارير</button>
+  <button onclick="showPage('enterprise',this)">الشركات</button>
+ </div>
 
-<section id="home" class="page hidden">
-<div class="panel">
-<span class="badge">WELCOME</span>
-<h2>لوحة MAYA الرئيسية</h2>
-<p>منصة توعوية لمراجعة عادات الأمان والخصوصية، مع تقارير محلية وإرشادات دفاعية.</p>
-<div class="grid">
-<div class="tile"><strong id="homeReports">0</strong><span>التقارير المحفوظة على هذا الجهاز</span></div>
-<div class="tile"><strong>10</strong><span>أسئلة المراجعة التوعوية</span></div>
-<div class="tile"><strong>9</strong><span>خيارات اللغة في الواجهة</span></div>
-</div>
-<p class="small">ابدئي من «المراجعة الأمنية». النتيجة مؤشر توعوي فقط وليست فحصاً تقنياً للجهاز.</p>
-<button class="primary" onclick="showPage('scan')">ابدئي المراجعة</button>
-</div>
+ <section id="home" class="page active">
+  <div class="grid">
+   <div class="card"><h3>📊 آخر مؤشر توعوي</h3><div class="stat" id="lastRisk">--</div><p>يُحسب من إجابات التقييم، وليس فحصًا تقنيًا.</p></div>
+   <div class="card"><h3>📁 التقارير المحفوظة</h3><div class="stat" id="reportCount">0</div><p>تقارير محفوظة على هذا المتصفح فقط.</p></div>
+   <div class="card"><h3>🌐 اللغات</h3><div class="stat">09</div><p>اختاري لغة الواجهة من القائمة أعلاه.</p></div>
+  </div>
+  <div class="card" style="margin-top:15px">
+   <h3>مرحبًا بك في MAYA</h3>
+   <p>ابدئي بتقييم توعوي لمعرفة الممارسات التي يمكن تحسينها. ستجدين بعده توصيات تعليمية مناسبة لإجاباتك.</p>
+   <button class="btn" onclick="showPage('assessment',document.querySelector('.nav button:nth-child(2)'))">ابدئي التقييم</button>
+  </div>
+ </section>
+
+ <section id="assessment" class="page">
+  <div class="card">
+   <h2>🧠 التقييم الأمني التوعوي</h2>
+   <p>أجيبي حسب ممارساتك الحالية. لا تدخلي كلمات مرور أو معلومات خاصة.</p>
+   <div class="progress"><div id="progressBar"></div></div>
+   <div id="questions"></div>
+   <button class="btn" onclick="finishAssessment()">إنهاء التقييم وحساب المؤشر</button>
+   <div id="assessmentResult"></div>
+  </div>
+ </section>
+
+ <section id="ai" class="page">
+  <div class="card">
+   <h2>✨ MAYA AI</h2>
+   <p>مساعد توعوي محلي يقدم إرشادات عامة. ليس خدمة ذكاء اصطناعي متصلة ولا محللًا تقنيًا.</p>
+   <input class="field" id="aiQuestion" placeholder="اكتبي سؤالك عن الأمن الرقمي">
+   <button class="btn" onclick="askMaya()">إرسال</button>
+   <div id="aiAnswer" class="item">مرحبًا! اسأليني عن حماية الحسابات والخصوصية والتوعية الرقمية.</div>
+  </div>
+ </section>
+
+ <section id="privacy" class="page">
+  <div class="card">
+   <h2>🔐 مركز الخصوصية</h2>
+   <p>هذا الإصدار يحفظ نتائج التقييم في التخزين المحلي للمتصفح على جهازك.</p>
+   <div class="item">لا ترسلي كلمات المرور أو رموز التحقق أو البيانات الشخصية إلى أي شخص.</div>
+   <div class="item">مؤشر الخصوصية التالي تعليمي فقط، وليس تدقيقًا فعليًا لإعدادات جهازك.</div>
+   <label>هل تستخدمين المصادقة الثنائية في حساباتك المهمة؟</label>
+   <select class="field" id="twoFactor"><option value="yes">نعم</option><option value="no">لا</option><option value="unknown">لست متأكدة</option></select>
+   <label>هل تراجعين أذونات التطبيقات بانتظام؟</label>
+   <select class="field" id="permissions"><option value="yes">نعم</option><option value="no">لا</option><option value="unknown">لست متأكدة</option></select>
+   <button class="btn" onclick="privacyCheck()">حساب مؤشر الخصوصية</button>
+   <div id="privacyResult" class="item"></div>
+  </div>
+ </section>
+
+ <section id="learning" class="page">
+  <div class="grid">
+   <div class="card"><h3>🔑 كلمات المرور</h3><p>استخدمي كلمة مرور طويلة وفريدة لكل حساب، واستعيني بمدير كلمات مرور موثوق.</p></div>
+   <div class="card"><h3>📩 التصيد الاحتيالي</h3><p>تحققي من عنوان المرسل والرابط قبل فتحه، ولا تشاركي رموز التحقق.</p></div>
+   <div class="card"><h3>📱 تحديث الأجهزة</h3><p>ثبتي تحديثات النظام والتطبيقات من المصادر الرسمية.</p></div>
+   <div class="card"><h3>🔐 المصادقة الثنائية</h3><p>فعّلي طبقة تحقق إضافية للحسابات المهمة، واحفظي رموز الاسترداد بأمان.</p></div>
+   <div class="card"><h3>🌍 الشبكات العامة</h3><p>تجنبي إدخال معلومات حساسة على شبكات لا تثقين بها، وتأكدي من اتصالك بالمواقع الصحيحة.</p></div>
+   <div class="card"><h3>💾 النسخ الاحتياطي</h3><p>احتفظي بنسخ احتياطية منتظمة في مكان آمن واختبري إمكانية استعادتها.</p></div>
+  </div>
+ </section>
+
+ <section id="reports" class="page">
+  <div class="card">
+   <h2>📑 التقارير</h2>
+   <p>التقارير محفوظة محليًا في هذا المتصفح. لا تمثل شهادة أمنية أو إثباتًا تقنيًا.</p>
+   <button class="btn" onclick="exportReports()">تصدير التقارير JSON</button>
+   <button class="btn secondary" onclick="exportText()">تنزيل ملخص نصي</button>
+   <button class="btn danger" onclick="clearReports()">حذف التقارير المحلية</button>
+   <div id="reportsList"></div>
+  </div>
+ </section>
+
+ <section id="enterprise" class="page">
+  <div class="card">
+   <h2>🏢 مساحة الشركات — DEMO</h2>
+   <div class="notice">هذه لوحة عرض تجريبية فقط. لا تضيف مستخدمين حقيقيين ولا تطبق صلاحيات أو عزل بيانات المؤسسات.</div>
+   <label>معرّف المؤسسة التجريبي</label>
+   <input class="field" id="orgId" value="MAYA-DEMO-001">
+   <label>الدور الوصفي</label>
+   <select class="field" id="userRole">
+    <option>Demo Administrator</option><option>Demo Security Analyst</option><option>Demo Employee</option>
+   </select>
+   <label>ملف التوعية المرجعي</label>
+   <select class="field" id="compliance">
+    <option>General Best Practices</option>
+    <option>OWASP ASVS Awareness</option>
+    <option>ISO 27001 Awareness</option>
+    <option>NIST CSF Awareness</option>
+   </select>
+   <button class="btn" onclick="saveDemoSettings()">حفظ الإعدادات التجريبية</button>
+   <div id="enterpriseResult" class="item"></div>
+   <h3>إحصائيات محلية</h3>
+   <div class="stat" id="companyCount">0</div>
+   <p>عدد التقارير المسجلة في هذا المتصفح، وليس عدد موظفي مؤسسة فعلية.</p>
+  </div>
+ </section>
+
+ <div class="small" style="text-align:center;margin-top:20px">
+  MAYA CYBER SECURITY • Educational Defensive Platform • Demo Build
+ </div>
 </section>
-
-<section id="scan" class="page hidden">
-<div class="panel">
-<h2>المراجعة الأمنية التوعوية</h2>
-<p class="muted">أجيبي بناءً على إعداداتك وعاداتك. لا تشاركي كلمات المرور أو المعلومات السرية.</p>
-<div id="questions"></div>
-<button class="primary" onclick="finishScan()">إنهاء المراجعة وحفظ التقرير</button>
-<button class="secondary" onclick="resetScan()">إعادة الإجابات</button>
-<div id="scanResult" aria-live="polite"></div>
-</div>
-</section>
-
-<section id="ai" class="page hidden">
-<div class="panel">
-<h2>MAYA AI</h2>
-<p class="muted">مساعد توعوي محلي بإجابات إرشادية جاهزة، وليس نموذج ذكاء اصطناعي متصلاً بخادم.</p>
-<label for="aiQuestion">اكتبي سؤالك الأمني العام</label>
-<textarea id="aiQuestion" rows="3" maxlength="500" placeholder="مثال: كيف أحمي حساباتي؟"></textarea>
-<button class="primary" onclick="askMaya()">إرسال السؤال</button>
-<div id="aiAnswer" class="report">ستظهر الإرشادات هنا.</div>
-</div>
-</section>
-
-<section id="privacy" class="page hidden">
-<div class="panel">
-<h2>مركز الخصوصية</h2>
-<ul>
-<li>لا تدخلي كلمات المرور أو أرقام الهوية أو بيانات مالية.</li>
-<li>التقارير محفوظة محلياً في متصفح هذا الجهاز باستخدام التخزين المحلي.</li>
-<li>حذف بيانات المتصفح قد يؤدي إلى حذف التقارير المحفوظة.</li>
-<li>لا يوجد اتصال بخادم أو حساب مستخدم أو مزامنة سحابية في هذه النسخة.</li>
-<li>لا يجري التطبيق فحصاً لملفات الهاتف أو مراقبة للشبكة أو كشفاً آلياً للاختراق.</li>
-</ul>
-<button class="danger" onclick="deleteReports()">حذف جميع التقارير المحلية</button>
-</div>
-</section>
-
-<section id="learn" class="page hidden">
-<div class="panel">
-<h2>مكتبة التعلم</h2>
-<div class="grid">
-<div class="tile"><h3>كلمات المرور</h3><p>استخدمي كلمة مرور طويلة وفريدة لكل حساب، واستعيني بمدير كلمات مرور موثوق.</p></div>
-<div class="tile"><h3>التحقق بخطوتين</h3><p>فعّلي المصادقة متعددة العوامل، واحتفظي برموز الاسترداد في مكان آمن.</p></div>
-<div class="tile"><h3>الروابط المشبوهة</h3><p>تحققي من عنوان الموقع والمرسل، ولا تفتحي المرفقات غير المتوقعة.</p></div>
-<div class="tile"><h3>التحديثات</h3><p>ثبتي تحديثات النظام والتطبيقات من المصادر الرسمية.</p></div>
-<div class="tile"><h3>النسخ الاحتياطي</h3><p>احتفظي بنسخة احتياطية مشفرة واختبري إمكانية استعادتها.</p></div>
-<div class="tile"><h3>الخصوصية</h3><p>راجعي أذونات التطبيقات وشاركي أقل قدر ممكن من البيانات.</p></div>
-</div>
-</div>
-</section>
-
-<section id="reportsPage" class="page hidden">
-<div class="panel">
-<h2>التقارير</h2>
-<p class="muted">التقارير التوعوية المحفوظة على هذا الجهاز فقط.</p>
-<button class="primary" onclick="exportReports()">تصدير التقارير JSON</button>
-<div id="reportsList"></div>
-</div>
-</section>
-
-<section id="enterprise" class="page hidden">
-<div class="panel">
-<span class="badge">DEMO · ENTERPRISE</span>
-<h2>لوحة إدارة الشركة التجريبية</h2>
-<p class="muted">للتجربة ببيانات وهمية فقط. لا تضيفي أسماء موظفين حقيقيين.</p>
-<div class="grid">
-<div class="tile"><strong id="employeeCount">0</strong><span>الموظفون التجريبيون</span></div>
-<div class="tile"><strong id="companyReports">0</strong><span>تقارير هذا الجهاز</span></div>
-</div>
-<h3>إضافة موظف تجريبي</h3>
-<label for="employeeName">اسم وهمي</label>
-<input id="employeeName" maxlength="60" placeholder="مثال: موظف تجريبي 1">
-<label for="employeeRole">الدور التجريبي</label>
-<select id="employeeRole">
-<option value="employee">موظف</option>
-<option value="manager">مدير</option>
-</select>
-<button class="primary" onclick="addDemoEmployee()">إضافة للقائمة</button>
-<div id="employeeList"></div>
-<p class="small">القائمة مؤقتة في ذاكرة الصفحة وتُمسح عند إعادة تحميلها. هذه ليست إدارة حسابات أو صلاحيات فعلية.</p>
-</div>
-</section>
-
-<footer>MAYA CYBER SECURITY · Defensive awareness only · Demo build</footer>
 </main>
+<footer>© 2026 MAYA CYBER SECURITY — INFINITY X</footer>
 
 <script>
-"use strict";
-
-const STORAGE_KEY = "mayaEnterpriseDemoReports";
-
-const questions = [
-"هل تستخدمين كلمة مرور مختلفة لكل حساب مهم؟",
-"هل فعّلتِ التحقق بخطوتين للحسابات التي تدعمه؟",
-"هل تحدّثين نظام الهاتف والتطبيقات بانتظام؟",
-"هل تتحققين من الرابط قبل إدخال بيانات تسجيل الدخول؟",
+const questions=[
+"هل تستخدمين كلمة مرور مختلفة للحسابات المهمة؟",
+"هل تفعلين المصادقة الثنائية للحسابات المهمة؟",
+"هل تتحققين من الروابط قبل الضغط عليها؟",
+"هل تثبتين التطبيقات من مصادر رسمية فقط؟",
+"هل تحدثين نظام الهاتف والتطبيقات بانتظام؟",
 "هل تتجنبين مشاركة رموز التحقق مع الآخرين؟",
-"هل تراجعين أذونات التطبيقات بشكل دوري؟",
-"هل تقفلين جهازك برمز قوي أو وسيلة قفل موثوقة؟",
-"هل تحتفظين بنسخة احتياطية حديثة وآمنة؟",
-"هل تعرفين طريقة استرداد حساباتك المهمة؟",
-"هل تتجنبين استخدام شبكات Wi-Fi العامة للمعاملات الحساسة دون حماية مناسبة؟"
+"هل تراجعين أذونات التطبيقات؟",
+"هل تحتفظين بنسخ احتياطية من ملفاتك المهمة؟",
+"هل تتحققين من هوية المرسل قبل فتح المرفقات؟",
+"هل تعرفين كيف تبلغين عن رسالة أو نشاط مشبوه؟"
 ];
-
-let answers = Array(questions.length).fill(null);
-let reports = loadReports();
-let demoEmployees = [];
-let accountType = "";
+const translations={
+en:{welcome:"A cybersecurity awareness platform for individuals and teams.",home:"Home",assessment:"Assessment",ai:"MAYA AI",privacy:"Privacy",learning:"Learning",reports:"Reports",enterprise:"Enterprise",mode:"Awareness control center"},
+fr:{welcome:"Une plateforme de sensibilisation à la cybersécurité pour les particuliers et les équipes.",home:"Accueil",assessment:"Évaluation",ai:"MAYA AI",privacy:"Confidentialité",learning:"Apprentissage",reports:"Rapports",enterprise:"Entreprise",mode:"Centre de sensibilisation"},
+es:{welcome:"Una plataforma de concienciación en ciberseguridad para personas y equipos.",home:"Inicio",assessment:"Evaluación",ai:"MAYA AI",privacy:"Privacidad",learning:"Aprendizaje",reports:"Informes",enterprise:"Empresa",mode:"Centro de concienciación"},
+de:{welcome:"Eine Plattform für Cybersicherheitsbewusstsein für Einzelpersonen und Teams.",home:"Start",assessment:"Bewertung",ai:"MAYA AI",privacy:"Datenschutz",learning:"Lernen",reports:"Berichte",enterprise:"Unternehmen",mode:"Awareness-Zentrale"},
+tr:{welcome:"Bireyler ve ekipler için siber güvenlik farkındalık platformu.",home:"Ana sayfa",assessment:"Değerlendirme",ai:"MAYA AI",privacy:"Gizlilik",learning:"Öğrenme",reports:"Raporlar",enterprise:"Şirket",mode:"Farkındalık merkezi"},
+pt:{welcome:"Uma plataforma de conscientização em cibersegurança para pessoas e equipes.",home:"Início",assessment:"Avaliação",ai:"MAYA AI",privacy:"Privacidade",learning:"Aprendizagem",reports:"Relatórios",enterprise:"Empresa",mode:"Centro de conscientização"},
+zh:{welcome:"面向个人和团队的网络安全意识平台。",home:"主页",assessment:"评估",ai:"MAYA AI",privacy:"隐私",learning:"学习",reports:"报告",enterprise:"企业",mode:"安全意识中心"},
+ja:{welcome:"個人やチーム向けのサイバーセキュリティ意識向上プラットフォーム。",home:"ホーム",assessment:"評価",ai:"MAYA AI",privacy:"プライバシー",learning:"学習",reports:"レポート",enterprise:"企業",mode:"意識向上センター"}
+};
+let currentMode="individual";
+let reports=loadReports();
+let lastScore=null;
 
 function loadReports(){
- try {
-  const value = JSON.parse(localStorage.getItem(STORAGE_KEY) || "[]");
-  return Array.isArray(value) ? value : [];
- } catch(e) {
-  return [];
- }
+ try{return JSON.parse(localStorage.getItem("mayaInfinityV2Reports")||"[]")}
+ catch(e){return []}
 }
-
 function saveReports(){
- try {
-  localStorage.setItem(STORAGE_KEY, JSON.stringify(reports));
- } catch(e) {
-  alert("تعذر حفظ التقرير. قد تكون مساحة التخزين ممتلئة أو معطلة.");
- }
+ try{localStorage.setItem("mayaInfinityV2Reports",JSON.stringify(reports))}
+ catch(e){alert("تعذر الحفظ. قد تكون مساحة التخزين ممتلئة.");}
+ updateStats();
 }
-
-function selectAccount(type){
- if(!["individual","company"].includes(type)) return;
- accountType = type;
- document.getElementById("accountChoice").classList.add("hidden");
- document.getElementById("nav").classList.remove("hidden");
- document.getElementById("companyNav").classList.toggle("hidden", type !== "company");
- showPage(type === "company" ? "enterprise" : "home");
+function enterApp(mode){
+ currentMode=mode;
+ document.getElementById("welcome").classList.add("hidden");
+ document.getElementById("application").classList.remove("hidden");
+ document.getElementById("modeText").textContent=mode==="company"?"مساحة الشركة التجريبية":"المساحة الفردية";
+ renderQuestions();updateStats();showPage("home",document.querySelector(".nav button"));
 }
-
-function switchAccount(){
- document.querySelectorAll(".page").forEach(p=>p.classList.add("hidden"));
- document.getElementById("nav").classList.add("hidden");
- document.getElementById("accountChoice").classList.remove("hidden");
- accountType = "";
+function showPage(id,button){
+ document.querySelectorAll(".page").forEach(p=>p.classList.remove("active"));
+ document.getElementById(id).classList.add("active");
+ document.querySelectorAll(".nav button").forEach(b=>b.classList.remove("active"));
+ if(button)button.classList.add("active");
+ if(id==="reports")renderReports();
+ if(id==="home")updateStats();
 }
-
-function showPage(id){
- document.querySelectorAll(".page").forEach(p=>p.classList.add("hidden"));
- const page = document.getElementById(id);
- if(page) page.classList.remove("hidden");
- if(id === "reportsPage") renderReports();
- if(id === "enterprise") renderDemoEmployees();
- updateCounts();
- window.scrollTo({top:0,behavior:"smooth"});
-}
-
 function renderQuestions(){
- const root = document.getElementById("questions");
- root.replaceChildren();
-
+ const host=document.getElementById("questions");
+ host.innerHTML="";
  questions.forEach((q,i)=>{
-  const box = document.createElement("div");
-  box.className = "question";
-
-  const title = document.createElement("p");
-  title.textContent = (i+1) + ". " + q;
-  box.append(title);
-
-  const answersBox = document.createElement("div");
-  answersBox.className = "answers";
-
-  [["yes","نعم"],["no","لا"],["unsure","لست متأكدة"]].forEach(([value,label])=>{
-   const btn = document.createElement("button");
-   btn.type = "button";
-   btn.textContent = label;
-
-   if(answers[i] === value) btn.classList.add("selected");
-
-   btn.onclick = ()=>{
-    answers[i] = value;
-    renderQuestions();
-   };
-
-   answersBox.append(btn);
-  });
-
-  box.append(answersBox);
-  root.append(box);
+  const div=document.createElement("div");div.className="question";
+  div.innerHTML=`<p>${i+1}. ${q}</p><div class="answers">
+   <label><input type="radio" name="q${i}" value="yes"> نعم</label>
+   <label><input type="radio" name="q${i}" value="no"> لا</label>
+   <label><input type="radio" name="q${i}" value="unknown"> لست متأكدة</label>
+  </div>`;
+  host.appendChild(div);
  });
+ host.querySelectorAll("input").forEach(input=>input.addEventListener("change",updateProgress));
 }
-
-function resetScan(){
- answers = Array(questions.length).fill(null);
- document.getElementById("scanResult").textContent = "";
- renderQuestions();
+function updateProgress(){
+ let answered=questions.filter((q,i)=>document.querySelector(`input[name="q${i}"]:checked`)).length;
+ document.getElementById("progressBar").style.width=(answered/questions.length*100)+"%";
 }
-
-function finishScan(){
- if(answers.some(a=>a === null)){
-  alert("أجيبي عن الأسئلة العشرة قبل حفظ التقرير.");
-  return;
- }
-
- const yes = answers.filter(a=>a === "yes").length;
-
- const report = {
-  id: Date.now(),
-  date: new Date().toLocaleString(),
-  yes,
-  total: questions.length,
-  answers: [...answers],
-  type: "awareness-review"
+function finishAssessment(){
+ let answers=questions.map((q,i)=>{
+  let el=document.querySelector(`input[name="q${i}"]:checked`);
+  return el?el.value:null;
+ });
+ if(answers.some(a=>a===null)){alert("أجيبي عن جميع الأسئلة أولًا.");return;}
+ let yes=answers.filter(a=>a==="yes").length;
+ let no=answers.filter(a=>a==="no").length;
+ let unknown=answers.filter(a=>a==="unknown").length;
+ let indicator=Math.round((no+unknown*.5)/questions.length*100);
+ let level=indicator<25?"مؤشر توعوي منخفض":indicator<55?"توجد فرص للتحسين":"توجد أولويات توعوية للتحسين";
+ let recs=[];
+ if(answers[1]!=="yes")recs.push("راجعي تفعيل المصادقة الثنائية للحسابات المهمة.");
+ if(answers[2]!=="yes")recs.push("تحققي من الروابط وعناوين المواقع قبل فتحها.");
+ if(answers[4]!=="yes")recs.push("راجعي تحديثات النظام والتطبيقات.");
+ if(answers[7]!=="yes")recs.push("أنشئي نسخة احتياطية آمنة لملفاتك المهمة.");
+ if(!recs.length)recs.push("استمري في الممارسات الجيدة وراجعيها دوريًا.");
+ const report={
+  id:"MAYA-"+Date.now(),date:new Date().toLocaleString(),
+  yes,no,unknown,indicator,level,recommendations:recs,
+  mode:currentMode,orgId:currentMode==="company"?document.getElementById("orgId").value:"Individual demo",
+  profile:document.getElementById("compliance").value
  };
-
- reports.unshift(report);
- saveReports();
-
- const result = document.getElementById("scanResult");
- result.className = "report";
- result.innerHTML =
-  '<div class="score">'+yes+'/10</div>' +
-  '<p>عدد الإجابات «نعم». راجعي الإجابات الأخرى لتحسين عادات الأمان.</p>' +
-  '<p class="small">هذه نتيجة توعوية وليست دليلاً على وجود اختراق أو عدمه، ولا تمثل فحصاً تقنياً للجهاز.</p>';
-
- updateCounts();
+ reports.unshift(report);reports=reports.slice(0,100);saveReports();
+ lastScore=indicator;
+ document.getElementById("assessmentResult").innerHTML=
+ `<div class="item"><h3>نتيجة التقييم</h3>
+ <div class="result">${indicator}%</div><strong>${level}</strong>
+ <p>نعم: ${yes} • لا: ${no} • غير متأكدة: ${unknown}</p>
+ <p>معرّف التقرير: ${report.id}</p>
+ <h3>توصيات توعوية</h3>${recs.map(r=>`<p>• ${r}</p>`).join("")}
+ <p class="small">هذه نتيجة مبنية على إجاباتك فقط، وليست قياسًا تقنيًا للخطر أو دليلًا على اختراق الجهاز.</p></div>`;
+ updateStats();
 }
-
+function updateStats(){
+ document.getElementById("reportCount").textContent=reports.length;
+ document.getElementById("companyCount").textContent=reports.filter(r=>r.mode==="company").length;
+ document.getElementById("lastRisk").textContent=reports.length?reports[0].indicator+"%":"--";
+}
+function askMaya(){
+ let q=document.getElementById("aiQuestion").value.trim().toLowerCase();
+ if(!q){alert("اكتبي سؤالًا أولًا.");return;}
+ let answer="ابدئي بتحديث التطبيقات، واستخدمي كلمات مرور فريدة، وفعّلي المصادقة الثنائية. لا تشاركي رموز التحقق أو كلمات المرور.";
+ if(q.includes("تصيد")||q.includes("رابط")||q.includes("phish")||q.includes("link"))
+  answer="لا تفتحي الرابط مباشرة. افحصي عنوان المرسل والنطاق بعناية، وادخلي إلى الموقع بكتابة عنوانه الرسمي بنفسك. لا تشاركي رموز التحقق.";
+ else if(q.includes("كلمة")||q.includes("password")||q.includes("mot de passe"))
+  answer="استخدمي كلمة مرور طويلة وفريدة لكل حساب، ولا تعيدي استخدامها. يمكن الاستعانة بمدير كلمات مرور موثوق.";
+ else if(q.includes("خصوص")||q.includes("privacy"))
+  answer="راجعي أذونات التطبيقات، وقللي البيانات التي تشاركينها، واستخدمي إعدادات الخصوصية المتاحة في التطبيقات.";
+ else if(q.includes("تحديث")||q.includes("update"))
+  answer="فعّلي التحديثات التلقائية عند توفرها، وثبتي التحديثات من متجر التطبيقات أو الموقع الرسمي فقط.";
+ else if(q.includes("اختراق")||q.includes("hack"))
+  answer="لا يمكن لهذا التطبيق اكتشاف الاختراقات. إذا لاحظت نشاطًا غير مألوف، راجعي نشاط تسجيل الدخول من الموقع الرسمي للخدمة وغيّري كلمة المرور من جهاز موثوق واطلبي المساعدة من الدعم الرسمي.";
+ document.getElementById("aiAnswer").textContent=answer;
+}
+function privacyCheck(){
+ let a=document.getElementById("twoFactor").value;
+ let b=document.getElementById("permissions").value;
+ let score=(a==="yes"?50:a==="unknown"?25:0)+(b==="yes"?50:b==="unknown"?25:0);
+ document.getElementById("privacyResult").textContent="مؤشر الممارسات المختارة: "+score+"%. هذا تقدير تعليمي مبسط وليس فحصًا لخصوصية الجهاز.";
+}
 function renderReports(){
- const root = document.getElementById("reportsList");
- root.replaceChildren();
-
- if(!reports.length){
-  root.textContent = "لا توجد تقارير محفوظة بعد.";
-  return;
- }
-
+ const host=document.getElementById("reportsList");host.innerHTML="";
+ if(!reports.length){host.textContent="لا توجد تقارير محفوظة بعد.";return;}
  reports.forEach(r=>{
-  const item = document.createElement("div");
-  item.className = "report";
-
-  const h = document.createElement("strong");
-  h.textContent = "مراجعة توعوية — " + r.yes + "/" + r.total;
-
-  const p = document.createElement("p");
-  p.className = "small";
-  p.textContent = r.date;
-
-  item.append(h,p);
-  root.append(item);
+  const div=document.createElement("div");div.className="item";
+  const title=document.createElement("strong");title.textContent=r.id+" — "+r.date;
+  const detail=document.createElement("p");
+  detail.textContent="المؤشر التوعوي: "+r.indicator+"% | نعم: "+r.yes+" | لا: "+r.no+" | غير متأكدة: "+r.unknown;
+  div.append(title,detail);host.appendChild(div);
  });
 }
-
-function updateCounts(){
- document.getElementById("homeReports").textContent = reports.length;
- document.getElementById("companyReports").textContent = reports.length;
- document.getElementById("employeeCount").textContent = demoEmployees.length;
-}
-
-function deleteReports(){
- if(!confirm("هل تريدين حذف جميع التقارير المحفوظة على هذا الجهاز؟")) return;
- reports = [];
- saveReports();
- renderReports();
- updateCounts();
-}
-
 function exportReports(){
- const blob = new Blob(
-  [JSON.stringify({
-   app:"MAYA CYBER SECURITY",
-   exportedAt:new Date().toISOString(),
-   reports
-  },null,2)],
-  {type:"application/json"}
- );
-
- const url = URL.createObjectURL(blob);
- const a = document.createElement("a");
- a.href = url;
- a.download = "maya-security-reports.json";
- a.click();
+ const blob=new Blob([JSON.stringify(reports,null,2)],{type:"application/json"});
+ downloadBlob(blob,"maya-cyber-reports.json");
+}
+function exportText(){
+ const content=reports.map(r=>`${r.id}\n${r.date}\nالمؤشر: ${r.indicator}%\n${r.level}\nالتوصيات:\n${r.recommendations.join("\n")}\n`).join("\n---\n");
+ downloadBlob(new Blob([content],{type:"text/plain;charset=utf-8"}),"maya-reports.txt");
+}
+function downloadBlob(blob,name){
+ const url=URL.createObjectURL(blob),a=document.createElement("a");
+ a.href=url;a.download=name;document.body.appendChild(a);a.click();a.remove();
  URL.revokeObjectURL(url);
 }
-
-function addDemoEmployee(){
- const input = document.getElementById("employeeName");
- const name = input.value.trim();
-
- if(!name){
-  alert("اكتبي اسماً وهمياً أولاً.");
-  return;
- }
-
- if(demoEmployees.length >= 20){
-  alert("الحد الأقصى 20 اسماً تجريبياً.");
-  return;
- }
-
- demoEmployees.push({
-  name,
-  role: document.getElementById("employeeRole").value
- });
-
- input.value = "";
- renderDemoEmployees();
+function clearReports(){
+ if(!confirm("هل تريدين حذف جميع التقارير المحلية؟"))return;
+ reports=[];saveReports();renderReports();
 }
-
-function renderDemoEmployees(){
- const root = document.getElementById("employeeList");
- root.replaceChildren();
-
- demoEmployees.forEach((employee,index)=>{
-  const item = document.createElement("div");
-  item.className = "report";
-
-  const name = document.createElement("strong");
-  name.textContent = employee.name;
-
-  const role = document.createElement("p");
-  role.className = "small";
-  role.textContent = employee.role === "manager" ? "مدير تجريبي" : "موظف تجريبي";
-
-  const remove = document.createElement("button");
-  remove.className = "danger";
-  remove.textContent = "حذف";
-
-  remove.onclick = ()=>{
-   demoEmployees.splice(index,1);
-   renderDemoEmployees();
-  };
-
-  item.append(name,role,remove);
-  root.append(item);
- });
-
- updateCounts();
+function saveDemoSettings(){
+ const data={
+  orgId:document.getElementById("orgId").value.trim(),
+  role:document.getElementById("userRole").value,
+  profile:document.getElementById("compliance").value
+ };
+ document.getElementById("enterpriseResult").textContent=
+ "تم تحديث إعدادات العرض لهذه الجلسة: "+JSON.stringify(data);
 }
-
-function askMaya(){
- const q = document.getElementById("aiQuestion").value.trim().toLowerCase();
- const output = document.getElementById("aiAnswer");
-
- if(!q){
-  output.textContent = "اكتبي سؤالاً عاماً أولاً.";
-  return;
- }
-
- let answer = "حافظي على تحديث جهازك، استخدمي كلمات مرور فريدة، وفعّلي التحقق بخطوتين. لا تشاركي رموز التحقق أو المعلومات السرية.";
-
- if(/كلم|password|mot de passe/.test(q)){
-  answer = "استخدمي كلمة مرور طويلة وفريدة لكل حساب. لا تعيدي استخدامها، ويمكنك استخدام مدير كلمات مرور موثوق.";
- }
- else if(/رابط|تصيد|رسالة|link|phish/.test(q)){
-  answer = "لا تضغطي على الروابط غير المتوقعة. افتحي الموقع بكتابة عنوانه بنفسك، وتحققي من المرسل واسم النطاق.";
- }
- else if(/اختراق|hack|pirat/.test(q)){
-  answer = "لا يمكن لهذا التطبيق تحديد ما إذا كان جهازك مخترقاً. حدّثي النظام، راجعي الأجهزة والجلسات المسجلة في حساباتك من صفحاتها الرسمية، واطلبي مساعدة مختص موثوق عند وجود مؤشرات مقلقة.";
- }
- else if(/خصوص|privacy|donn/.test(q)){
-  answer = "راجعي أذونات التطبيقات، وقللي البيانات التي تشاركينها، واستخدمي إعدادات الخصوصية الرسمية لكل خدمة.";
- }
-
- output.textContent = answer;
+function changeLanguage(lang){
+ document.documentElement.lang=lang;
+ document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+ if(lang==="ar"){document.getElementById("welcomeText").textContent="منصة توعوية للأمن السيبراني، تساعد الأفراد والفرق على فهم الممارسات الأمنية وتحسينها.";return;}
+ const t=translations[lang];if(!t)return;
+ document.getElementById("welcomeText").textContent=t.welcome;
+ const labels=[t.home,t.assessment,t.ai,t.privacy,t.learning,t.reports,t.enterprise];
+ document.querySelectorAll(".nav button").forEach((b,i)=>b.textContent=labels[i]);
+ document.getElementById("modeText").textContent=t.mode;
 }
-
-renderQuestions();
-updateCounts();
+updateStats();
+if("serviceWorker" in navigator){
+ window.addEventListener("load",()=>navigator.serviceWorker.register("service-worker.js").catch(()=>{}));
+}
 </script>
 </body>
 </html>
