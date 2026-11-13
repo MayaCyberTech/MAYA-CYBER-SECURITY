@@ -5,242 +5,329 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#100a2a">
-<meta name="description" content="MAYA CYBER SECURITY - Defensive Security Awareness">
-<title>MAYA CYBER SECURITY — INFINITY X</title>
+<meta name="description" content="MAYA CYBER SECURITY - Defensive Security Platform">
+<title>MAYA CYBER SECURITY — INFINITY X ULTIMATE</title>
 <link rel="manifest" href="manifest.json">
 <style>
-:root {
-  --bg:#0b071b;
-  --panel:#17112e;
-  --panel2:#21183d;
-  --cyan:#36e5f5;
-  --purple:#a879ff;
-  --text:#f5f2ff;
-  --muted:#aaa3c4;
-  --line:#342852;
-  --green:#54e6a5;
+:root{
+ --bg:#0b071b;--panel:#17112e;--panel2:#21183d;
+ --cyan:#36e5f5;--purple:#a879ff;--text:#f5f2ff;
+ --muted:#aaa3c4;--line:#342852;--green:#54e6a5;
+ --red:#ff718c;--yellow:#ffd36e;
 }
-* {box-sizing:border-box}
-body {
-  margin:0;
-  font-family:Arial,sans-serif;
-  color:var(--text);
-  background:radial-gradient(circle at top,#24134b,var(--bg) 58%);
-  min-height:100vh;
+*{box-sizing:border-box}
+body{
+ margin:0;background:radial-gradient(circle at top,#24134b,var(--bg) 58%);
+ color:var(--text);font-family:Arial,sans-serif;min-height:100vh;
 }
-header {
-  text-align:center;
-  padding:27px 15px 18px;
+button,input,select,textarea{font:inherit}
+button{cursor:pointer}
+header{text-align:center;padding:25px 14px 16px}
+.logo{
+ width:65px;height:65px;border-radius:21px;margin:auto auto 12px;
+ display:grid;place-items:center;font-size:29px;font-weight:bold;
+ color:#09051a;background:linear-gradient(135deg,var(--cyan),var(--purple));
+ box-shadow:0 0 30px #8c62ff55;
 }
-.logo {
-  width:66px;height:66px;border-radius:20px;
-  display:grid;place-items:center;margin:auto auto 12px;
-  font-size:27px;font-weight:bold;color:#09051a;
-  background:linear-gradient(135deg,var(--cyan),var(--purple));
-  box-shadow:0 0 30px #8c62ff55;
+h1{font-size:22px;letter-spacing:1px;margin:7px 0}
+.subtitle{color:var(--cyan);font-size:11px;letter-spacing:2px}
+#language{
+ margin-top:16px;padding:10px 13px;border-radius:12px;
+ background:var(--panel);color:white;border:1px solid var(--line);
 }
-h1 {
-  font-size:23px;letter-spacing:1px;margin:8px 0;
+nav{
+ display:flex;gap:7px;padding:10px 12px;overflow-x:auto;
+ position:sticky;top:0;z-index:10;background:#0b071bf2;
+ border-bottom:1px solid #342852;
 }
-.subtitle {color:var(--cyan);font-size:12px;letter-spacing:2px}
-select,button {
-  font:inherit;
+nav button{
+ flex:1;min-width:83px;padding:11px 8px;border-radius:12px;
+ background:var(--panel);color:var(--muted);
+ border:1px solid var(--line);font-size:12px;
 }
-#language {
-  margin-top:17px;padding:10px 14px;border-radius:12px;
-  background:var(--panel);color:white;border:1px solid var(--line);
+nav button.active{
+ color:var(--cyan);border-color:var(--cyan);background:#14263a;
 }
-nav {
-  display:flex;gap:8px;overflow-x:auto;padding:10px 14px;
-  position:sticky;top:0;background:#0b071beF;z-index:5;
+main{max-width:720px;margin:auto;padding:12px}
+.page{animation:appear .2s ease}
+.hidden{display:none!important}
+@keyframes appear{from{opacity:.4;transform:translateY(5px)}to{opacity:1;transform:none}}
+.panel{
+ background:linear-gradient(145deg,#1b1434,#120d26);
+ border:1px solid var(--line);border-radius:19px;padding:18px;
+ margin:12px 0;box-shadow:0 10px 35px #0003;
 }
-nav button {
-  flex:1;min-width:85px;padding:11px 9px;
-  border:1px solid var(--line);border-radius:12px;
-  background:var(--panel);color:var(--muted);font-size:12px;
+h2{font-size:18px;margin:0 0 12px}
+h3{font-size:15px;margin:8px 0}
+p{line-height:1.7;color:var(--muted);font-size:14px}
+.small{font-size:11px}
+.muted{color:var(--muted)}
+.primary{
+ width:100%;padding:14px;border:0;border-radius:13px;
+ color:#09051a;font-weight:bold;
+ background:linear-gradient(100deg,var(--cyan),var(--purple));
+ margin-top:12px;
 }
-nav button.active {
-  color:var(--cyan);border-color:var(--cyan);
-  background:#14263a;
+.secondary{
+ padding:12px 15px;border:1px solid var(--line);
+ background:var(--panel2);color:white;border-radius:12px;
 }
-main {max-width:650px;margin:auto;padding:14px}
-.panel {
-  background:linear-gradient(145deg,#1b1434,#120d26);
-  border:1px solid var(--line);border-radius:20px;
-  padding:20px;margin:12px 0;
-  box-shadow:0 10px 35px #0003;
+.danger{border-color:#9d4058;color:#ff9bae}
+.grid{
+ display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;
 }
-h2 {font-size:19px;margin-top:0}
-p {line-height:1.7;color:var(--muted)}
-.primary {
-  width:100%;padding:14px;border:0;border-radius:13px;
-  color:#09051a;font-weight:bold;
-  background:linear-gradient(100deg,var(--cyan),var(--purple));
-  cursor:pointer;margin-top:12px;
+.tile{
+ background:#211a3b;border:1px solid var(--line);
+ border-radius:15px;padding:15px;min-width:0;
 }
-.secondary {
-  padding:12px 16px;border:1px solid var(--line);
-  background:var(--panel2);color:white;border-radius:12px;
-  cursor:pointer;
+.tile strong{display:block;font-size:23px;color:var(--cyan);margin-bottom:5px}
+.tile span{font-size:12px;color:var(--muted)}
+.statline{display:flex;justify-content:space-between;gap:10px;font-size:12px;color:var(--muted);margin:12px 0}
+.track{height:9px;background:#30264b;border-radius:20px;overflow:hidden}
+.fill{height:100%;width:0;background:linear-gradient(90deg,var(--cyan),var(--purple));transition:width .3s}
+.option{
+ display:flex;align-items:center;gap:10px;padding:14px;margin:10px 0;
+ border:1px solid var(--line);border-radius:13px;
+ background:#211a3b;cursor:pointer;
 }
-button:disabled {opacity:.35;cursor:not-allowed}
-.hidden {display:none!important}
-.stat {
-  display:flex;justify-content:space-between;
-  color:var(--muted);font-size:13px;margin:12px 0;
+.option.selected{border-color:var(--cyan);background:#123044}
+.option input{accent-color:var(--cyan);width:18px;height:18px}
+.navigation{display:flex;gap:9px;margin-top:16px}
+.navigation button{flex:1}
+.badge{
+ display:inline-block;padding:5px 9px;border-radius:20px;
+ background:#292044;color:var(--cyan);font-size:11px;
 }
-.track {
-  height:9px;background:#30264b;border-radius:20px;overflow:hidden;
+.report{
+ padding:14px;margin:10px 0;border:1px solid var(--line);
+ border-radius:13px;background:#211a3b;
 }
-.fill {
-  height:100%;width:0%;
-  background:linear-gradient(90deg,var(--cyan),var(--purple));
-  transition:width .25s;
+.result-number{text-align:center;font-size:44px;font-weight:bold;color:var(--cyan);margin:17px}
+input[type=text],textarea{
+ width:100%;padding:13px;border-radius:12px;
+ background:#100b22;color:white;border:1px solid var(--line);
+ outline:none;
 }
-.option {
-  display:flex;align-items:center;gap:10px;
-  padding:14px;margin:10px 0;
-  border:1px solid var(--line);border-radius:13px;
-  background:#211a3b;cursor:pointer;
+textarea{resize:vertical;min-height:65px}
+.chatbox{
+ min-height:210px;max-height:360px;overflow-y:auto;
+ background:#100b22;border:1px solid var(--line);
+ border-radius:14px;padding:12px;
 }
-.option.selected {
-  border-color:var(--cyan);background:#123044;
+.message{
+ padding:11px 13px;border-radius:13px;margin:8px 0;
+ max-width:90%;font-size:13px;line-height:1.7;white-space:pre-wrap;
 }
-.option input {accent-color:var(--cyan);width:18px;height:18px}
-.navigation {
-  display:flex;gap:10px;margin-top:20px;
+.bot{background:#282044;border:1px solid #49356f}
+.user{background:#123044;border:1px solid #236078;margin-inline-start:auto}
+.chatrow{display:flex;gap:7px;margin-top:10px}
+.chatrow input{min-width:0;flex:1}
+.chatrow button{width:75px}
+.tip{
+ border-inline-start:3px solid var(--cyan);
+ padding:10px 13px;background:#15142d;margin:10px 0;border-radius:8px;
 }
-.navigation button {flex:1}
-.result-number {
-  font-size:44px;font-weight:bold;color:var(--cyan);
-  text-align:center;margin:20px 0;
+footer{text-align:center;color:#77718f;padding:24px 12px;font-size:11px}
+@media(max-width:380px){
+ h1{font-size:19px}.panel{padding:14px}.grid{gap:7px}
+ nav button{min-width:75px;font-size:11px}
 }
-.report {
-  padding:14px;margin:10px 0;border:1px solid var(--line);
-  border-radius:12px;background:#211a3b;
-}
-footer {
-  text-align:center;color:#77718f;padding:25px 12px;
-  font-size:11px;
-}
-input[type=text] {
-  width:100%;padding:13px;border-radius:12px;
-  background:#100b22;color:white;border:1px solid var(--line);
-}
-.small {font-size:12px}
 </style>
 </head>
 <body>
 
 <header>
-  <div class="logo">M</div>
-  <h1>MAYA CYBER SECURITY</h1>
-  <div class="subtitle">INFINITY X · DEFENSIVE SECURITY</div>
-  <select id="language" aria-label="Language">
-    <option value="ar">العربية</option>
-    <option value="en">English</option>
-    <option value="fr">Français</option>
-    <option value="es">Español</option>
-    <option value="de">Deutsch</option>
-    <option value="tr">Türkçe</option>
-    <option value="pt">Português</option>
-    <option value="zh">中文</option>
-    <option value="ja">日本語</option>
-  </select>
+ <div class="logo">M</div>
+ <h1>MAYA CYBER SECURITY</h1>
+ <div class="subtitle">INFINITY X · ULTIMATE EDITION</div>
+ <select id="language" aria-label="Language">
+  <option value="ar">العربية</option>
+  <option value="en">English</option>
+  <option value="fr">Français</option>
+  <option value="es">Español</option>
+  <option value="de">Deutsch</option>
+  <option value="tr">Türkçe</option>
+  <option value="pt">Português</option>
+  <option value="zh">中文</option>
+  <option value="ja">日本語</option>
+ </select>
 </header>
 
-<nav>
-  <button class="active" data-page="home" data-i="home">الرئيسية</button>
-  <button data-page="check" data-i="check">الفحص</button>
-  <button data-page="ai" data-i="ai">MAYA AI</button>
-  <button data-page="privacy" data-i="privacy">الخصوصية</button>
-  <button data-page="reports" data-i="reports">التقارير</button>
+<nav id="nav">
+ <button class="active" data-page="home" data-i="home">الرئيسية</button>
+ <button data-page="scan" data-i="scan">الفحص</button>
+ <button data-page="ai">MAYA AI</button>
+ <button data-page="privacy" data-i="privacy">الخصوصية</button>
+ <button data-page="learn" data-i="learn">التعلم</button>
+ <button data-page="reports" data-i="reports">التقارير</button>
 </nav>
 
 <main>
+
+<!-- HOME -->
 <section id="home" class="page">
-  <div class="panel">
-    <h2 data-i="welcome">مرحباً بك في MAYA CYBER</h2>
-    <p data-i="intro">منصة توعوية لمراجعة إعدادات الأمان والخصوصية وحماية أجهزتك.</p>
-    <button class="primary" onclick="startCheck()" data-i="start">ابدئي مراجعة الأمان</button>
-  </div>
-  <div class="panel">
-    <h2 data-i="features">مميزات المنصة</h2>
-    <p>◈ <span data-i="f1">مراجعة أمنية تفاعلية</span></p>
-    <p>◈ <span data-i="f2">إرشادات الخصوصية</span></p>
-    <p>◈ <span data-i="f3">تقارير قابلة للحفظ</span></p>
-    <p>◈ <span data-i="f4">دعم تسع لغات</span></p>
-  </div>
+ <div class="panel">
+  <span class="badge" data-i="platform">منصة الأمن الرقمي</span>
+  <h2 data-i="welcome">مرحباً بك في MAYA CYBER</h2>
+  <p data-i="intro">منصة توعوية لمراجعة الأمان والخصوصية والتعلم.</p>
+  <button class="primary" onclick="startScan()" data-i="start">ابدئي مراجعة الأمان</button>
+ </div>
+
+ <div class="grid">
+  <div class="tile"><strong id="totalReports">0</strong><span data-i="savedReports">التقارير المحفوظة</span></div>
+  <div class="tile"><strong id="lastScore">--</strong><span data-i="lastResult">آخر نتيجة</span></div>
+  <div class="tile"><strong>9</strong><span data-i="languages">اللغات المدعومة</span></div>
+  <div class="tile"><strong>10</strong><span data-i="questionsCount">أسئلة المراجعة</span></div>
+ </div>
+
+ <div class="panel">
+  <h2 data-i="features">مميزات المنصة</h2>
+  <div class="tip" data-i="feature1">مراجعة أمنية تفاعلية</div>
+  <div class="tip" data-i="feature2">مساعد توعوي MAYA AI</div>
+  <div class="tip" data-i="feature3">تقارير محفوظة وقابلة للتنزيل</div>
+  <div class="tip" data-i="feature4">مركز الخصوصية والتعلم</div>
+ </div>
+
+ <div class="panel">
+  <h2 data-i="important">معلومة مهمة</h2>
+  <p data-i="limitations">هذه المنصة تقدم مراجعة توعوية بناءً على إجاباتك. لا تقوم بفحص ملفات الهاتف أو اكتشاف الاختراقات تلقائياً.</p>
+ </div>
 </section>
 
-<section id="check" class="page hidden">
-  <div class="panel">
-    <h2 data-i="review">مراجعة أمان الجهاز</h2>
-    <p data-i="reviewInfo">أجيبي عن الأسئلة العشرة لمراجعة ممارسات الأمان لديك.</p>
-    <div class="stat">
-      <span id="questionCounter">1 / 10</span>
-      <span id="percent">10%</span>
-    </div>
-    <div class="track"><div class="fill" id="progress"></div></div>
-    <div id="questionArea">
-      <h2 id="questionText"></h2>
-      <div id="options"></div>
-    </div>
-    <div class="navigation">
-      <button class="secondary" id="backBtn" onclick="previousQuestion()">BACK</button>
-      <button class="primary" id="nextBtn" onclick="nextQuestion()">NEXT</button>
-    </div>
-    <button class="primary hidden" id="finishBtn" onclick="finishCheck()">FINISH CHECK</button>
-    <p class="small" data-i="disclaimer">هذه مراجعة توعوية تعتمد على إجاباتك ولا تفحص ملفات الهاتف أو تكشف الاختراق تلقائياً.</p>
+<!-- SECURITY REVIEW -->
+<section id="scan" class="page hidden">
+ <div class="panel">
+  <h2 data-i="reviewTitle">مراجعة أمان الجهاز</h2>
+  <p data-i="reviewIntro">أجيبي عن الأسئلة العشرة لمراجعة ممارسات الأمان لديك.</p>
+
+  <div class="statline">
+   <span id="counter">1 / 10</span>
+   <span id="percent">10%</span>
   </div>
-  <div id="result" class="panel hidden"></div>
+  <div class="track"><div class="fill" id="progress"></div></div>
+
+  <h3 id="questionText" style="margin-top:22px"></h3>
+  <div id="options"></div>
+
+  <div class="navigation">
+   <button class="secondary" id="backBtn" onclick="previousQuestion()">BACK</button>
+   <button class="primary" id="nextBtn" onclick="nextQuestion()">NEXT</button>
+  </div>
+  <button class="primary hidden" id="finishBtn" onclick="finishScan()">FINISH CHECK</button>
+  <p class="small" data-i="scanNotice">النتيجة مؤشر توعوي وليست فحصاً تقنياً للهاتف.</p>
+ </div>
+ <div id="result" class="panel hidden"></div>
 </section>
 
+<!-- MAYA AI -->
 <section id="ai" class="page hidden">
-  <div class="panel">
-    <h2>MAYA AI</h2>
-    <p data-i="aiInfo">مساعد توعوي محلي يقدم إرشادات عامة للأمان الرقمي.</p>
-    <input type="text" id="aiInput" placeholder="اكتبي سؤالك هنا...">
-    <button class="primary" onclick="askAI()" data-i="send">إرسال</button>
-    <div id="aiAnswer" class="report hidden"></div>
+ <div class="panel">
+  <span class="badge">LOCAL EDUCATIONAL ASSISTANT</span>
+  <h2>MAYA AI</h2>
+  <p data-i="aiIntro">اسألي MAYA عن كلمات المرور والخصوصية والأمان الرقمي.</p>
+  <div class="chatbox" id="chat">
+   <div class="message bot" data-i="aiWelcome">مرحباً! أنا MAYA، مساعدتك للتوعية بالأمن الرقمي. كيف يمكنني مساعدتك؟</div>
   </div>
+  <div class="chatrow">
+   <input id="aiInput" type="text" maxlength="500" placeholder="اكتبي سؤالك...">
+   <button class="primary" onclick="sendAI()" data-i="send">إرسال</button>
+  </div>
+  <button class="secondary" style="width:100%;margin-top:10px" onclick="clearChat()" data-i="clearChat">مسح المحادثة</button>
+  <p class="small" data-i="aiNotice">MAYA AI في هذا الإصدار مساعد محلي بإجابات إرشادية جاهزة، وليست خدمة ذكاء اصطناعي متصلة بالإنترنت.</p>
+ </div>
 </section>
 
+<!-- PRIVACY -->
 <section id="privacy" class="page hidden">
-  <div class="panel">
-    <h2 data-i="privacyTitle">دليل الخصوصية</h2>
-    <p data-i="privacy1">استعملي كلمات مرور قوية ومختلفة لحساباتك.</p>
-    <p data-i="privacy2">فعّلي المصادقة الثنائية متى كانت متاحة.</p>
-    <p data-i="privacy3">راجعي أذونات التطبيقات ومشاركة الموقع.</p>
-    <p data-i="privacy4">حدّثي نظام التشغيل والتطبيقات بانتظام.</p>
-    <p data-i="privacy5">لا تفتحي الروابط والمرفقات غير الموثوقة.</p>
-  </div>
+ <div class="panel">
+  <h2 data-i="privacyTitle">مركز الخصوصية</h2>
+  <div class="tip"><h3 data-i="p1title">كلمات المرور</h3><p data-i="p1">استخدمي كلمة مرور قوية ومختلفة لكل حساب مهم.</p></div>
+  <div class="tip"><h3 data-i="p2title">المصادقة الثنائية</h3><p data-i="p2">فعّلي المصادقة الثنائية لحماية الحسابات المهمة.</p></div>
+  <div class="tip"><h3 data-i="p3title">أذونات التطبيقات</h3><p data-i="p3">راجعي صلاحيات الموقع والكاميرا والميكروفون.</p></div>
+  <div class="tip"><h3 data-i="p4title">التحديثات</h3><p data-i="p4">حدّثي النظام والتطبيقات من المصادر الرسمية.</p></div>
+  <div class="tip"><h3 data-i="p5title">الروابط</h3><p data-i="p5">تحققي من الروابط قبل فتحها ولا تشاركي رموز التحقق.</p></div>
+  <div class="tip"><h3 data-i="p6title">النسخ الاحتياطي</h3><p data-i="p6">احتفظي بنسخة احتياطية آمنة من ملفاتك المهمة.</p></div>
+ </div>
 </section>
 
-<section id="reports" class="page hidden">
-  <div class="panel">
-    <h2 data-i="reportsTitle">تقارير المراجعة</h2>
-    <div id="reportList"></div>
-    <button class="primary" onclick="downloadReports()" data-i="download">تنزيل التقارير JSON</button>
+<!-- LEARNING -->
+<section id="learn" class="page hidden">
+ <div class="panel">
+  <h2 data-i="learnTitle">مكتبة الأمن السيبراني</h2>
+  <div class="report">
+   <h3 data-i="l1title">ما هو الأمن السيبراني؟</h3>
+   <p data-i="l1">هو مجموعة ممارسات وتقنيات لحماية الأجهزة والحسابات والبيانات من المخاطر الرقمية.</p>
   </div>
+  <div class="report">
+   <h3 data-i="l2title">التصيد الإلكتروني</h3>
+   <p data-i="l2">محاولات خداع المستخدم للحصول على معلوماته. تحققي من هوية المرسل والرابط.</p>
+  </div>
+  <div class="report">
+   <h3 data-i="l3title">المصادقة الثنائية</h3>
+   <p data-i="l3">طبقة إضافية للتحقق من الهوية عند تسجيل الدخول.</p>
+  </div>
+  <div class="report">
+   <h3 data-i="l4title">الشبكات العامة</h3>
+   <p data-i="l4">تجنبي إدخال معلومات حساسة على شبكات غير موثوقة.</p>
+  </div>
+  <div class="report">
+   <h3 data-i="l5title">الهندسة الاجتماعية</h3>
+   <p data-i="l5">أساليب للتأثير على الأشخاص ودفعهم لمشاركة معلومات أو تنفيذ أفعال غير آمنة.</p>
+  </div>
+ </div>
 </section>
+
+<!-- REPORTS -->
+<section id="reports" class="page hidden">
+ <div class="panel">
+  <h2 data-i="reportsTitle">تقارير المراجعة</h2>
+  <div id="reportList"></div>
+  <button class="primary" onclick="downloadReports()" data-i="download">تنزيل التقارير JSON</button>
+  <button class="secondary danger" style="width:100%;margin-top:10px" onclick="deleteReports()" data-i="deleteReports">حذف جميع التقارير</button>
+  <p class="small" data-i="reportNotice">التقارير محفوظة محلياً في متصفح هذا الجهاز.</p>
+ </div>
+</section>
+
 </main>
 
-<footer>MAYA CYBER SECURITY · INFINITY X<br>Defensive awareness only</footer>
+<footer>
+ MAYA CYBER SECURITY · INFINITY X ULTIMATE
+ <br>DEFENSIVE SECURITY AWARENESS
+</footer>
 
 <script>
-const translations = {
+const D={
 ar:{
-home:"الرئيسية",check:"الفحص",ai:"MAYA AI",privacy:"الخصوصية",reports:"التقارير",
-welcome:"مرحباً بك في MAYA CYBER",intro:"منصة توعوية لمراجعة إعدادات الأمان والخصوصية وحماية أجهزتك.",
-start:"ابدئي مراجعة الأمان",features:"مميزات المنصة",f1:"مراجعة أمنية تفاعلية",f2:"إرشادات الخصوصية",f3:"تقارير قابلة للحفظ",f4:"دعم تسع لغات",
-review:"مراجعة أمان الجهاز",reviewInfo:"أجيبي عن الأسئلة العشرة لمراجعة ممارسات الأمان لديك.",
-disclaimer:"هذه مراجعة توعوية تعتمد على إجاباتك ولا تفحص ملفات الهاتف أو تكشف الاختراق تلقائياً.",
-aiInfo:"مساعد توعوي محلي يقدم إرشادات عامة للأمان الرقمي.",send:"إرسال",
-privacyTitle:"دليل الخصوصية",privacy1:"استعملي كلمات مرور قوية ومختلفة لحساباتك.",privacy2:"فعّلي المصادقة الثنائية متى كانت متاحة.",privacy3:"راجعي أذونات التطبيقات ومشاركة الموقع.",privacy4:"حدّثي نظام التشغيل والتطبيقات بانتظام.",privacy5:"لا تفتحي الروابط والمرفقات غير الموثوقة.",
-reportsTitle:"تقارير المراجعة",download:"تنزيل التقارير JSON",
+home:"الرئيسية",scan:"الفحص",privacy:"الخصوصية",learn:"التعلم",reports:"التقارير",
+platform:"منصة الأمن الرقمي",welcome:"مرحباً بك في MAYA CYBER",
+intro:"منصة توعوية لمراجعة الأمان والخصوصية والتعلم.",
+start:"ابدئي مراجعة الأمان",savedReports:"التقارير المحفوظة",lastResult:"آخر نتيجة",
+languages:"اللغات المدعومة",questionsCount:"أسئلة المراجعة",features:"مميزات المنصة",
+feature1:"مراجعة أمنية تفاعلية",feature2:"مساعد توعوي MAYA AI",
+feature3:"تقارير محفوظة وقابلة للتنزيل",feature4:"مركز الخصوصية والتعلم",
+important:"معلومة مهمة",limitations:"هذه المنصة تقدم مراجعة توعوية بناءً على إجاباتك. لا تقوم بفحص ملفات الهاتف أو اكتشاف الاختراقات تلقائياً.",
+reviewTitle:"مراجعة أمان الجهاز",reviewIntro:"أجيبي عن الأسئلة العشرة لمراجعة ممارسات الأمان لديك.",
+scanNotice:"النتيجة مؤشر توعوي وليست فحصاً تقنياً للهاتف.",
 yes:"نعم",no:"لا",unknown:"لست متأكدة",back:"BACK",next:"NEXT",finish:"FINISH CHECK",
-complete:"اكتملت المراجعة",positive:"إجابات الأمان الإيجابية",reviewItems:"إجابات تحتاج إلى مراجعة",save:"حُفظ التقرير بنجاح",noReports:"لا توجد تقارير بعد.",
+complete:"اكتملت المراجعة",positive:"الإجابات الإيجابية",reviewItems:"إجابات تحتاج إلى مراجعة",
+recommendation:"التوصيات",saved:"تم حفظ التقرير بنجاح",reportsTitle:"تقارير المراجعة",
+download:"تنزيل التقارير JSON",deleteReports:"حذف جميع التقارير",reportNotice:"التقارير محفوظة محلياً في متصفح هذا الجهاز.",
+noReports:"لا توجد تقارير محفوظة بعد.",confirmDelete:"هل تريدين حذف جميع التقارير؟",
+aiIntro:"اسألي MAYA عن كلمات المرور والخصوصية والأمان الرقمي.",
+aiWelcome:"مرحباً! أنا MAYA، مساعدتك للتوعية بالأمن الرقمي. كيف يمكنني مساعدتك؟",
+send:"إرسال",clearChat:"مسح المحادثة",aiNotice:"MAYA AI في هذا الإصدار مساعد محلي بإجابات إرشادية جاهزة، وليست خدمة ذكاء اصطناعي متصلة بالإنترنت.",
+privacyTitle:"مركز الخصوصية",p1title:"كلمات المرور",p1:"استخدمي كلمة مرور قوية ومختلفة لكل حساب مهم.",
+p2title:"المصادقة الثنائية",p2:"فعّلي المصادقة الثنائية لحماية الحسابات المهمة.",
+p3title:"أذونات التطبيقات",p3:"راجعي صلاحيات الموقع والكاميرا والميكروفون.",
+p4title:"التحديثات",p4:"حدّثي النظام والتطبيقات من المصادر الرسمية.",
+p5title:"الروابط",p5:"تحققي من الروابط قبل فتحها ولا تشاركي رموز التحقق.",
+p6title:"النسخ الاحتياطي",p6:"احتفظي بنسخة احتياطية آمنة من ملفاتك المهمة.",
+learnTitle:"مكتبة الأمن السيبراني",
+l1title:"ما هو الأمن السيبراني؟",l1:"هو مجموعة ممارسات وتقنيات لحماية الأجهزة والحسابات والبيانات من المخاطر الرقمية.",
+l2title:"التصيد الإلكتروني",l2:"محاولات خداع المستخدم للحصول على معلوماته. تحققي من هوية المرسل والرابط.",
+l3title:"المصادقة الثنائية",l3:"طبقة إضافية للتحقق من الهوية عند تسجيل الدخول.",
+l4title:"الشبكات العامة",l4:"تجنبي إدخال معلومات حساسة على شبكات غير موثوقة.",
+l5title:"الهندسة الاجتماعية",l5:"أساليب للتأثير على الأشخاص ودفعهم لمشاركة معلومات أو تنفيذ أفعال غير آمنة.",
 questions:[
 "هل تستخدمين رمز قفل قويًا لهاتفك؟",
 "هل تقومين بتحديث نظام التشغيل بانتظام؟",
@@ -254,16 +341,36 @@ questions:[
 "هل تراجعين إعدادات الخصوصية بانتظام؟"
 ]},
 en:{
-home:"Home",check:"Review",ai:"MAYA AI",privacy:"Privacy",reports:"Reports",
-welcome:"Welcome to MAYA CYBER",intro:"A security awareness platform for reviewing device safety and privacy.",
-start:"START SECURITY REVIEW",features:"Platform Features",f1:"Interactive security review",f2:"Privacy guidance",f3:"Saveable reports",f4:"Nine languages supported",
-review:"Device Security Review",reviewInfo:"Answer all ten questions to review your security practices.",
-disclaimer:"This awareness review uses your answers. It does not scan device files or automatically detect intrusions.",
-aiInfo:"A local educational assistant for general digital security guidance.",send:"Send",
-privacyTitle:"Privacy Guide",privacy1:"Use strong, unique passwords.",privacy2:"Enable two-factor authentication when available.",privacy3:"Review app permissions and location sharing.",privacy4:"Update your operating system and apps regularly.",privacy5:"Avoid untrusted links and attachments.",
-reportsTitle:"Review Reports",download:"Download JSON Reports",
+home:"Home",scan:"Review",privacy:"Privacy",learn:"Learn",reports:"Reports",
+platform:"Digital Security Platform",welcome:"Welcome to MAYA CYBER",
+intro:"A learning platform for security, privacy and awareness.",
+start:"START SECURITY REVIEW",savedReports:"Saved reports",lastResult:"Last result",
+languages:"Supported languages",questionsCount:"Review questions",features:"Platform features",
+feature1:"Interactive security review",feature2:"MAYA AI educational assistant",
+feature3:"Saved and downloadable reports",feature4:"Privacy and learning center",
+important:"Important information",limitations:"This platform provides an awareness review based on your answers. It does not scan phone files or automatically detect intrusions.",
+reviewTitle:"Device Security Review",reviewIntro:"Answer all ten questions to review your security practices.",
+scanNotice:"This is an awareness indicator, not a technical device scan.",
 yes:"Yes",no:"No",unknown:"Not sure",back:"BACK",next:"NEXT",finish:"FINISH CHECK",
-complete:"Review completed",positive:"Positive security answers",reviewItems:"Answers needing review",save:"Report saved successfully",noReports:"No reports yet.",
+complete:"Review completed",positive:"Positive answers",reviewItems:"Answers needing review",
+recommendation:"Recommendations",saved:"Report saved successfully",reportsTitle:"Review reports",
+download:"Download JSON reports",deleteReports:"Delete all reports",reportNotice:"Reports are stored locally in this browser.",
+noReports:"No saved reports yet.",confirmDelete:"Delete all reports?",
+aiIntro:"Ask MAYA about passwords, privacy and digital safety.",
+aiWelcome:"Hello! I'm MAYA, your digital security awareness assistant. How can I help?",
+send:"Send",clearChat:"Clear conversation",aiNotice:"MAYA AI is a local assistant with prepared educational responses, not an online AI service.",
+privacyTitle:"Privacy Center",p1title:"Passwords",p1:"Use a strong, unique password for every important account.",
+p2title:"Two-factor authentication",p2:"Enable two-factor authentication for important accounts.",
+p3title:"App permissions",p3:"Review location, camera and microphone permissions.",
+p4title:"Updates",p4:"Update your system and apps from official sources.",
+p5title:"Links",p5:"Check links before opening them and never share verification codes.",
+p6title:"Backups",p6:"Keep a safe backup of important files.",
+learnTitle:"Cybersecurity Library",
+l1title:"What is cybersecurity?",l1:"Practices and technologies that protect devices, accounts and data from digital risks.",
+l2title:"Phishing",l2:"Attempts to trick people into sharing information. Check the sender and link.",
+l3title:"Two-factor authentication",l3:"An additional identity verification step during sign-in.",
+l4title:"Public networks",l4:"Avoid entering sensitive information on untrusted networks.",
+l5title:"Social engineering",l5:"Methods that manipulate people into sharing information or taking unsafe actions.",
 questions:[
 "Do you use a strong passcode on your phone?",
 "Do you update your operating system regularly?",
@@ -277,165 +384,265 @@ questions:[
 "Do you review your privacy settings regularly?"
 ]},
 fr:{
-home:"Accueil",check:"Contrôle",ai:"MAYA AI",privacy:"Confidentialité",reports:"Rapports",
-welcome:"Bienvenue sur MAYA CYBER",intro:"Une plateforme éducative pour revoir la sécurité et la confidentialité de vos appareils.",
-start:"COMMENCER LE CONTRÔLE",features:"Fonctionnalités",f1:"Contrôle interactif",f2:"Conseils de confidentialité",f3:"Rapports enregistrables",f4:"Neuf langues",
-review:"Contrôle de sécurité",reviewInfo:"Répondez aux dix questions.",
-disclaimer:"Ce contrôle repose sur vos réponses. Il n'analyse pas les fichiers et ne détecte pas automatiquement les intrusions.",
-aiInfo:"Assistant éducatif local pour la sécurité numérique.",send:"Envoyer",
-privacyTitle:"Guide de confidentialité",privacy1:"Utilisez des mots de passe forts et uniques.",privacy2:"Activez l'authentification à deux facteurs.",privacy3:"Vérifiez les autorisations des applications.",privacy4:"Mettez à jour votre système et vos applications.",privacy5:"Évitez les liens inconnus.",
-reportsTitle:"Rapports",download:"Télécharger les rapports JSON",
-yes:"Oui",no:"Non",unknown:"Je ne sais pas",back:"BACK",next:"NEXT",finish:"FINISH CHECK",
-complete:"Contrôle terminé",positive:"Réponses positives",reviewItems:"Réponses à vérifier",save:"Rapport enregistré",noReports:"Aucun rapport.",
+home:"Accueil",scan:"Contrôle",privacy:"Confidentialité",learn:"Apprendre",reports:"Rapports",
+platform:"Plateforme de sécurité numérique",welcome:"Bienvenue sur MAYA CYBER",
+intro:"Plateforme éducative de sécurité et de confidentialité.",start:"COMMENCER LE CONTRÔLE",
+savedReports:"Rapports enregistrés",lastResult:"Dernier résultat",languages:"Langues disponibles",
+questionsCount:"Questions",features:"Fonctionnalités",feature1:"Contrôle interactif",
+feature2:"Assistant éducatif MAYA AI",feature3:"Rapports téléchargeables",
+feature4:"Centre de confidentialité et d'apprentissage",important:"Information importante",
+limitations:"Cette plateforme propose un contrôle basé sur vos réponses. Elle n'analyse pas les fichiers du téléphone et ne détecte pas automatiquement les intrusions.",
+reviewTitle:"Contrôle de sécurité",reviewIntro:"Répondez aux dix questions.",
+scanNotice:"Indicateur éducatif, pas une analyse technique.",yes:"Oui",no:"Non",
+unknown:"Je ne sais pas",back:"BACK",next:"NEXT",finish:"FINISH CHECK",
+complete:"Contrôle terminé",positive:"Réponses positives",reviewItems:"Réponses à vérifier",
+recommendation:"Conseils",saved:"Rapport enregistré",reportsTitle:"Rapports",
+download:"Télécharger JSON",deleteReports:"Supprimer tous les rapports",
+reportNotice:"Rapports enregistrés localement.",noReports:"Aucun rapport.",
+confirmDelete:"Supprimer tous les rapports ?",aiIntro:"Posez vos questions sur la sécurité numérique.",
+aiWelcome:"Bonjour ! Je suis MAYA, votre assistante éducative.",send:"Envoyer",
+clearChat:"Effacer la conversation",aiNotice:"MAYA AI fournit des réponses éducatives locales, sans service IA en ligne.",
+privacyTitle:"Centre de confidentialité",p1title:"Mots de passe",p1:"Utilisez des mots de passe forts et uniques.",
+p2title:"Double authentification",p2:"Activez la double authentification.",
+p3title:"Autorisations",p3:"Vérifiez les autorisations des applications.",
+p4title:"Mises à jour",p4:"Mettez à jour vos appareils depuis les sources officielles.",
+p5title:"Liens",p5:"Vérifiez les liens avant de les ouvrir.",
+p6title:"Sauvegardes",p6:"Conservez une sauvegarde sûre de vos fichiers.",
+learnTitle:"Bibliothèque de cybersécurité",
+l1title:"Cybersécurité",l1:"Pratiques protégeant les appareils, comptes et données.",
+l2title:"Hameçonnage",l2:"Tentatives de tromperie visant à obtenir des informations.",
+l3title:"Double authentification",l3:"Une vérification supplémentaire lors de la connexion.",
+l4title:"Réseaux publics",l4:"Évitez les informations sensibles sur les réseaux inconnus.",
+l5title:"Ingénierie sociale",l5:"Manipulation des personnes pour obtenir des informations.",
 questions:[
-"Utilisez-vous un code de verrouillage fort ?",
-"Mettez-vous votre système à jour régulièrement ?",
-"Utilisez-vous des mots de passe différents ?",
-"Avez-vous activé la double authentification ?",
-"Vérifiez-vous les autorisations des applications ?",
-"Évitez-vous les liens et fichiers inconnus ?",
-"Utilisez-vous un Wi-Fi fiable ?",
-"Vérifiez-vous les appareils connectés à vos comptes ?",
-"Conservez-vous une sauvegarde de vos données ?",
-"Vérifiez-vous régulièrement vos paramètres de confidentialité ?"
+"Utilisez-vous un code de verrouillage fort ?","Mettez-vous votre système à jour ?",
+"Utilisez-vous des mots de passe différents ?","Avez-vous activé la double authentification ?",
+"Vérifiez-vous les autorisations des applications ?","Évitez-vous les liens inconnus ?",
+"Utilisez-vous un Wi-Fi fiable ?","Vérifiez-vous les appareils connectés ?",
+"Conservez-vous une sauvegarde ?","Vérifiez-vous vos paramètres de confidentialité ?"
 ]},
 es:{
-home:"Inicio",check:"Revisión",ai:"MAYA AI",privacy:"Privacidad",reports:"Informes",
-welcome:"Bienvenido a MAYA CYBER",intro:"Plataforma educativa de seguridad y privacidad.",
-start:"INICIAR REVISIÓN",features:"Funciones",f1:"Revisión interactiva",f2:"Consejos de privacidad",f3:"Informes guardados",f4:"Nueve idiomas",
-review:"Revisión de seguridad",reviewInfo:"Responde las diez preguntas.",
-disclaimer:"Esta revisión utiliza tus respuestas. No analiza archivos ni detecta intrusiones automáticamente.",
-aiInfo:"Asistente educativo local de seguridad digital.",send:"Enviar",
-privacyTitle:"Guía de privacidad",privacy1:"Usa contraseñas fuertes y únicas.",privacy2:"Activa la autenticación de dos factores.",privacy3:"Revisa los permisos de las aplicaciones.",privacy4:"Actualiza el sistema y las aplicaciones.",privacy5:"Evita enlaces desconocidos.",
-reportsTitle:"Informes",download:"Descargar informes JSON",
-yes:"Sí",no:"No",unknown:"No estoy seguro",back:"BACK",next:"NEXT",finish:"FINISH CHECK",
-complete:"Revisión completada",positive:"Respuestas positivas",reviewItems:"Respuestas por revisar",save:"Informe guardado",noReports:"Todavía no hay informes.",
+home:"Inicio",scan:"Revisión",privacy:"Privacidad",learn:"Aprender",reports:"Informes",
+platform:"Plataforma de seguridad digital",welcome:"Bienvenido a MAYA CYBER",
+intro:"Plataforma educativa de seguridad y privacidad.",start:"INICIAR REVISIÓN",
+savedReports:"Informes guardados",lastResult:"Último resultado",languages:"Idiomas",
+questionsCount:"Preguntas",features:"Funciones",feature1:"Revisión interactiva",
+feature2:"Asistente educativo MAYA AI",feature3:"Informes descargables",
+feature4:"Centro de privacidad y aprendizaje",important:"Información importante",
+limitations:"Esta plataforma ofrece una revisión basada en tus respuestas. No analiza archivos ni detecta intrusiones automáticamente.",
+reviewTitle:"Revisión de seguridad",reviewIntro:"Responde las diez preguntas.",
+scanNotice:"Indicador educativo, no un análisis técnico.",yes:"Sí",no:"No",
+unknown:"No estoy seguro",back:"BACK",next:"NEXT",finish:"FINISH CHECK",
+complete:"Revisión completada",positive:"Respuestas positivas",reviewItems:"Respuestas por revisar",
+recommendation:"Recomendaciones",saved:"Informe guardado",reportsTitle:"Informes",
+download:"Descargar JSON",deleteReports:"Eliminar informes",reportNotice:"Informes guardados localmente.",
+noReports:"No hay informes.",confirmDelete:"¿Eliminar todos los informes?",
+aiIntro:"Pregunta a MAYA sobre seguridad digital.",aiWelcome:"¡Hola! Soy MAYA, tu asistente educativo.",
+send:"Enviar",clearChat:"Borrar conversación",aiNotice:"MAYA AI utiliza respuestas educativas locales, no un servicio de IA en línea.",
+privacyTitle:"Centro de privacidad",p1title:"Contraseñas",p1:"Usa contraseñas fuertes y únicas.",
+p2title:"Autenticación doble",p2:"Activa la autenticación de dos factores.",
+p3title:"Permisos",p3:"Revisa los permisos de las aplicaciones.",
+p4title:"Actualizaciones",p4:"Actualiza desde fuentes oficiales.",
+p5title:"Enlaces",p5:"Comprueba los enlaces antes de abrirlos.",
+p6title:"Copias de seguridad",p6:"Guarda copias seguras de tus archivos.",
+learnTitle:"Biblioteca de ciberseguridad",
+l1title:"Ciberseguridad",l1:"Prácticas para proteger dispositivos, cuentas y datos.",
+l2title:"Phishing",l2:"Intentos de engaño para obtener información.",
+l3title:"Autenticación doble",l3:"Una verificación adicional al iniciar sesión.",
+l4title:"Redes públicas",l4:"Evita información sensible en redes desconocidas.",
+l5title:"Ingeniería social",l5:"Manipulación para conseguir información.",
 questions:[
-"¿Usas un código seguro en tu teléfono?",
-"¿Actualizas el sistema regularmente?",
-"¿Usas contraseñas diferentes?",
-"¿Activaste la autenticación de dos factores?",
-"¿Revisas los permisos de las aplicaciones?",
-"¿Evitas enlaces y archivos desconocidos?",
-"¿Usas redes Wi-Fi confiables?",
-"¿Revisas los dispositivos conectados a tus cuentas?",
-"¿Guardas una copia de seguridad de tus datos?",
-"¿Revisas tu privacidad regularmente?"
+"¿Usas un código seguro en tu teléfono?","¿Actualizas el sistema regularmente?",
+"¿Usas contraseñas diferentes?","¿Activaste la autenticación doble?",
+"¿Revisas los permisos de las aplicaciones?","¿Evitas enlaces desconocidos?",
+"¿Usas redes Wi-Fi confiables?","¿Revisas los dispositivos conectados?",
+"¿Guardas una copia de seguridad?","¿Revisas tu privacidad regularmente?"
 ]},
 de:{
-home:"Start",check:"Prüfung",ai:"MAYA AI",privacy:"Datenschutz",reports:"Berichte",
-welcome:"Willkommen bei MAYA CYBER",intro:"Eine Lernplattform für digitale Sicherheit und Datenschutz.",
-start:"SICHERHEITSPRÜFUNG STARTEN",features:"Funktionen",f1:"Interaktive Prüfung",f2:"Datenschutztipps",f3:"Speicherbare Berichte",f4:"Neun Sprachen",
-review:"Sicherheitsprüfung",reviewInfo:"Beantworte alle zehn Fragen.",
-disclaimer:"Diese Prüfung basiert auf deinen Antworten. Sie scannt keine Dateien und erkennt keine Angriffe automatisch.",
-aiInfo:"Lokaler Lernassistent für digitale Sicherheit.",send:"Senden",
-privacyTitle:"Datenschutzleitfaden",privacy1:"Verwende starke, einzigartige Passwörter.",privacy2:"Aktiviere Zwei-Faktor-Authentifizierung.",privacy3:"Prüfe App-Berechtigungen.",privacy4:"Aktualisiere System und Apps regelmäßig.",privacy5:"Vermeide unbekannte Links.",
-reportsTitle:"Berichte",download:"JSON-Berichte herunterladen",
-yes:"Ja",no:"Nein",unknown:"Nicht sicher",back:"BACK",next:"NEXT",finish:"FINISH CHECK",
-complete:"Prüfung abgeschlossen",positive:"Positive Antworten",reviewItems:"Zu prüfende Antworten",save:"Bericht gespeichert",noReports:"Noch keine Berichte.",
+home:"Start",scan:"Prüfung",privacy:"Datenschutz",learn:"Lernen",reports:"Berichte",
+platform:"Digitale Sicherheitsplattform",welcome:"Willkommen bei MAYA CYBER",
+intro:"Lernplattform für Sicherheit und Datenschutz.",start:"PRÜFUNG STARTEN",
+savedReports:"Gespeicherte Berichte",lastResult:"Letztes Ergebnis",languages:"Sprachen",
+questionsCount:"Fragen",features:"Funktionen",feature1:"Interaktive Prüfung",
+feature2:"MAYA AI Lernassistent",feature3:"Speicherbare Berichte",
+feature4:"Datenschutz und Lernen",important:"Wichtige Information",
+limitations:"Diese Plattform bietet eine Prüfung anhand deiner Antworten. Sie scannt keine Dateien und erkennt keine Angriffe automatisch.",
+reviewTitle:"Sicherheitsprüfung",reviewIntro:"Beantworte alle zehn Fragen.",
+scanNotice:"Lernanzeige, kein technischer Scan.",yes:"Ja",no:"Nein",unknown:"Unsicher",
+back:"BACK",next:"NEXT",finish:"FINISH CHECK",complete:"Prüfung abgeschlossen",
+positive:"Positive Antworten",reviewItems:"Zu prüfende Antworten",recommendation:"Empfehlungen",
+saved:"Bericht gespeichert",reportsTitle:"Berichte",download:"JSON herunterladen",
+deleteReports:"Alle Berichte löschen",reportNotice:"Berichte lokal gespeichert.",
+noReports:"Keine Berichte.",confirmDelete:"Alle Berichte löschen?",
+aiIntro:"Frage MAYA über digitale Sicherheit.",aiWelcome:"Hallo! Ich bin MAYA, deine Lernassistentin.",
+send:"Senden",clearChat:"Chat löschen",aiNotice:"MAYA AI verwendet lokale Lernantworten, keinen Online-KI-Dienst.",
+privacyTitle:"Datenschutz",p1title:"Passwörter",p1:"Verwende starke, einzigartige Passwörter.",
+p2title:"Zwei-Faktor-Authentifizierung",p2:"Aktiviere die Zwei-Faktor-Authentifizierung.",
+p3title:"App-Berechtigungen",p3:"Prüfe die App-Berechtigungen.",
+p4title:"Updates",p4:"Aktualisiere über offizielle Quellen.",
+p5title:"Links",p5:"Prüfe Links vor dem Öffnen.",
+p6title:"Backups",p6:"Sichere wichtige Dateien.",
+learnTitle:"Cybersecurity-Bibliothek",
+l1title:"Cybersecurity",l1:"Praktiken zum Schutz von Geräten, Konten und Daten.",
+l2title:"Phishing",l2:"Täuschungsversuche zum Erhalten von Informationen.",
+l3title:"Zwei-Faktor",l3:"Zusätzliche Identitätsprüfung beim Anmelden.",
+l4title:"Öffentliche Netzwerke",l4:"Keine sensiblen Daten in unbekannten Netzwerken eingeben.",
+l5title:"Social Engineering",l5:"Manipulation von Menschen zur Informationsgewinnung.",
 questions:[
-"Verwendest du einen starken Sperrcode?",
-"Aktualisierst du dein Betriebssystem regelmäßig?",
-"Verwendest du unterschiedliche Passwörter?",
-"Hast du Zwei-Faktor-Authentifizierung aktiviert?",
-"Prüfst du App-Berechtigungen?",
-"Vermeidest du unbekannte Links und Dateien?",
-"Verwendest du vertrauenswürdiges WLAN?",
-"Prüfst du verbundene Geräte deiner Konten?",
-"Erstellst du Datensicherungen?",
-"Prüfst du regelmäßig deine Datenschutzeinstellungen?"
+"Verwendest du einen starken Sperrcode?","Aktualisierst du dein System regelmäßig?",
+"Verwendest du unterschiedliche Passwörter?","Ist die Zwei-Faktor-Authentifizierung aktiviert?",
+"Prüfst du App-Berechtigungen?","Vermeidest du unbekannte Links?",
+"Verwendest du vertrauenswürdiges WLAN?","Prüfst du verbundene Geräte?",
+"Erstellst du Datensicherungen?","Prüfst du deine Datenschutzeinstellungen?"
 ]},
 tr:{
-home:"Ana Sayfa",check:"Kontrol",ai:"MAYA AI",privacy:"Gizlilik",reports:"Raporlar",
-welcome:"MAYA CYBER'e hoş geldin",intro:"Güvenlik ve gizlilik farkındalık platformu.",
-start:"GÜVENLİK KONTROLÜNÜ BAŞLAT",features:"Özellikler",f1:"Etkileşimli kontrol",f2:"Gizlilik önerileri",f3:"Kaydedilebilir raporlar",f4:"Dokuz dil",
-review:"Güvenlik Kontrolü",reviewInfo:"On soruyu cevapla.",
-disclaimer:"Bu kontrol cevaplarına dayanır. Dosyaları taramaz ve saldırıları otomatik tespit etmez.",
-aiInfo:"Dijital güvenlik için yerel eğitim asistanı.",send:"Gönder",
-privacyTitle:"Gizlilik Rehberi",privacy1:"Güçlü ve benzersiz şifreler kullan.",privacy2:"İki faktörlü doğrulamayı etkinleştir.",privacy3:"Uygulama izinlerini kontrol et.",privacy4:"Sistemi ve uygulamaları güncelle.",privacy5:"Bilinmeyen bağlantılardan kaçın.",
-reportsTitle:"Raporlar",download:"JSON raporlarını indir",
-yes:"Evet",no:"Hayır",unknown:"Emin değilim",back:"BACK",next:"NEXT",finish:"FINISH CHECK",
-complete:"Kontrol tamamlandı",positive:"Olumlu cevaplar",reviewItems:"İncelenecek cevaplar",save:"Rapor kaydedildi",noReports:"Henüz rapor yok.",
+home:"Ana Sayfa",scan:"Kontrol",privacy:"Gizlilik",learn:"Öğren",reports:"Raporlar",
+platform:"Dijital güvenlik platformu",welcome:"MAYA CYBER'e hoş geldin",
+intro:"Güvenlik ve gizlilik eğitim platformu.",start:"GÜVENLİK KONTROLÜNÜ BAŞLAT",
+savedReports:"Kaydedilen raporlar",lastResult:"Son sonuç",languages:"Diller",
+questionsCount:"Sorular",features:"Özellikler",feature1:"Etkileşimli güvenlik kontrolü",
+feature2:"MAYA AI eğitim asistanı",feature3:"İndirilebilir raporlar",
+feature4:"Gizlilik ve öğrenme merkezi",important:"Önemli bilgi",
+limitations:"Bu platform cevaplarına göre eğitim amaçlı kontrol sunar. Telefon dosyalarını taramaz ve saldırıları otomatik algılamaz.",
+reviewTitle:"Güvenlik kontrolü",reviewIntro:"On soruyu cevapla.",
+scanNotice:"Eğitim göstergesi, teknik tarama değildir.",yes:"Evet",no:"Hayır",
+unknown:"Emin değilim",back:"BACK",next:"NEXT",finish:"FINISH CHECK",
+complete:"Kontrol tamamlandı",positive:"Olumlu cevaplar",reviewItems:"İncelenecek cevaplar",
+recommendation:"Öneriler",saved:"Rapor kaydedildi",reportsTitle:"Raporlar",
+download:"JSON indir",deleteReports:"Tüm raporları sil",reportNotice:"Raporlar yerel olarak saklanır.",
+noReports:"Henüz rapor yok.",confirmDelete:"Tüm raporlar silinsin mi?",
+aiIntro:"Dijital güvenlik hakkında MAYA'ya sor.",aiWelcome:"Merhaba! Ben MAYA, eğitim asistanınım.",
+send:"Gönder",clearChat:"Sohbeti temizle",aiNotice:"MAYA AI yerel eğitim cevapları kullanır; çevrimiçi bir AI hizmeti değildir.",
+privacyTitle:"Gizlilik merkezi",p1title:"Şifreler",p1:"Güçlü ve benzersiz şifreler kullan.",
+p2title:"İki faktörlü doğrulama",p2:"İki faktörlü doğrulamayı etkinleştir.",
+p3title:"Uygulama izinleri",p3:"Uygulama izinlerini kontrol et.",
+p4title:"Güncellemeler",p4:"Resmî kaynaklardan güncelleme yap.",
+p5title:"Bağlantılar",p5:"Bağlantıları açmadan önce kontrol et.",
+p6title:"Yedekleme",p6:"Önemli dosyalarını yedekle.",
+learnTitle:"Siber güvenlik kütüphanesi",
+l1title:"Siber güvenlik",l1:"Cihazları, hesapları ve verileri koruma uygulamaları.",
+l2title:"Kimlik avı",l2:"Bilgi elde etmek için yapılan aldatma girişimleri.",
+l3title:"İki faktör",l3:"Girişte ek kimlik doğrulama.",
+l4title:"Genel ağlar",l4:"Güvenilmeyen ağlarda hassas bilgi girme.",
+l5title:"Sosyal mühendislik",l5:"İnsanları bilgi paylaşmaya yönlendiren manipülasyon.",
 questions:[
-"Telefonunda güçlü bir kilit kodu kullanıyor musun?",
-"Sistemi düzenli güncelliyor musun?",
-"Farklı şifreler kullanıyor musun?",
-"İki faktörlü doğrulamayı açtın mı?",
-"Uygulama izinlerini kontrol ediyor musun?",
-"Bilinmeyen bağlantılardan kaçınıyor musun?",
-"Güvenilir Wi-Fi kullanıyor musun?",
-"Hesaplarına bağlı cihazları kontrol ediyor musun?",
-"Verilerini yedekliyor musun?",
-"Gizlilik ayarlarını düzenli kontrol ediyor musun?"
+"Telefonunda güçlü bir kilit kodu kullanıyor musun?","Sistemi düzenli güncelliyor musun?",
+"Farklı şifreler kullanıyor musun?","İki faktörlü doğrulamayı açtın mı?",
+"Uygulama izinlerini kontrol ediyor musun?","Bilinmeyen bağlantılardan kaçınıyor musun?",
+"Güvenilir Wi-Fi kullanıyor musun?","Bağlı cihazları kontrol ediyor musun?",
+"Verilerini yedekliyor musun?","Gizlilik ayarlarını kontrol ediyor musun?"
 ]},
 pt:{
-home:"Início",check:"Revisão",ai:"MAYA AI",privacy:"Privacidade",reports:"Relatórios",
-welcome:"Bem-vindo ao MAYA CYBER",intro:"Plataforma educativa de segurança e privacidade.",
-start:"INICIAR REVISÃO",features:"Recursos",f1:"Revisão interativa",f2:"Dicas de privacidade",f3:"Relatórios salvos",f4:"Nove idiomas",
-review:"Revisão de segurança",reviewInfo:"Responda às dez perguntas.",
-disclaimer:"Esta revisão usa suas respostas. Não verifica arquivos nem detecta invasões automaticamente.",
-aiInfo:"Assistente educativo local de segurança digital.",send:"Enviar",
-privacyTitle:"Guia de privacidade",privacy1:"Use senhas fortes e únicas.",privacy2:"Ative a autenticação de dois fatores.",privacy3:"Revise as permissões dos aplicativos.",privacy4:"Atualize o sistema e os aplicativos.",privacy5:"Evite links desconhecidos.",
-reportsTitle:"Relatórios",download:"Baixar relatórios JSON",
-yes:"Sim",no:"Não",unknown:"Não sei",back:"BACK",next:"NEXT",finish:"FINISH CHECK",
-complete:"Revisão concluída",positive:"Respostas positivas",reviewItems:"Respostas para revisar",save:"Relatório salvo",noReports:"Nenhum relatório ainda.",
+home:"Início",scan:"Revisão",privacy:"Privacidade",learn:"Aprender",reports:"Relatórios",
+platform:"Plataforma de segurança digital",welcome:"Bem-vindo ao MAYA CYBER",
+intro:"Plataforma educativa de segurança e privacidade.",start:"INICIAR REVISÃO",
+savedReports:"Relatórios salvos",lastResult:"Último resultado",languages:"Idiomas",
+questionsCount:"Perguntas",features:"Recursos",feature1:"Revisão interativa",
+feature2:"Assistente educativo MAYA AI",feature3:"Relatórios para baixar",
+feature4:"Centro de privacidade e aprendizagem",important:"Informação importante",
+limitations:"Esta plataforma oferece uma revisão baseada nas respostas. Não analisa arquivos nem detecta invasões automaticamente.",
+reviewTitle:"Revisão de segurança",reviewIntro:"Responda às dez perguntas.",
+scanNotice:"Indicador educativo, não análise técnica.",yes:"Sim",no:"Não",
+unknown:"Não sei",back:"BACK",next:"NEXT",finish:"FINISH CHECK",
+complete:"Revisão concluída",positive:"Respostas positivas",reviewItems:"Respostas para revisar",
+recommendation:"Recomendações",saved:"Relatório salvo",reportsTitle:"Relatórios",
+download:"Baixar JSON",deleteReports:"Excluir relatórios",reportNotice:"Relatórios salvos localmente.",
+noReports:"Nenhum relatório.",confirmDelete:"Excluir todos os relatórios?",
+aiIntro:"Pergunte à MAYA sobre segurança digital.",aiWelcome:"Olá! Sou MAYA, sua assistente educativa.",
+send:"Enviar",clearChat:"Limpar conversa",aiNotice:"MAYA AI usa respostas educativas locais, não um serviço de IA online.",
+privacyTitle:"Centro de privacidade",p1title:"Senhas",p1:"Use senhas fortes e únicas.",
+p2title:"Autenticação dupla",p2:"Ative a autenticação de dois fatores.",
+p3title:"Permissões",p3:"Revise as permissões dos aplicativos.",
+p4title:"Atualizações",p4:"Atualize usando fontes oficiais.",
+p5title:"Links",p5:"Verifique os links antes de abrir.",
+p6title:"Backup",p6:"Mantenha cópias seguras dos arquivos.",
+learnTitle:"Biblioteca de cibersegurança",
+l1title:"Cibersegurança",l1:"Práticas para proteger dispositivos, contas e dados.",
+l2title:"Phishing",l2:"Tentativas de enganar pessoas para obter informações.",
+l3title:"Autenticação dupla",l3:"Verificação adicional ao entrar na conta.",
+l4title:"Redes públicas",l4:"Evite dados sensíveis em redes desconhecidas.",
+l5title:"Engenharia social",l5:"Manipulação para obter informações.",
 questions:[
-"Você usa um código forte no telefone?",
-"Atualiza o sistema regularmente?",
-"Usa senhas diferentes?",
-"Ativou a autenticação de dois fatores?",
-"Revisa as permissões dos aplicativos?",
-"Evita links e arquivos desconhecidos?",
-"Usa redes Wi-Fi confiáveis?",
-"Revisa os dispositivos conectados às suas contas?",
-"Faz cópias de segurança dos dados?",
-"Revisa as configurações de privacidade?"
+"Você usa um código forte no telefone?","Atualiza o sistema regularmente?",
+"Usa senhas diferentes?","Ativou a autenticação de dois fatores?",
+"Revisa as permissões dos aplicativos?","Evita links desconhecidos?",
+"Usa redes Wi-Fi confiáveis?","Revisa os dispositivos conectados?",
+"Faz cópias de segurança?","Revisa suas configurações de privacidade?"
 ]},
 zh:{
-home:"首页",check:"检查",ai:"MAYA AI",privacy:"隐私",reports:"报告",
-welcome:"欢迎来到 MAYA CYBER",intro:"数字安全与隐私教育平台。",
-start:"开始安全检查",features:"平台功能",f1:"互动安全检查",f2:"隐私建议",f3:"可保存报告",f4:"支持九种语言",
-review:"设备安全检查",reviewInfo:"请回答全部十个问题。",
-disclaimer:"本检查基于你的回答，不会扫描设备文件或自动检测入侵。",
-aiInfo:"提供数字安全建议的本地教育助手。",send:"发送",
-privacyTitle:"隐私指南",privacy1:"使用强密码且不要重复使用。",privacy2:"启用双重身份验证。",privacy3:"检查应用权限。",privacy4:"定期更新系统和应用。",privacy5:"避免未知链接。",
-reportsTitle:"检查报告",download:"下载 JSON 报告",
-yes:"是",no:"否",unknown:"不确定",back:"BACK",next:"NEXT",finish:"FINISH CHECK",
-complete:"检查完成",positive:"安全肯定回答",reviewItems:"需要检查的回答",save:"报告已保存",noReports:"暂无报告。",
+home:"首页",scan:"检查",privacy:"隐私",learn:"学习",reports:"报告",
+platform:"数字安全平台",welcome:"欢迎来到 MAYA CYBER",intro:"安全与隐私教育平台。",
+start:"开始安全检查",savedReports:"已保存报告",lastResult:"上次结果",
+languages:"支持语言",questionsCount:"检查问题",features:"平台功能",
+feature1:"互动安全检查",feature2:"MAYA AI 教育助手",feature3:"可下载报告",
+feature4:"隐私与学习中心",important:"重要信息",
+limitations:"本平台根据你的回答提供教育性检查，不会扫描手机文件或自动检测入侵。",
+reviewTitle:"设备安全检查",reviewIntro:"请回答全部十个问题。",
+scanNotice:"教育性指标，不是技术扫描。",yes:"是",no:"否",
+unknown:"不确定",back:"BACK",next:"NEXT",finish:"FINISH CHECK",
+complete:"检查完成",positive:"肯定回答",reviewItems:"需要检查的回答",
+recommendation:"建议",saved:"报告已保存",reportsTitle:"检查报告",
+download:"下载 JSON",deleteReports:"删除所有报告",reportNotice:"报告保存在本地浏览器。",
+noReports:"暂无报告。",confirmDelete:"删除所有报告？",
+aiIntro:"向 MAYA 询问数字安全问题。",aiWelcome:"你好！我是 MAYA，你的数字安全教育助手。",
+send:"发送",clearChat:"清除对话",aiNotice:"MAYA AI 使用本地教育回答，不是联网 AI 服务。",
+privacyTitle:"隐私中心",p1title:"密码",p1:"使用强密码并避免重复使用。",
+p2title:"双重验证",p2:"启用双重身份验证。",
+p3title:"应用权限",p3:"检查应用权限。",
+p4title:"更新",p4:"从官方来源更新系统和应用。",
+p5title:"链接",p5:"打开链接前先检查。",
+p6title:"备份",p6:"安全备份重要文件。",
+learnTitle:"网络安全知识库",
+l1title:"网络安全",l1:"保护设备、账户和数据的实践。",
+l2title:"网络钓鱼",l2:"欺骗用户以获取信息的尝试。",
+l3title:"双重验证",l3:"登录时的额外身份验证。",
+l4title:"公共网络",l4:"避免在不可信网络输入敏感信息。",
+l5title:"社会工程",l5:"操纵他人以获取信息的方式。",
 questions:[
-"你的手机是否使用强锁屏密码？",
-"你是否定期更新系统？",
-"你是否为不同账户使用不同密码？",
-"你是否启用了双重身份验证？",
-"你是否检查应用权限？",
-"你是否避免未知链接和文件？",
-"你是否使用可信的 Wi-Fi？",
-"你是否检查账户连接的设备？",
-"你是否备份数据？",
-"你是否定期检查隐私设置？"
+"你的手机是否使用强锁屏密码？","你是否定期更新系统？",
+"你是否为不同账户使用不同密码？","你是否启用了双重身份验证？",
+"你是否检查应用权限？","你是否避免未知链接和文件？",
+"你是否使用可信的 Wi-Fi？","你是否检查账户连接的设备？",
+"你是否备份数据？","你是否定期检查隐私设置？"
 ]},
 ja:{
-home:"ホーム",check:"確認",ai:"MAYA AI",privacy:"プライバシー",reports:"レポート",
-welcome:"MAYA CYBERへようこそ",intro:"デジタルセキュリティとプライバシーの学習プラットフォーム。",
-start:"セキュリティ確認を開始",features:"機能",f1:"対話型セキュリティ確認",f2:"プライバシーの助言",f3:"保存可能なレポート",f4:"9言語対応",
-review:"端末セキュリティ確認",reviewInfo:"10個の質問に回答してください。",
-disclaimer:"この確認は回答に基づきます。端末ファイルのスキャンや侵入の自動検出は行いません。",
-aiInfo:"デジタルセキュリティの学習用ローカルアシスタント。",send:"送信",
-privacyTitle:"プライバシーガイド",privacy1:"強力で固有のパスワードを使用してください。",privacy2:"二要素認証を有効にしてください。",privacy3:"アプリの権限を確認してください。",privacy4:"システムとアプリを更新してください。",privacy5:"不明なリンクを避けてください。",
-reportsTitle:"レポート",download:"JSONレポートをダウンロード",
-yes:"はい",no:"いいえ",unknown:"不明",back:"BACK",next:"NEXT",finish:"FINISH CHECK",
-complete:"確認完了",positive:"肯定的な回答",reviewItems:"確認が必要な回答",save:"レポートを保存しました",noReports:"レポートはありません。",
+home:"ホーム",scan:"確認",privacy:"プライバシー",learn:"学習",reports:"レポート",
+platform:"デジタルセキュリティ",welcome:"MAYA CYBERへようこそ",
+intro:"セキュリティとプライバシーの学習プラットフォーム。",
+start:"セキュリティ確認を開始",savedReports:"保存済みレポート",
+lastResult:"前回の結果",languages:"対応言語",questionsCount:"確認質問",
+features:"機能",feature1:"対話型セキュリティ確認",feature2:"MAYA AI 学習アシスタント",
+feature3:"ダウンロード可能なレポート",feature4:"プライバシーと学習センター",
+important:"重要な情報",limitations:"このプラットフォームは回答に基づく教育的な確認を行います。端末ファイルのスキャンや侵入の自動検出は行いません。",
+reviewTitle:"端末セキュリティ確認",reviewIntro:"10個の質問に回答してください。",
+scanNotice:"教育用の指標であり、技術的なスキャンではありません。",
+yes:"はい",no:"いいえ",unknown:"不明",back:"BACK",next:"NEXT",
+finish:"FINISH CHECK",complete:"確認完了",positive:"肯定的な回答",
+reviewItems:"確認が必要な回答",recommendation:"推奨事項",saved:"レポートを保存しました",
+reportsTitle:"レポート",download:"JSONをダウンロード",
+deleteReports:"すべて削除",reportNotice:"レポートはブラウザに保存されます。",
+noReports:"レポートはありません。",confirmDelete:"すべてのレポートを削除しますか？",
+aiIntro:"デジタルセキュリティについてMAYAに質問してください。",
+aiWelcome:"こんにちは！私はMAYAです。デジタル安全についてお手伝いします。",
+send:"送信",clearChat:"会話を消去",aiNotice:"MAYA AIはローカルの教育用回答を使用し、オンラインAIサービスではありません。",
+privacyTitle:"プライバシーセンター",p1title:"パスワード",p1:"強力で固有のパスワードを使用してください。",
+p2title:"二要素認証",p2:"二要素認証を有効にしてください。",
+p3title:"アプリの権限",p3:"アプリの権限を確認してください。",
+p4title:"更新",p4:"公式ソースから更新してください。",
+p5title:"リンク",p5:"リンクを開く前に確認してください。",
+p6title:"バックアップ",p6:"重要なファイルを安全にバックアップしてください。",
+learnTitle:"サイバーセキュリティライブラリ",
+l1title:"サイバーセキュリティ",l1:"端末、アカウント、データを保護する取り組み。",
+l2title:"フィッシング",l2:"情報を得るために人をだます試み。",
+l3title:"二要素認証",l3:"ログイン時の追加認証。",
+l4title:"公共ネットワーク",l4:"信頼できないネットワークで機密情報を入力しないでください。",
+l5title:"ソーシャルエンジニアリング",l5:"人を操作して情報を得る手法。",
 questions:[
-"強力な画面ロックコードを使用していますか？",
-"OSを定期的に更新していますか？",
-"アカウントごとに異なるパスワードを使用していますか？",
-"二要素認証を有効にしていますか？",
-"アプリの権限を確認していますか？",
-"不明なリンクやファイルを避けていますか？",
-"信頼できるWi-Fiを使用していますか？",
-"アカウントに接続された端末を確認していますか？",
-"データをバックアップしていますか？",
-"プライバシー設定を定期的に確認していますか？"
+"強力な画面ロックコードを使用していますか？","OSを定期的に更新していますか？",
+"アカウントごとに異なるパスワードを使用していますか？","二要素認証を有効にしていますか？",
+"アプリの権限を確認していますか？","不明なリンクやファイルを避けていますか？",
+"信頼できるWi-Fiを使用していますか？","接続された端末を確認していますか？",
+"データをバックアップしていますか？","プライバシー設定を確認していますか？"
 ]}
 };
 
@@ -443,178 +650,274 @@ let lang="ar";
 let current=0;
 let answers=Array(10).fill(null);
 let reports=[];
-
-try {
-  reports=JSON.parse(localStorage.getItem("mayaReports")||"[]");
-  if(!Array.isArray(reports)) reports=[];
-} catch(e) { reports=[]; }
-
 const $=id=>document.getElementById(id);
-const t=key=>translations[lang][key] || translations.en[key] || key;
+const t=k=>D[lang][k] ?? D.en[k] ?? k;
 
-function changeLanguage(value) {
-  lang=value;
-  document.documentElement.lang=lang;
-  document.documentElement.dir=lang==="ar"?"rtl":"ltr";
-  document.querySelectorAll("[data-i]").forEach(el=>{
-    el.textContent=t(el.dataset.i);
-  });
-  $("backBtn").textContent=t("back");
-  $("nextBtn").textContent=t("next");
-  $("finishBtn").textContent=t("finish");
-  $("aiInput").placeholder=lang==="ar"?"اكتبي سؤالك هنا...":"Type your question...";
-  showQuestion();
-  renderReports();
+try{
+ const stored=JSON.parse(localStorage.getItem("mayaUltimateReports")||"[]");
+ reports=Array.isArray(stored)?stored:[];
+}catch(e){reports=[];}
+
+function showPage(id){
+ document.querySelectorAll(".page").forEach(p=>p.classList.add("hidden"));
+ $(id).classList.remove("hidden");
+ document.querySelectorAll("#nav button").forEach(b=>{
+  b.classList.toggle("active",b.dataset.page===id);
+ });
+ if(id==="reports")renderReports();
+ if(id==="home")updateDashboard();
 }
-$("language").addEventListener("change",e=>changeLanguage(e.target.value));
 
-document.querySelectorAll("nav button").forEach(btn=>{
-  btn.addEventListener("click",()=>showPage(btn.dataset.page));
+document.querySelectorAll("#nav button").forEach(b=>{
+ b.addEventListener("click",()=>showPage(b.dataset.page));
 });
 
-function showPage(id) {
-  document.querySelectorAll(".page").forEach(p=>p.classList.add("hidden"));
-  $(id).classList.remove("hidden");
-  document.querySelectorAll("nav button").forEach(b=>{
-    b.classList.toggle("active",b.dataset.page===id);
+function setLanguage(value){
+ lang=D[value]?value:"ar";
+ document.documentElement.lang=lang;
+ document.documentElement.dir=lang==="ar"?"rtl":"ltr";
+ document.querySelectorAll("[data-i]").forEach(el=>{
+  el.textContent=t(el.dataset.i);
+ });
+ $("aiInput").placeholder=lang==="ar"?"اكتبي سؤالك...":"Type your question...";
+ $("backBtn").textContent=t("back");
+ $("nextBtn").textContent=t("next");
+ $("finishBtn").textContent=t("finish");
+ if(!$("scan").classList.contains("hidden"))showQuestion();
+ if(!$("reports").classList.contains("hidden"))renderReports();
+ updateDashboard();
+}
+$("language").addEventListener("change",e=>setLanguage(e.target.value));
+
+function startScan(){
+ current=0;
+ answers=Array(10).fill(null);
+ $("result").classList.add("hidden");
+ showPage("scan");
+ showQuestion();
+}
+
+function showQuestion(){
+ $("questionText").textContent=D[lang].questions[current];
+ $("counter").textContent=(current+1)+" / 10";
+ $("percent").textContent=((current+1)*10)+"%";
+ $("progress").style.width=((current+1)*10)+"%";
+
+ const box=$("options");
+ box.replaceChildren();
+
+ ["yes","no","unknown"].forEach(value=>{
+  const label=document.createElement("label");
+  label.className="option"+(answers[current]===value?" selected":"");
+  const input=document.createElement("input");
+  input.type="radio";
+  input.name="mayaAnswer";
+  input.value=value;
+  input.checked=answers[current]===value;
+  input.addEventListener("change",()=>{
+   answers[current]=value;
+   showQuestion();
   });
-  if(id==="reports") renderReports();
+  const span=document.createElement("span");
+  span.textContent=t(value);
+  label.append(input,span);
+  box.append(label);
+ });
+
+ $("backBtn").disabled=current===0;
+ $("nextBtn").classList.toggle("hidden",current===9);
+ $("finishBtn").classList.toggle("hidden",current!==9);
+ $("nextBtn").disabled=answers[current]===null;
+ $("finishBtn").disabled=answers.some(a=>a===null);
 }
 
-function startCheck() {
-  current=0;
-  answers=Array(10).fill(null);
-  $("result").classList.add("hidden");
-  showPage("check");
-  showQuestion();
+function nextQuestion(){
+ if(answers[current]===null)return;
+ if(current<9){current++;showQuestion();}
+}
+function previousQuestion(){
+ if(current>0){current--;showQuestion();}
 }
 
-function showQuestion() {
-  const q=translations[lang].questions[current];
-  $("questionText").textContent=q;
-  $("questionCounter").textContent=(current+1)+" / 10";
-  $("percent").textContent=Math.round((current+1)*10)+"%";
-  $("progress").style.width=((current+1)*10)+"%";
+function finishScan(){
+ if(answers.some(a=>a===null))return;
 
-  const options=$("options");
-  options.innerHTML="";
-  ["yes","no","unknown"].forEach(value=>{
-    const label=document.createElement("label");
-    label.className="option"+(answers[current]===value?" selected":"");
-    const radio=document.createElement("input");
-    radio.type="radio";
-    radio.name="answer";
-    radio.value=value;
-    radio.checked=answers[current]===value;
-    radio.addEventListener("change",()=>{
-      answers[current]=value;
-      showQuestion();
-    });
-    const span=document.createElement("span");
-    span.textContent=t(value);
-    label.append(radio,span);
-    options.appendChild(label);
-  });
+ const positive=answers.filter(a=>a==="yes").length;
+ const review=10-positive;
+ const report={
+  id:Date.now(),
+  date:new Date().toLocaleString(),
+  score:positive,
+  total:10,
+  answers:answers.slice(),
+  language:lang
+ };
+ reports.unshift(report);
+ saveReports();
 
-  $("backBtn").disabled=current===0;
-  $("nextBtn").classList.toggle("hidden",current===9);
-  $("finishBtn").classList.toggle("hidden",current!==9);
-  $("nextBtn").disabled=answers[current]===null;
-  $("finishBtn").disabled=answers.some(a=>a===null);
+ const result=$("result");
+ result.classList.remove("hidden");
+ result.replaceChildren();
+
+ const title=document.createElement("h2");
+ title.textContent=t("complete");
+ const score=document.createElement("div");
+ score.className="result-number";
+ score.textContent=positive+"/10";
+ const good=document.createElement("p");
+ good.textContent=t("positive")+": "+positive;
+ const needs=document.createElement("p");
+ needs.textContent=t("reviewItems")+": "+review;
+ const bar=document.createElement("div");
+ bar.className="track";
+ const fill=document.createElement("div");
+ fill.className="fill";
+ fill.style.width=(positive*10)+"%";
+ bar.append(fill);
+ const heading=document.createElement("h3");
+ heading.textContent=t("recommendation");
+ const advice=document.createElement("p");
+ advice.textContent=review===0
+  ?(lang==="ar"?"أحسنتِ! حافظي على ممارسات الأمان وراجعيها باستمرار.":"Great! Keep reviewing your security practices.")
+  :(lang==="ar"?"راجعي الأسئلة التي كانت إجابتها لا أو لست متأكدة، واتبعي إرشادات مركز الخصوصية.":"Review answers marked No or Not sure and follow the privacy guidance.");
+ const saved=document.createElement("p");
+ saved.className="small";
+ saved.textContent=t("saved");
+ const button=document.createElement("button");
+ button.className="primary";
+ button.textContent=t("reportsTitle");
+ button.addEventListener("click",()=>showPage("reports"));
+ result.append(title,score,good,needs,bar,heading,advice,saved,button);
+ updateDashboard();
+ result.scrollIntoView({behavior:"smooth",block:"start"});
 }
 
-function nextQuestion() {
-  if(answers[current]===null) return;
-  if(current<9) {
-    current++;
-    showQuestion();
+function saveReports(){
+ try{
+  localStorage.setItem("mayaUltimateReports",JSON.stringify(reports));
+ }catch(e){
+  alert("Storage is full or unavailable. Download your reports.");
+ }
+}
+
+function renderReports(){
+ const list=$("reportList");
+ list.replaceChildren();
+ if(!reports.length){
+  const p=document.createElement("p");
+  p.textContent=t("noReports");
+  list.append(p);
+  return;
+ }
+ reports.forEach(r=>{
+  const card=document.createElement("div");
+  card.className="report";
+  const date=document.createElement("p");
+  date.textContent=r.date;
+  const score=document.createElement("strong");
+  score.style.color="var(--cyan)";
+  score.textContent=r.score+"/"+r.total;
+  const details=document.createElement("p");
+  details.className="small";
+  details.textContent=lang==="ar"?"نتيجة المراجعة التوعوية":"Awareness review result";
+  card.append(date,score,details);
+  list.append(card);
+ });
+}
+
+function updateDashboard(){
+ $("totalReports").textContent=reports.length;
+ $("lastScore").textContent=reports.length?reports[0].score+"/10":"--";
+}
+
+function downloadReports(){
+ if(!reports.length){alert(t("noReports"));return;}
+ const blob=new Blob([JSON.stringify(reports,null,2)],{type:"application/json"});
+ const url=URL.createObjectURL(blob);
+ const a=document.createElement("a");
+ a.href=url;
+ a.download="MAYA-CYBER-SECURITY-REPORTS.json";
+ document.body.append(a);
+ a.click();
+ a.remove();
+ setTimeout(()=>URL.revokeObjectURL(url),1000);
+}
+
+function deleteReports(){
+ if(!confirm(t("confirmDelete")))return;
+ reports=[];
+ saveReports();
+ renderReports();
+ updateDashboard();
+}
+
+function addMessage(text,who){
+ const div=document.createElement("div");
+ div.className="message "+who;
+ div.textContent=text;
+ $("chat").append(div);
+ $("chat").scrollTop=$("chat").scrollHeight;
+}
+
+function aiReply(question){
+ const q=question.toLowerCase();
+
+ const groups=[
+  {keys:["password","كلمة المرور","كلمات المرور","mot de passe","contraseña","passwort","şifre","senha","密码","パスワード"],
+   ar:"نصيحة MAYA: استخدمي كلمة مرور طويلة وفريدة لكل حساب مهم. لا تشاركيها مع أحد، واستعملي مدير كلمات مرور موثوقاً عند الحاجة.",
+   en:"MAYA tip: Use a long, unique password for each important account. Never share it. Consider a reputable password manager."},
+  {keys:["phishing","تصيد","رابط","link","lien","enlace","phishing","linki","链接","フィッシング"],
+   ar:"نصيحة MAYA: لا تفتحي الروابط المشبوهة. تحققي من عنوان الموقع والمرسل، ولا تدخلي كلمة المرور بعد الوصول من رسالة غير متوقعة.",
+   en:"MAYA tip: Avoid suspicious links. Check the website address and sender. Do not enter passwords after following unexpected messages."},
+  {keys:["privacy","خصوصية","الخصوصية","confidentialité","privacidad","datenschutz","gizlilik","privacidade","隐私","プライバシー"],
+   ar:"نصيحة MAYA: راجعي أذونات التطبيقات، وقللي مشاركة الموقع والبيانات التي لا تحتاجين إلى مشاركتها.",
+   en:"MAYA tip: Review app permissions and limit location and personal-data sharing to what is necessary."},
+  {keys:["wifi","واي فاي","شبكة","network","réseau","red","netzwerk","ağ","rede","网络","ネットワーク"],
+   ar:"نصيحة MAYA: استخدمي شبكات موثوقة، وتجنبي إدخال معلومات حساسة في شبكات عامة غير معروفة.",
+   en:"MAYA tip: Use trusted networks and avoid entering sensitive information on unknown public Wi-Fi."},
+  {keys:["update","تحديث","تحديثات","mise à jour","actualización","aktualisierung","güncelleme","atualização","更新","アップデート"],
+   ar:"نصيحة MAYA: ثبتي تحديثات النظام والتطبيقات من إعدادات الجهاز أو المتاجر الرسمية، لأنها قد تتضمن إصلاحات أمنية.",
+   en:"MAYA tip: Install system and app updates through official settings or stores. Updates often include security fixes."},
+  {keys:["hack","اختراق","مخترق","piraté","hackeo","gehackt","hacklendi","invadido","黑客","ハッキング"],
+   ar:"إذا كنتِ قلقة بشأن أمان جهازك، حدّثي النظام، وراجعي الأجهزة المتصلة بحساباتك، وغيّري كلمات المرور من جهاز موثوق. إذا ظهرت مشكلة فعلية، استعيني بشخص بالغ موثوق أو دعم الشركة الرسمي. هذه المنصة لا تستطيع تأكيد حدوث اختراق.",
+   en:"If you are concerned about your device, update it, review devices connected to your accounts, and change passwords from a trusted device. Contact official support if needed. This platform cannot confirm an intrusion."},
+  {keys:["two factor","مصادقة","التحقق","authentification","autenticación","zweifaktor","iki faktör","dois fatores","双重验证","二要素"],
+   ar:"نصيحة MAYA: فعّلي المصادقة الثنائية للحسابات المهمة، واحفظي رموز الاسترداد في مكان آمن ولا تشاركي رموز التحقق.",
+   en:"MAYA tip: Enable two-factor authentication for important accounts. Store recovery codes safely and never share verification codes."}
+ ];
+
+ for(const group of groups){
+  if(group.keys.some(k=>q.includes(k))){
+   return lang==="ar"?group.ar:group.en;
   }
+ }
+
+ return lang==="ar"
+  ?"يمكنني مساعدتك في موضوعات كلمات المرور والتصيد والخصوصية والتحديثات والشبكات الآمنة. اكتبي سؤالك بصورة أوضح."
+  :"I can help with passwords, phishing, privacy, updates and safe networks. Please ask a more specific question.";
 }
 
-function previousQuestion() {
-  if(current>0) {
-    current--;
-    showQuestion();
-  }
+function sendAI(){
+ const input=$("aiInput");
+ const question=input.value.trim();
+ if(!question)return;
+ addMessage(question,"user");
+ addMessage(aiReply(question),"bot");
+ input.value="";
+ input.focus();
 }
 
-function finishCheck() {
-  if(answers.some(a=>a===null)) return;
+$("aiInput").addEventListener("keydown",e=>{
+ if(e.key==="Enter")sendAI();
+});
 
-  const positive=answers.filter(a=>a==="yes").length;
-  const needsReview=10-positive;
-  const report={
-    date:new Date().toLocaleString(),
-    language:lang,
-    score:positive,
-    total:10,
-    answers:answers.slice()
-  };
-
-  reports.unshift(report);
-  try {
-    localStorage.setItem("mayaReports",JSON.stringify(reports));
-  } catch(e) {}
-
-  const result=$("result");
-  result.classList.remove("hidden");
-  result.innerHTML=`
-    <h2>${t("complete")}</h2>
-    <div class="result-number">${positive}/10</div>
-    <p>${t("positive")}: ${positive}</p>
-    <p>${t("reviewItems")}: ${needsReview}</p>
-    <div class="track"><div class="fill" style="width:${positive*10}%"></div></div>
-    <p class="small">${t("save")}</p>
-    <button class="primary" onclick="showPage('reports')">${t("reports")}</button>
-  `;
-  renderReports();
-  result.scrollIntoView({behavior:"smooth"});
+function clearChat(){
+ $("chat").replaceChildren();
+ addMessage(t("aiWelcome"),"bot");
 }
 
-function renderReports() {
-  const list=$("reportList");
-  if(!reports.length) {
-    list.textContent=t("noReports");
-    return;
-  }
-  list.innerHTML="";
-  reports.forEach(r=>{
-    const item=document.createElement("div");
-    item.className="report";
-    const date=document.createElement("p");
-    date.textContent=r.date;
-    const score=document.createElement("strong");
-    score.textContent=r.score+"/10";
-    item.append(date,score);
-    list.appendChild(item);
-  });
-}
-
-function downloadReports() {
-  if(!reports.length) {
-    alert(t("noReports"));
-    return;
-  }
-  const blob=new Blob([JSON.stringify(reports,null,2)],{type:"application/json"});
-  const url=URL.createObjectURL(blob);
-  const a=document.createElement("a");
-  a.href=url;
-  a.download="MAYA-CYBER-REPORTS.json";
-  a.click();
-  URL.revokeObjectURL(url);
-}
-
-function askAI() {
-  const question=$("aiInput").value.trim();
-  if(!question) return;
-  const answer=lang==="ar"
-    ?"نصيحة MAYA: استعملي كلمات مرور قوية، وفعّلي المصادقة الثنائية، وراجعي أذونات التطبيقات. لا تشاركي رموز التحقق أو كلمات المرور مع أي شخص. هذه إجابة توعوية محلية وليست خدمة ذكاء اصطناعي متصلة."
-    :"MAYA tip: Use strong unique passwords, enable two-factor authentication, review app permissions, and never share verification codes. This is a local educational response, not a connected AI service.";
-  $("aiAnswer").textContent=answer;
-  $("aiAnswer").classList.remove("hidden");
-}
-
-changeLanguage("ar");
+setLanguage("ar");
+updateDashboard();
 showPage("home");
 </script>
 </body>
